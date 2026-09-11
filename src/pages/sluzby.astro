@@ -1,0 +1,162 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Služby"
+  description="Procesní audit, n8n automatizace a AI implementace. Konkrétní řešení pro firmy, které chtějí přestat hasit požáry."
+>
+  <!-- Hero -->
+  <section class="section bg-gradient-to-br from-brand-50 to-white">
+    <div class="container text-center">
+      <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">Co nabízím</p>
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-6">Služby</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Žádné obecné doporučení z PowerPointu. Konkrétní analýza, konkrétní řešení, měřitelné výsledky.
+      </p>
+    </div>
+  </section>
+
+  <!-- Procesní audit -->
+  <section id="audit" class="section bg-white">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-5xl mb-4">🔍</div>
+          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">Procesní audit</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Systematické zmapování vašich klíčových procesů — od zakázky po fakturaci, od onboardingu po support. Hledám místa, kde se ztrácí čas, peníze a energie.
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Rozhovory s klíčovými lidmi, analýza stávajících procesů',
+              'Vizualizace procesní mapy (BPMN / value stream)',
+              'Identifikace úzkých hrdel a quick wins',
+              'Písemná zpráva s prioritizovaným plánem optimalizace',
+              'Prezentace výsledků managementu',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/kontakt" class="btn-primary">Mám zájem o audit</a>
+        </div>
+        <div class="bg-brand-50 rounded-2xl p-8">
+          <p class="text-sm font-semibold text-brand-600 uppercase tracking-wide mb-4">Typický výsledek</p>
+          <div class="space-y-4">
+            {[
+              { label: 'Identifikované úspory', value: '15–40 % procesního času' },
+              { label: 'Quick wins', value: '3–7 konkrétních kroků' },
+              { label: 'Délka auditu', value: '2–4 týdny' },
+              { label: 'Výstup', value: 'Písemná zpráva + prezentace' },
+            ].map(({ label, value }) => (
+              <div class="flex justify-between py-2 border-b border-brand-100">
+                <span class="text-gray-600 text-sm">{label}</span>
+                <span class="font-semibold text-brand-700 text-sm">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- n8n Automatizace -->
+  <section id="n8n" class="section bg-gray-50">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 bg-gray-900 rounded-2xl p-8 font-mono text-sm text-green-400 overflow-hidden">
+          <p class="text-gray-500 mb-2">// n8n workflow — ukázka</p>
+          <p><span class="text-blue-400">Trigger:</span> Nová objednávka (webhook)</p>
+          <p>  → <span class="text-yellow-400">Ověř zákazníka</span> (CRM lookup)</p>
+          <p>  → <span class="text-yellow-400">Vytvoř fakturu</span> (Fakturoid API)</p>
+          <p>  → <span class="text-yellow-400">Odešli potvrzení</span> (e-mail + SMS)</p>
+          <p>  → <span class="text-yellow-400">Notifikuj obchodníka</span> (Slack)</p>
+          <p>  → <span class="text-yellow-400">Založ úkol</span> (Notion/Asana)</p>
+          <p class="mt-4 text-gray-500">// Čas: 0.3 s | Manuálně: ~12 min</p>
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="text-5xl mb-4">⚙️</div>
+          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">n8n Automatizace</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            n8n je open-source alternativa Zapier a Make — provozujete ho na vlastním serveru, platíte jen za hosting. Navrhuji a implementuji workflow, která za vás dělají opakující se práci.
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Analýza vhodných procesů pro automatizaci',
+              'Návrh a implementace n8n workflow',
+              'Integrace s vašimi stávajícími nástroji (CRM, ERP, e-mail, Slack...)',
+              'Testování, dokumentace a předání',
+              'Volitelně: správa a rozvoj workflow',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/kontakt" class="btn-primary">Chci automatizovat</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Implementace -->
+  <section id="ai" class="section bg-white">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-5xl mb-4">🧠</div>
+          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">AI Implementace</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Ne každý problém potřebuje AI. Ale tam, kde smysl dává — v analýze dat, generování obsahu, zákaznické komunikaci nebo interních asistentích — pomůžu vám AI skutečně nasadit, ne jen vyzkoušet.
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'Analýza vhodných use-cases pro AI ve vaší firmě',
+              'Výběr správných nástrojů (ChatGPT, Claude, Mistral, lokální modely)',
+              'Integrace AI do stávajících workflow a n8n',
+              'Interní AI asistenti a knowledge base',
+              'Školení týmu a nastavení governance',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/kontakt" class="btn-primary">Probrat AI strategii</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { icon: '📧', label: 'E-mail asistent', desc: 'Automatické třídění a drafty odpovědí' },
+            { icon: '📊', label: 'Analýza dat', desc: 'AI zpracování reportů a dokumentů' },
+            { icon: '💬', label: 'Chatbot', desc: 'Interní KB nebo zákaznický support' },
+            { icon: '✍️', label: 'Obsah', desc: 'Generování a revize textů, překladů' },
+          ].map(({ icon, label, desc }) => (
+            <div class="card text-center">
+              <div class="text-3xl mb-2">{icon}</div>
+              <p class="font-semibold text-sm text-gray-900 mb-1">{label}</p>
+              <p class="text-xs text-gray-500">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-600">
+    <div class="container text-center">
+      <h2 class="text-3xl font-heading font-bold text-white mb-4">Nejste si jistí, kde začít?</h2>
+      <p class="text-brand-100 text-lg mb-8 max-w-xl mx-auto">
+        Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhneme, co dává největší smysl.
+      </p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-brand-600 font-bold rounded-xl hover:bg-brand-50 transition-colors shadow-lg text-lg">
+        Domluvit bezplatnou konzultaci →
+      </a>
+    </div>
+  </section>
+</Layout>

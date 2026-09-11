@@ -1,0 +1,53 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-gray-300 mt-auto">
+  <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 font-heading font-bold text-xl text-white mb-3">
+          <span class="text-accent-500 text-2xl">⚙</span>
+          Radek Kovařík
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Specialista na firemní procesy, automatizace v n8n a implementaci AI. Pomáhám firmám zbavit se stojatých vod a neefektivity.
+        </p>
+      </div>
+
+      <!-- Navigace -->
+      <div>
+        <h3 class="font-semibold text-white mb-4">Navigace</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/sluzby" class="hover:text-accent-400 transition-colors">Služby</a></li>
+          <li><a href="/o-mne" class="hover:text-accent-400 transition-colors">O mně</a></li>
+          <li><a href="/blog" class="hover:text-accent-400 transition-colors">Blog</a></li>
+          <li><a href="/kontakt" class="hover:text-accent-400 transition-colors">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontakt -->
+      <div>
+        <h3 class="font-semibold text-white mb-4">Kontakt</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="mailto:radek@kovarik.us" class="hover:text-accent-400 transition-colors flex items-center gap-2">
+              ✉ radek@kovarik.us
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/radekkovarik" target="_blank" rel="noopener" class="hover:text-accent-400 transition-colors flex items-center gap-2">
+              🔗 LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+      <p>© {year} Radek Kovařík. Všechna práva vyhrazena.</p>
+      <p>Postaveno na Astro + Tailwind CSS</p>
+    </div>
+  </div>
+</footer>

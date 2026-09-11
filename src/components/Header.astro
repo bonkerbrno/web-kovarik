@@ -1,0 +1,81 @@
+---
+const navItems = [
+  { href: '/', label: 'Domů' },
+  { href: '/sluzby', label: 'Služby' },
+  { href: '/o-mne', label: 'O mně' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-700 hover:text-brand-500 transition-colors">
+        <span class="text-accent-500 text-2xl">⚙</span>
+        Radek Kovařík
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-1">
+        {navItems.map(({ href, label }) => (
+          <a
+            href={href}
+            class={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 ${
+              currentPath === href
+                ? 'bg-brand-50 text-brand-600'
+                : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
+            }`}
+          >
+            {label}
+          </a>
+        ))}
+        <a href="/kontakt" class="ml-4 btn-primary text-sm py-2 px-5">
+          Nezávazná konzultace
+        </a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-toggle"
+        class="md:hidden p-2 rounded-lg text-gray-600 hover:text-brand-600 hover:bg-gray-50 transition-colors"
+        aria-label="Otevřít menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <nav class="flex flex-col gap-1">
+        {navItems.map(({ href, label }) => (
+          <a
+            href={href}
+            class={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+              currentPath === href
+                ? 'bg-brand-50 text-brand-600'
+                : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
+            }`}
+          >
+            {label}
+          </a>
+        ))}
+        <a href="/kontakt" class="mt-2 btn-primary text-sm text-center">
+          Nezávazná konzultace
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
