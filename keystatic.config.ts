@@ -21,7 +21,7 @@ export default config({
         }),
         author: fields.text({
           label: 'Autor',
-          defaultValue: 'Radek Kovařík',
+          defaultValue: 'Stan Kovařík',
         }),
         tags: fields.array(fields.text({ label: 'Tag' }), {
           label: 'Tagy',
