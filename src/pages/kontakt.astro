@@ -1,5 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '../../keystatic.config';
+
+const reader = createReader(process.cwd(), keystaticConfig);
+const page = await reader.singletons.kontakt.read();
 ---
 
 <Layout
@@ -8,9 +13,9 @@ import Layout from '@/layouts/Layout.astro';
 >
   <section class="section bg-gradient-to-br from-brand-50 to-white">
     <div class="container text-center">
-      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-4">Pojďme si promluvit</h1>
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-4">{page?.heroTitle}</h1>
       <p class="text-xl text-gray-500 max-w-xl mx-auto">
-        První konzultace je zdarma a bez závazků. Zjistíme, zda a jak mohu vaší firmě pomoci.
+        {page?.heroText}
       </p>
     </div>
   </section>
@@ -20,7 +25,7 @@ import Layout from '@/layouts/Layout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
         <!-- Formulář -->
         <div>
-          <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">Napište mi</h2>
+          <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">{page?.formTitle}</h2>
           <form
             name="kontakt"
             method="POST"
@@ -67,10 +72,9 @@ import Layout from '@/layouts/Layout.astro';
                 class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-shadow bg-white"
               >
                 <option value="">Vyberte téma...</option>
-                <option value="audit">Procesní audit</option>
-                <option value="n8n">n8n Automatizace</option>
-                <option value="ai">AI Implementace</option>
-                <option value="other">Jiné / Nevím ještě</option>
+                {(page?.topics ?? []).map(({ value, label }) => (
+                  <option value={value}>{label}</option>
+                ))}
               </select>
             </div>
             <div>
@@ -85,41 +89,35 @@ import Layout from '@/layouts/Layout.astro';
               ></textarea>
             </div>
             <button type="submit" class="btn-primary w-full justify-center text-base py-3.5">
-              Odeslat zprávu →
+              {page?.submitButton}
             </button>
           </form>
         </div>
 
         <!-- Kontaktní info -->
         <div>
-          <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">Nebo se ozvěte přímo</h2>
+          <h2 class="text-2xl font-heading font-bold text-gray-900 mb-6">{page?.contactTitle}</h2>
           <div class="space-y-6 mb-10">
-            <a href="mailto:info@kovarik.us" class="card flex items-center gap-4 hover:border-brand-200 group">
+            <a href={`mailto:${page?.email}`} class="card flex items-center gap-4 hover:border-brand-200 group">
               <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">✉</div>
               <div>
                 <p class="text-xs text-gray-500 mb-0.5">E-mail</p>
-                <p class="font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">info@kovarik.us</p>
+                <p class="font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">{page?.email}</p>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/stanley1968cz/" target="_blank" rel="noopener" class="card flex items-center gap-4 hover:border-brand-200 group">
+            <a href={page?.linkedinUrl} target="_blank" rel="noopener" class="card flex items-center gap-4 hover:border-brand-200 group">
               <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
               <div>
                 <p class="text-xs text-gray-500 mb-0.5">LinkedIn</p>
-                <p class="font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">linkedin.com/in/stanley1968cz</p>
+                <p class="font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">{page?.linkedinLabel}</p>
               </div>
             </a>
           </div>
 
           <div class="bg-gray-50 rounded-2xl p-6">
-            <h3 class="font-heading font-bold text-gray-900 mb-3">Jak to probíhá?</h3>
+            <h3 class="font-heading font-bold text-gray-900 mb-3">{page?.processTitle}</h3>
             <ol class="space-y-3">
-              {[
-                'Napíšete mi — e-mailem nebo formulářem',
-                'Do 24 hodin se ozvem zpět',
-                'Domluvíme 30minutový hovor (online)',
-                'Zhodnotíme situaci a navrhneme možnosti',
-                'Rozhodnete, jak chcete pokračovat',
-              ].map((step, i) => (
+              {(page?.processSteps ?? []).map((step, i) => (
                 <li class="flex items-start gap-3 text-sm text-gray-600">
                   <span class="w-6 h-6 bg-brand-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                     {i + 1}

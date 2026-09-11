@@ -1,0 +1,29 @@
+heroTitle: "Pojďme si promluvit"
+heroText: >-
+  První konzultace je zdarma a bez závazků. Zjistíme, zda a jak mohu vaší
+  firmě pomoci.
+
+formTitle: "Napište mi"
+topics:
+  - value: "audit"
+    label: "Procesní audit"
+  - value: "n8n"
+    label: "n8n Automatizace"
+  - value: "ai"
+    label: "AI Implementace"
+  - value: "other"
+    label: "Jiné / Nevím ještě"
+submitButton: "Odeslat zprávu →"
+
+contactTitle: "Nebo se ozvěte přímo"
+email: "info@kovarik.us"
+linkedinUrl: "https://www.linkedin.com/in/stanley1968cz/"
+linkedinLabel: "linkedin.com/in/stanley1968cz"
+
+processTitle: "Jak to probíhá?"
+processSteps:
+  - "Napíšete mi — e-mailem nebo formulářem"
+  - "Do 24 hodin se ozvu zpět"
+  - "Domluvíme 30minutový hovor (online)"
+  - "Zhodnotíme situaci a navrhneme možnosti"
+  - "Rozhodnete, jak chcete pokračovat"

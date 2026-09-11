@@ -1,6 +1,11 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '../../keystatic.config';
+
+const reader = createReader(process.cwd(), keystaticConfig);
+const home = await reader.singletons.homepage.read();
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -14,20 +19,20 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <!-- Hero -->
   <section class="section bg-gradient-to-br from-brand-50 via-white to-accent-400/5">
     <div class="container text-center">
-      <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">Procesní poradenství & Automatizace</p>
+      <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{home?.heroEyebrow}</p>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight mb-6">
-        Stojatá voda v procesech<br class="hidden sm:block" />
-        <span class="text-brand-500">vás stojí víc, než tušíte</span>
+        {home?.heroTitleLine1}<br class="hidden sm:block" />
+        <span class="text-brand-500">{home?.heroTitleLine2}</span>
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Pomáhám firmám identifikovat skryté neefektivity, automatizovat rutinu přes <strong>n8n</strong> a inteligentně nasadit <strong>AI</strong> tam, kde skutečně vydělá — ne jen jako buzzword.
+        {home?.heroText}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/kontakt" class="btn-primary text-lg px-8 py-4">
-          Nezávazná konzultace zdarma
+          {home?.heroCtaPrimary}
         </a>
         <a href="/sluzby" class="btn-outline text-lg px-8 py-4">
-          Co nabízím →
+          {home?.heroCtaSecondary}
         </a>
       </div>
     </div>
@@ -37,18 +42,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section bg-white">
     <div class="container">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mb-4">Poznáváte se?</h2>
-        <p class="text-gray-500 text-lg">Tyhle situace jsou signálem, že je čas jednat.</p>
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mb-4">{home?.problemsTitle}</h2>
+        <p class="text-gray-500 text-lg">{home?.problemsSubtitle}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { icon: '🔁', title: 'Opakující se ruční práce', desc: 'Vaši lidé každý den dělají totéž — přepisují data, posílají stejné e-maily, generují reporty ručně.' },
-          { icon: '🚧', title: 'Procesy "vždy to tak bylo"', desc: 'Nikdo neví proč, ale tak to prostě je. Žádná dokumentace, žádná optimalizace, jen zvyk.' },
-          { icon: '📊', title: 'Data v izolovaných silech', desc: 'Excel tu, CRM tam, účetnictví jinde. Nikdo nemá celkový přehled a integrace "se plánuje".' },
-          { icon: '🤖', title: 'AI na papíře, ne v praxi', desc: 'Všichni mluví o AI, ale v reálu nemáte čas ani kapacitu to smysluplně nasadit.' },
-          { icon: '⏱', title: 'Manažeři jako hasiči', desc: 'Místo strategie řeší operativu. Každý den je jiný problém, systém nefunguje sám.' },
-          { icon: '💸', title: 'Náklady rostou, výkon ne', desc: 'Přibývají lidé, ale kapacita nerostí úměrně. Škálování se tříští o procesní chaos.' },
-        ].map(({ icon, title, desc }) => (
+        {(home?.problems ?? []).map(({ icon, title, desc }) => (
           <div class="card">
             <div class="text-3xl mb-4">{icon}</div>
             <h3 class="font-heading font-bold text-lg text-gray-900 mb-2">{title}</h3>
@@ -63,29 +61,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section bg-gray-50">
     <div class="container">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mb-4">Jak konkrétně pomáhám</h2>
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mb-4">{home?.servicesTitle}</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          {
-            icon: '🔍',
-            title: 'Procesní audit',
-            desc: 'Zmapuji vaše procesy, identifikuji úzká hrdla a připravím plán optimalizace s konkrétními kroky.',
-            href: '/sluzby#audit',
-          },
-          {
-            icon: '⚙️',
-            title: 'n8n Automatizace',
-            desc: 'Navrhnout a nasadit workflow v n8n, které za vás dělají opakující se práci — 24/7, bez chyb.',
-            href: '/sluzby#n8n',
-          },
-          {
-            icon: '🧠',
-            title: 'AI Implementace',
-            desc: 'Integruju AI nástroje (ChatGPT, Claude, lokální modely) tam, kde vám ušetří čas a přidají hodnotu.',
-            href: '/sluzby#ai',
-          },
-        ].map(({ icon, title, desc, href }) => (
+        {(home?.services ?? []).map(({ icon, title, desc, href }) => (
           <a href={href} class="card group hover:border-brand-200">
             <div class="text-4xl mb-4">{icon}</div>
             <h3 class="font-heading font-bold text-xl text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">{title}</h3>
@@ -105,13 +84,13 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           👤
         </div>
         <div>
-          <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-2">Kdo za tím stojí</p>
-          <h2 class="text-2xl font-heading font-bold text-gray-900 mb-3">Stan Kovařík</h2>
+          <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-2">{home?.aboutEyebrow}</p>
+          <h2 class="text-2xl font-heading font-bold text-gray-900 mb-3">{home?.aboutName}</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Přes 15 let v manažerských rolích v různých odvětvích. Z praxe vím, jak vypadá procesní chaos i jak ho systematicky řešit. Automatizace a AI nejsou pro mě módní slova — jsou to nástroje, které sám denně používám a implementuji klientům.
+            {home?.aboutText}
           </p>
           <a href="/o-mne" class="text-brand-500 font-semibold hover:text-brand-700 transition-colors">
-            Přečíst celý příběh →
+            {home?.aboutLinkText}
           </a>
         </div>
       </div>
@@ -151,12 +130,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <!-- CTA -->
   <section class="section bg-brand-600">
     <div class="container text-center">
-      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">Připraveni změnit přístup k procesům?</h2>
+      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">{home?.ctaTitle}</h2>
       <p class="text-brand-100 text-lg mb-8 max-w-xl mx-auto">
-        První konzultace je zdarma a bez závazků. Zjistíme spolu, kde má největší smysl začít.
+        {home?.ctaText}
       </p>
       <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-brand-600 font-bold rounded-xl hover:bg-brand-50 transition-colors shadow-lg text-lg">
-        Domluvit konzultaci →
+        {home?.ctaButton}
       </a>
     </div>
   </section>

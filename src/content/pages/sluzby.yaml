@@ -1,0 +1,84 @@
+heroEyebrow: "Co nabízím"
+heroTitle: "Služby"
+heroText: >-
+  Žádné obecné doporučení z PowerPointu. Konkrétní analýza, konkrétní
+  řešení, měřitelné výsledky.
+
+auditIcon: "🔍"
+auditTitle: "Procesní audit"
+auditText: >-
+  Systematické zmapování vašich klíčových procesů — od zakázky po
+  fakturaci, od onboardingu po support. Hledám místa, kde se ztrácí čas,
+  peníze a energie.
+auditBullets:
+  - "Rozhovory s klíčovými lidmi, analýza stávajících procesů"
+  - "Vizualizace procesní mapy (BPMN / value stream)"
+  - "Identifikace úzkých hrdel a quick wins"
+  - "Písemná zpráva s prioritizovaným plánem optimalizace"
+  - "Prezentace výsledků managementu"
+auditCta: "Mám zájem o audit"
+auditResultsLabel: "Typický výsledek"
+auditResults:
+  - label: "Identifikované úspory"
+    value: "15–40 % procesního času"
+  - label: "Quick wins"
+    value: "3–7 konkrétních kroků"
+  - label: "Délka auditu"
+    value: "2–4 týdny"
+  - label: "Výstup"
+    value: "Písemná zpráva + prezentace"
+
+n8nIcon: "⚙️"
+n8nTitle: "n8n Automatizace"
+n8nText: >-
+  n8n je open-source alternativa Zapier a Make — provozujete ho na vlastním
+  serveru, platíte jen za hosting. Navrhuji a implementuji workflow, která
+  za vás dělají opakující se práci.
+n8nBullets:
+  - "Analýza vhodných procesů pro automatizaci"
+  - "Návrh a implementace n8n workflow"
+  - "Integrace s vašimi stávajícími nástroji (CRM, ERP, e-mail, Slack...)"
+  - "Testování, dokumentace a předání"
+  - "Volitelně: správa a rozvoj workflow"
+n8nCta: "Chci automatizovat"
+n8nCodeComment: "// n8n workflow — ukázka"
+n8nCodeSteps:
+  - "Ověř zákazníka (CRM lookup)"
+  - "Vytvoř fakturu (Fakturoid API)"
+  - "Odešli potvrzení (e-mail + SMS)"
+  - "Notifikuj obchodníka (Slack)"
+  - "Založ úkol (Notion/Asana)"
+n8nCodeFooter: "// Čas: 0.3 s | Manuálně: ~12 min"
+
+aiIcon: "🧠"
+aiTitle: "AI Implementace"
+aiText: >-
+  Ne každý problém potřebuje AI. Ale tam, kde smysl dává — v analýze dat,
+  generování obsahu, zákaznické komunikaci nebo interních asistentích —
+  pomůžu vám AI skutečně nasadit, ne jen vyzkoušet.
+aiBullets:
+  - "Analýza vhodných use-cases pro AI ve vaší firmě"
+  - "Výběr správných nástrojů (ChatGPT, Claude, Mistral, lokální modely)"
+  - "Integrace AI do stávajících workflow a n8n"
+  - "Interní AI asistenti a knowledge base"
+  - "Školení týmu a nastavení governance"
+aiCta: "Probrat AI strategii"
+aiUseCases:
+  - icon: "📧"
+    label: "E-mail asistent"
+    desc: "Automatické třídění a drafty odpovědí"
+  - icon: "📊"
+    label: "Analýza dat"
+    desc: "AI zpracování reportů a dokumentů"
+  - icon: "💬"
+    label: "Chatbot"
+    desc: "Interní KB nebo zákaznický support"
+  - icon: "✍️"
+    label: "Obsah"
+    desc: "Generování a revize textů, překladů"
+
+ctaTitle: "Nejste si jistí, kde začít?"
+ctaText: >-
+  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a
+  navrhneme, co dává největší smysl.
+ctaButton: "Domluvit bezplatnou konzultaci →"
