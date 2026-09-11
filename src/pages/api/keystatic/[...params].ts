@@ -1,4 +1,7 @@
-import { makeHandler } from '@keystatic/astro/api'
-import config from '../../../keystatic.config'
+// Keystatic API handler - only functional in dev mode
+// In static builds, this generates no pages
+export const prerender = true;
 
-export const ALL = makeHandler({ config })
+export function getStaticPaths() {
+  return [];
+}
