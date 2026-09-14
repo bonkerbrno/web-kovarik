@@ -1,79 +1,75 @@
-heroEyebrow: "Procesní poradenství & Automatizace"
-heroTitleLine1: "Stojatá voda v procesech"
-heroTitleLine2: "vás stojí víc, než tušíte"
+heroEyebrow: Procesy - automatizace - lokální Ai - optimalizace
+heroTitleLine1: Stojaté vody v procesech
+heroTitleLine2: vás stojí víc, než tušíte
 heroText: >-
-  Pomáhám firmám identifikovat skryté neefektivity, automatizovat rutinu přes
-  n8n a inteligentně nasadit AI tam, kde skutečně vydělá — ne jen jako
-  buzzword.
-heroCtaPrimary: "Nezávazná konzultace zdarma"
-heroCtaSecondary: "Co nabízím →"
-
-problemsTitle: "Poznáváte se?"
-problemsSubtitle: "Tyhle situace jsou signálem, že je čas jednat."
+  Pomáhám identifikovat skryté neefektivity, automatizovat rutinu a inteligentně
+  bezpečně nasadit přiměřenou AI tam, kde to dává smysl. 
+heroCtaPrimary: 'Konzultace '
+heroCtaSecondary: Co nabízím →
+problemsTitle: Poznáváte se?
+problemsSubtitle: Tyhle situace jsou signálem, že je čas jednat.
 problems:
-  - icon: "🔁"
-    title: "Opakující se ruční práce"
-    desc: >-
-      Vaši lidé každý den dělají totéž — přepisují data, posílají stejné
-      e-maily, generují reporty ručně.
-  - icon: "🚧"
-    title: "Procesy \"vždy to tak bylo\""
-    desc: >-
-      Nikdo neví proč, ale tak to prostě je. Žádná dokumentace, žádná
-      optimalizace, jen zvyk.
-  - icon: "📊"
-    title: "Data v izolovaných silech"
-    desc: >-
-      Excel tu, CRM tam, účetnictví jinde. Nikdo nemá celkový přehled a
-      integrace "se plánuje".
-  - icon: "🤖"
-    title: "AI na papíře, ne v praxi"
-    desc: >-
-      Všichni mluví o AI, ale v reálu nemáte čas ani kapacitu to smysluplně
-      nasadit.
-  - icon: "⏱"
-    title: "Manažeři jako hasiči"
+  - icon: ⏱
+    title: Manažeři jako hasiči
     desc: >-
       Místo strategie řeší operativu. Každý den je jiný problém, systém
       nefunguje sám.
-  - icon: "💸"
-    title: "Náklady rostou, výkon ne"
+  - icon: 🚧
+    title: Procesy "vždy to tak bylo"
+    desc: >-
+      Nikdo neví proč, ale tak to prostě je. Žádná dokumentace, žádná
+      optimalizace, jen zvyk.
+  - icon: 🤖
+    title: AI na papíře, ne v praxi
+    desc: >-
+      Všichni mluví o AI, ale v reálu nemáte čas ani kapacitu to smysluplně
+      nasadit.
+  - icon: 🔁
+    title: Opakující se ruční práce
+    desc: >-
+      Vaši lidé každý den dělají totéž — přepisují data, posílají stejné
+      e-maily, generují reporty ručně.
+  - icon: 📊
+    title: Data v izolovaných silech
+    desc: >-
+      Excel tu, CRM tam, účetnictví jinde. Nikdo nemá celkový přehled a
+      integrace "se plánuje".
+  - icon: 💸
+    title: Náklady rostou, výkon ne
     desc: >-
       Přibývají lidé, ale kapacita neroste úměrně. Škálování se tříští o
       procesní chaos.
-
-servicesTitle: "Jak konkrétně pomáhám"
+servicesTitle: Jak konkrétně pomáhám
 services:
-  - icon: "🔍"
-    title: "Procesní audit"
+  - icon: 🔍
+    title: Procesní audit
     desc: >-
       Zmapuji vaše procesy, identifikuji úzká hrdla a připravím plán
       optimalizace s konkrétními kroky.
-    href: "/sluzby#audit"
-  - icon: "⚙️"
-    title: "n8n Automatizace"
+    href: /sluzby#audit
+  - icon: ⚙️
+    title: Automatizace
     desc: >-
-      Navrhnu a nasadím workflow v n8n, které za vás dělají opakující se
-      práci — 24/7, bez chyb.
-    href: "/sluzby#n8n"
-  - icon: "🧠"
-    title: "AI Implementace"
+      Navrhnu  workflow, které za vás dělají opakující se práci — 24/7, bez
+      chyb.
+    href: /sluzby#n8n
+  - icon: 🧠
+    title: AI Implementace
     desc: >-
-      Integruju AI nástroje (ChatGPT, Claude, lokální modely) tam, kde vám
-      ušetří čas a přidají hodnotu.
-    href: "/sluzby#ai"
-
-aboutEyebrow: "Kdo za tím stojí"
-aboutName: "Stan Kovařík"
+      Integruji AI nástroje vhodně tam, kde vám ušetří čas a přidají hodnotu.
+      Poradím vám jak mít AI pod kontrolou a dostávat spolehlivé opakovatelné
+      výstupy a neplýtvat tokeny.
+    href: /sluzby#ai
+aboutEyebrow: Kdo za tím stojí
+aboutName: Stan Kovařík
 aboutText: >-
-  Přes 15 let v manažerských rolích v různých odvětvích. Z praxe vím, jak
-  vypadá procesní chaos i jak ho systematicky řešit. Automatizace a AI
-  nejsou pro mě módní slova — jsou to nástroje, které sám denně používám a
-  implementuji klientům.
-aboutLinkText: "Přečíst celý příběh →"
-
-ctaTitle: "Připraveni změnit přístup k procesům?"
+  Přes 15 let v manažerských rolích v různých odvětvích. Z praxe vím, jak vypadá
+  procesní chaos i jak ho systematicky řešit. Automatizace a AI nejsou pro mě
+  módní slova — jsou to nástroje, které sám denně používám a implementuji
+  klientům.
+aboutLinkText: Přečíst celý příběh →
+ctaTitle: Připraveni změnit přístup k procesům?
 ctaText: >-
-  První konzultace je zdarma a bez závazků. Zjistíme spolu, kde má
-  největší smysl začít.
-ctaButton: "Domluvit konzultaci →"
+  První konzultace je zdarma a bez závazků. Zjistíme spolu, kde má největší
+  smysl začít.
+ctaButton: Domluvit konzultaci →
