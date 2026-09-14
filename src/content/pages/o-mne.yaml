@@ -1,61 +1,60 @@
-subtitle: "Specialista na firemní procesy, n8n automatizace a AI"
-locationText: "📍 Česká republika  ·  ✉ info@kovarik.us"
-
-storyTitle: "Proč dělám to, co dělám"
+subtitle: Praktik ve firemních procesech, automatizaci a integrátor AI
+locationText: 📍 Česká republika  ·  ✉ info@kovarik.us
+storyTitle: Proč dělám to, co dělám
 storyParagraphs:
   - >-
-    Přes 15 let jsem pracoval v manažerských rolích — od středního
-    managementu po ředitelské pozice v různých odvětvích. A v každé firmě
-    jsem narážel na stejný problém: chytří lidé trávili hodiny na práci,
-    která je nudila, vyčerpávala a přitom se dala automatizovat.
+    Přes 15 let jsem pracoval v manažerských rolích — od středního managementu
+    po ředitelské pozice. A v každé firmě jsem narážel na stejný problém: chytří
+    lidé trávili hodiny na práci, která je nudila, vyčerpávala a přitom se dala
+    automatizovat. 
   - >-
-    Fascinovalo mě, jak firmy fungují, co je zpomaluje a proč se přidaná
-    hodnota ztrácí v procesním chaosu. Postupně jsem se stal tím, za kým
-    kolegové chodili s otázkou „Jak toto zefektivnit?"
+    Fascinovalo mě, jak firmy fungují, co je zpomaluje a proč se přidaná hodnota
+    ztrácí v procesním chaosu. Postupně jsem se stal tím, za kým kolegové
+    chodili s otázkou „Jak toto zefektivnit?"
   - >-
-    Před několika lety jsem se začal soustředit na oblast, kde vidím
-    největší dopad: kombinaci procesní optimalizace, n8n automatizace a
-    praktického nasazení AI. Ne jako módní téma, ale jako konkrétní
-    nástroje, které jsem sám nastavoval, testoval a laděl.
+    Před několika lety jsem se začal soustředit na oblast, kde vidím největší
+    dopad: kombinaci procesní optimalizace, automatizace a rozumného nasazení
+    AI. Ne jako módní téma, ale jako kontrolovatelnou součást konkrétního
+    nástroje.
   - >-
-    Dnes pomáhám firmám — od malých rodinných podniků po střední firmy —
-    zbavit se stojatých vod, automatizovat rutinu a rozumně nasadit AI
-    tam, kde skutečně pomáhá.
-
-experienceTitle: "Zkušenosti a dovednosti"
+    Dnes pomáhám firmám — od malých rodinných podniků po střední firmy — zbavit
+    se stojatých vod, automatizovat rutinu a rozumně nasadit AI tam, kde
+    skutečně pomáhá.  Nechodím "s kanonem na vrabce" ale efektivně vytěžuji
+    maximum z co nejjednodužších a nejlevnějších AI modelů.
+experienceTitle: Zkušenosti a dovednosti
 experience:
-  - icon: "🏢"
-    title: "15+ let v managementu"
-    desc: "Střední a vyšší management v různých odvětvích — výroba, služby, technologie."
-  - icon: "⚙️"
-    title: "n8n a procesní automatizace"
+  - icon: 🏢
+    title: 15+ let v managementu
     desc: >-
-      Stovky hodin praxe s n8n. Integrace CRM, ERP, e-mail, Slack, Notion,
-      Google Workspace a dalšího.
-  - icon: "🧠"
-    title: "AI implementace"
+      Střední a vyšší management v různých odvětvích — obchod, služby,
+      technologie.
+  - icon: ⚙️
+    title: procesní automatizace
     desc: >-
-      Praktické nasazení GPT-4, Claude, Mistral a lokálních modelů v
-      reálných firemních procesech.
-  - icon: "📋"
-    title: "Procesní metodiky"
-    desc: "BPMN, Lean, Value Stream Mapping. Prakticky, ne akademicky."
-
-toolsTitle: "Nástroje, se kterými pracuji"
+      Praxe, studium, integrace, CRM, ERP, e-mail, Slack, Notion, Google
+      Workspace a dalšího.
+  - icon: 🧠
+    title: AI implementace
+    desc: >-
+      Praktické nasazení Gemini, Claude, Mistral a lokálních modelů v reálných
+      firemních procesech.
+  - icon: 📋
+    title: Procesní metodiky
+    desc: BPMN, Lean, Value Stream Mapping. Prakticky.
+toolsTitle: Nástroje, se kterými pracuji
 tools:
-  - "n8n"
-  - "ChatGPT / GPT-4o"
-  - "Claude"
-  - "Notion"
-  - "Google Workspace"
-  - "Slack"
-  - "Fakturoid"
-  - "Airtable"
-  - "Make (Integromat)"
-  - "Docker"
-  - "GitHub"
-  - "Keystatic CMS"
-
-ctaTitle: "Pojďme si promluvit"
-ctaText: "Rádi vám ukážu, jak to, co zde popisuji, může fungovat i ve vaší firmě."
-ctaButton: "Kontaktovat →"
+  - n8n
+  - ChatGPT / GPT-4o
+  - Claude
+  - Notion
+  - Google Workspace
+  - Slack
+  - Fakturoid
+  - Airtable
+  - Make (Integromat)
+  - Docker
+  - GitHub
+  - Keystatic CMS
+ctaTitle: Pojďme si promluvit
+ctaText: Rádi vám ukážu, jak to, co zde popisuji, může fungovat i ve vaší firmě.
+ctaButton: Kontaktovat →
