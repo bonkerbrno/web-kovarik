@@ -1,4 +1,4 @@
-heroEyebrow: Pro firmy, OSVČ, obce a neziskovky
+heroEyebrow: 'procesní optimalizace - automatizace - smysluplná implementace Ai '
 heroTitleLine1: Ať to u vás zase plyne
 heroTitleLine2: a na to důležité vám zbude čas
 heroText: >-
@@ -22,8 +22,7 @@ problems:
       nikde nejsou sepsané.
   - icon: 🤖
     title: AI zatím jen z doslechu
-    desc: >-
-      O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
+    desc: O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
   - icon: 🔁
     title: Pořád dokola ruční práce
     desc: >-
@@ -36,8 +35,7 @@ problems:
       dne.
   - icon: 💸
     title: Práce přibývá, čas ne
-    desc: >-
-      Víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá.
+    desc: Víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá.
 servicesTitle: Jak konkrétně pomáhám
 services:
   - icon: 🔍
