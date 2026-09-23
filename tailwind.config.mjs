@@ -19,10 +19,31 @@ export default {
                                         500: '#20c997',
                                         600: '#12b886',
                             },
+                            ivory: {
+                                        DEFAULT: '#FBF8F1',
+                                        50:  '#FEFCF8',
+                            },
+                            mist: {
+                                        50:  '#F3F6FA',
+                                        100: '#EAF0F6',
+                                        200: '#DAE3EE',
+                                        300: '#C2D0E1',
+                                        400: '#9DB2CB',
+                            },
+                            dusk: {
+                                        500: '#546E9C',
+                                        600: '#48608E',
+                            },
                   },
                   fontFamily: {
-                            sans: ['Inter', 'system-ui', 'sans-serif'],
-                            heading: ['Outfit', 'Inter', 'sans-serif'],
+                            sans: ['Figtree', 'system-ui', 'sans-serif'],
+                            heading: ['Figtree', 'system-ui', 'sans-serif'],
+                  },
+                  fontWeight: {
+                            bold: '650',
+                  },
+                  lineHeight: {
+                            relaxed: '1.7',
                   },
           },
     },

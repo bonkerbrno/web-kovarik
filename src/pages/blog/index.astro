@@ -10,35 +10,35 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   title="Blog"
   description="Články o procesní optimalizaci, n8n automatizaci a praktickém nasazení AI ve firmách."
 >
-  <section class="section bg-gradient-to-br from-brand-50 to-white">
+  <section class="section bg-gradient-to-br from-mist-100 via-mist-50 to-ivory">
     <div class="container text-center">
       <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">Ze zákulisí praxe</p>
-      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-4">Blog</h1>
-      <p class="text-xl text-gray-500 max-w-xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-4">Blog</h1>
+      <p class="text-xl text-slate-500 max-w-xl mx-auto">
         Konkrétní návody, případové studie a poznatky z praxe procesní optimalizace a automatizace.
       </p>
     </div>
   </section>
 
-  <section class="section bg-white">
+  <section class="section bg-ivory">
     <div class="container">
       {posts.length === 0 ? (
-        <p class="text-center text-gray-500 text-lg py-12">Žádné články zatím nejsou k dispozici.</p>
+        <p class="text-center text-slate-500 text-lg py-12">Žádné články zatím nejsou k dispozici.</p>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <a href={`/blog/${post.slug}`} class="card group flex flex-col">
               <div class="flex flex-wrap gap-2 mb-3">
                 {post.data.tags.map((tag) => (
-                  <span class="text-xs bg-brand-50 text-brand-600 px-2 py-1 rounded-full font-medium">{tag}</span>
+                  <span class="text-xs bg-mist-100 text-brand-700 px-2 py-1 rounded-full font-medium">{tag}</span>
                 ))}
               </div>
-              <h2 class="font-heading font-bold text-lg text-gray-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug flex-1">
+              <h2 class="font-heading font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug flex-1">
                 {post.data.title}
               </h2>
-              <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
-              <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                <span class="text-xs text-gray-400">
+              <p class="text-slate-600 text-[15px] leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                <span class="text-xs text-slate-400">
                   {post.data.pubDate.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </span>
                 <span class="text-brand-500 text-sm font-medium">Číst →</span>

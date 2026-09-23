@@ -15,31 +15,31 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-  <article class="section bg-white">
+  <article class="section bg-ivory">
     <div class="container max-w-3xl">
       <!-- Breadcrumb -->
-      <nav class="mb-8 text-sm text-gray-500">
+      <nav class="mb-8 text-sm text-slate-500">
         <a href="/" class="hover:text-brand-500 transition-colors">Domů</a>
         <span class="mx-2">→</span>
         <a href="/blog" class="hover:text-brand-500 transition-colors">Blog</a>
         <span class="mx-2">→</span>
-        <span class="text-gray-700">{post.data.title}</span>
+        <span class="text-slate-700">{post.data.title}</span>
       </nav>
 
       <!-- Tagy -->
       <div class="flex flex-wrap gap-2 mb-4">
         {post.data.tags.map((tag) => (
-          <span class="text-xs bg-brand-50 text-brand-600 px-3 py-1 rounded-full font-medium">{tag}</span>
+          <span class="text-xs bg-mist-100 text-brand-700 px-3 py-1 rounded-full font-medium">{tag}</span>
         ))}
       </div>
 
       <!-- Nadpis -->
-      <h1 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mb-4 leading-tight">
+      <h1 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900 mb-4 leading-tight">
         {post.data.title}
       </h1>
 
       <!-- Meta -->
-      <div class="flex items-center gap-4 text-sm text-gray-500 mb-8 pb-8 border-b border-gray-100">
+      <div class="flex items-center gap-4 text-sm text-slate-500 mb-8 pb-8 border-b border-slate-100">
         <span>✍ {post.data.author}</span>
         <span>·</span>
         <span>
@@ -48,12 +48,12 @@ const { Content } = await post.render();
       </div>
 
       <!-- Obsah -->
-      <div class="prose prose-lg prose-headings:font-heading prose-headings:font-bold prose-a:text-brand-500 prose-a:no-underline hover:prose-a:underline prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm max-w-none">
+      <div class="prose prose-lg prose-headings:font-heading prose-headings:font-bold prose-a:text-brand-500 prose-a:no-underline hover:prose-a:underline prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm max-w-none">
         <Content />
       </div>
 
       <!-- Footer článku -->
-      <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <a href="/blog" class="text-brand-500 font-semibold hover:text-brand-700 transition-colors">← Zpět na blog</a>
         <a href="/kontakt" class="btn-primary text-sm">Poradit se o vašem případu</a>
       </div>

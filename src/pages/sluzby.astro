@@ -12,29 +12,29 @@ const page = await reader.singletons.sluzby.read();
   description="Procesní audit, n8n automatizace a AI implementace. Konkrétní řešení pro firmy, které chtějí přestat hasit požáry."
 >
   <!-- Hero -->
-  <section class="section bg-gradient-to-br from-brand-50 to-white">
+  <section class="section bg-gradient-to-br from-mist-100 via-mist-50 to-ivory">
     <div class="container text-center">
       <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{page?.heroEyebrow}</p>
-      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-6">{page?.heroTitle}</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-6">{page?.heroTitle}</h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
         {page?.heroText}
       </p>
     </div>
   </section>
 
   <!-- Procesní audit -->
-  <section id="audit" class="section bg-white">
+  <section id="audit" class="section bg-ivory">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="text-5xl mb-4">{page?.auditIcon}</div>
-          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">{page?.auditTitle}</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">{page?.auditTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
             {page?.auditText}
           </p>
           <ul class="space-y-3 mb-8">
             {(page?.auditBullets ?? []).map((item) => (
-              <li class="flex items-start gap-3 text-gray-700">
+              <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
@@ -42,12 +42,12 @@ const page = await reader.singletons.sluzby.read();
           </ul>
           <a href="/kontakt" class="btn-primary">{page?.auditCta}</a>
         </div>
-        <div class="bg-brand-50 rounded-2xl p-8">
+        <div class="bg-mist-100 rounded-2xl p-8">
           <p class="text-sm font-semibold text-brand-600 uppercase tracking-wide mb-4">{page?.auditResultsLabel}</p>
           <div class="space-y-4">
             {(page?.auditResults ?? []).map(({ label, value }) => (
-              <div class="flex justify-between py-2 border-b border-brand-100">
-                <span class="text-gray-600 text-sm">{label}</span>
+              <div class="flex justify-between py-2 border-b border-mist-200">
+                <span class="text-slate-600 text-sm">{label}</span>
                 <span class="font-semibold text-brand-700 text-sm">{value}</span>
               </div>
             ))}
@@ -58,26 +58,26 @@ const page = await reader.singletons.sluzby.read();
   </section>
 
   <!-- n8n Automatizace -->
-  <section id="n8n" class="section bg-gray-50">
+  <section id="n8n" class="section bg-gradient-to-b from-mist-100 to-mist-50">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1 bg-gray-900 rounded-2xl p-8 font-mono text-sm text-green-400 overflow-hidden">
-          <p class="text-gray-500 mb-2">{page?.n8nCodeComment}</p>
+        <div class="order-2 lg:order-1 bg-slate-900 rounded-2xl p-8 font-mono text-sm text-green-400 overflow-hidden">
+          <p class="text-slate-500 mb-2">{page?.n8nCodeComment}</p>
           <p><span class="text-blue-400">Trigger:</span> Nová objednávka (webhook)</p>
           {(page?.n8nCodeSteps ?? []).map((step) => (
             <p>  → <span class="text-yellow-400">{step}</span></p>
           ))}
-          <p class="mt-4 text-gray-500">{page?.n8nCodeFooter}</p>
+          <p class="mt-4 text-slate-500">{page?.n8nCodeFooter}</p>
         </div>
         <div class="order-1 lg:order-2">
           <div class="text-5xl mb-4">{page?.n8nIcon}</div>
-          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">{page?.n8nTitle}</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">{page?.n8nTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
             {page?.n8nText}
           </p>
           <ul class="space-y-3 mb-8">
             {(page?.n8nBullets ?? []).map((item) => (
-              <li class="flex items-start gap-3 text-gray-700">
+              <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
@@ -90,18 +90,18 @@ const page = await reader.singletons.sluzby.read();
   </section>
 
   <!-- AI Implementace -->
-  <section id="ai" class="section bg-white">
+  <section id="ai" class="section bg-ivory">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="text-5xl mb-4">{page?.aiIcon}</div>
-          <h2 class="text-3xl font-heading font-bold text-gray-900 mb-4">{page?.aiTitle}</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
+          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">{page?.aiTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
             {page?.aiText}
           </p>
           <ul class="space-y-3 mb-8">
             {(page?.aiBullets ?? []).map((item) => (
-              <li class="flex items-start gap-3 text-gray-700">
+              <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
@@ -113,8 +113,8 @@ const page = await reader.singletons.sluzby.read();
           {(page?.aiUseCases ?? []).map(({ icon, label, desc }) => (
             <div class="card text-center">
               <div class="text-3xl mb-2">{icon}</div>
-              <p class="font-semibold text-sm text-gray-900 mb-1">{label}</p>
-              <p class="text-xs text-gray-500">{desc}</p>
+              <p class="font-semibold text-sm text-slate-900 mb-1">{label}</p>
+              <p class="text-xs text-slate-500">{desc}</p>
             </div>
           ))}
         </div>
@@ -123,13 +123,13 @@ const page = await reader.singletons.sluzby.read();
   </section>
 
   <!-- CTA -->
-  <section class="section bg-brand-600">
+  <section class="section bg-gradient-to-br from-dusk-600 to-dusk-500">
     <div class="container text-center">
-      <h2 class="text-3xl font-heading font-bold text-white mb-4">{page?.ctaTitle}</h2>
-      <p class="text-brand-100 text-lg mb-8 max-w-xl mx-auto">
+      <h2 class="text-3xl font-heading font-bold text-ivory mb-4">{page?.ctaTitle}</h2>
+      <p class="text-ivory text-lg mb-8 max-w-xl mx-auto">
         {page?.ctaText}
       </p>
-      <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-brand-600 font-bold rounded-xl hover:bg-brand-50 transition-colors shadow-lg text-lg">
+      <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-ivory-50 text-dusk-600 font-bold rounded-xl hover:bg-mist-50 transition-colors shadow-lg shadow-slate-900/15 text-lg">
         {page?.ctaButton}
       </a>
     </div>

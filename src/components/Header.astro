@@ -9,13 +9,13 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+<header class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-mist-200/70 shadow-sm shadow-mist-400/10">
   <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-700 hover:text-brand-500 transition-colors">
-        <span class="text-accent-500 text-2xl">⚙</span>
-        Ing. Stan Kovarik
+        <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-red-400 text-white text-lg">⚙</span>
+        Ing. Stanislav Kovařík
       </a>
 
       <!-- Desktop nav -->
@@ -25,22 +25,19 @@ const currentPath = Astro.url.pathname;
             href={href}
             class={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 ${
               currentPath === href
-                ? 'bg-brand-50 text-brand-600'
-                : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
+                ? 'bg-mist-100 text-brand-700'
+                : 'text-slate-600 hover:text-brand-600 hover:bg-mist-50'
             }`}
           >
             {label}
           </a>
         ))}
-        <a href="/kontakt" class="ml-4 btn-primary text-sm py-2 px-5">
-          Nezávazná konzultace
-        </a>
       </nav>
 
       <!-- Mobile hamburger -->
       <button
         id="menu-toggle"
-        class="md:hidden p-2 rounded-lg text-gray-600 hover:text-brand-600 hover:bg-gray-50 transition-colors"
+        class="md:hidden p-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-mist-50 transition-colors"
         aria-label="Otevřít menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,16 +54,13 @@ const currentPath = Astro.url.pathname;
             href={href}
             class={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
               currentPath === href
-                ? 'bg-brand-50 text-brand-600'
-                : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
+                ? 'bg-mist-100 text-brand-700'
+                : 'text-slate-600 hover:text-brand-600 hover:bg-mist-50'
             }`}
           >
             {label}
           </a>
         ))}
-        <a href="/kontakt" class="mt-2 btn-primary text-sm text-center">
-          Nezávazná konzultace
-        </a>
       </nav>
     </div>
   </div>

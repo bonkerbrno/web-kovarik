@@ -1,74 +1,72 @@
-heroEyebrow: Procesy - automatizace - lokální Ai - optimalizace
+heroEyebrow: Pro malé firmy, OSVČ, obce a neziskovky
 heroTitleLine1: Stojaté vody v procesech
 heroTitleLine2: vás stojí víc, než tušíte
 heroText: >-
-  Pomáhám identifikovat skryté neefektivity, automatizovat rutinu a inteligentně
-  bezpečně nasadit přiměřenou AI tam, kde to dává smysl. 
+  Pomůžu vám najít, kde zbytečně ztrácíte čas, zbavit se ruční práce, kterou
+  zvládne počítač, a rozumně využít AI. Bez velkých investic a bez vlastního IT
+  oddělení.
 heroCtaPrimary: 'Konzultace '
 heroCtaSecondary: Co nabízím →
 problemsTitle: Poznáváte se?
 problemsSubtitle: Tyhle situace jsou signálem, že je čas jednat.
 problems:
   - icon: ⏱
-    title: Manažeři jako hasiči
+    title: Místo plánování hasíte provoz
     desc: >-
-      Místo strategie řeší operativu. Každý den je jiný problém, systém
-      nefunguje sám.
+      Každý den řešíte něco jiného a na to důležité nezbývá čas. Bez vás se nic
+      nepohne.
   - icon: 🚧
-    title: Procesy "vždy to tak bylo"
+    title: „Vždycky se to tak dělalo“
     desc: >-
-      Nikdo neví proč, ale tak to prostě je. Žádná dokumentace, žádná
-      optimalizace, jen zvyk.
+      Nikdo už neví proč, ale dělá se to tak. Postupy má každý jen v hlavě a
+      nikde nejsou sepsané.
   - icon: 🤖
-    title: AI na papíře, ne v praxi
+    title: AI zatím jen z doslechu
     desc: >-
-      Všichni mluví o AI, ale v reálu nemáte čas ani kapacitu to smysluplně
-      nasadit.
+      O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
   - icon: 🔁
-    title: Opakující se ruční práce
+    title: Pořád dokola ruční práce
     desc: >-
-      Vaši lidé každý den dělají totéž — přepisují data, posílají stejné
-      e-maily, generují reporty ručně.
+      Přepisování údajů, pořád stejné e-maily, ruční tabulky a výkazy. Každý
+      týden znovu.
   - icon: 📊
-    title: Data v izolovaných silech
+    title: Informace roztroušené všude
     desc: >-
-      Excel tu, CRM tam, účetnictví jinde. Nikdo nemá celkový přehled a
-      integrace "se plánuje".
+      Excel tu, e-maily tam, papíry v šanonu. Najít jednu informaci zabere půl
+      dne.
   - icon: 💸
-    title: Náklady rostou, výkon ne
+    title: Práce přibývá, čas ne
     desc: >-
-      Přibývají lidé, ale kapacita neroste úměrně. Škálování se tříští o
-      procesní chaos.
+      Víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá.
 servicesTitle: Jak konkrétně pomáhám
 services:
   - icon: 🔍
     title: Procesní audit
     desc: >-
-      Zmapuji vaše procesy, identifikuji úzká hrdla a připravím plán
-      optimalizace s konkrétními kroky.
+      Projdu s vámi, jak pracujete, najdu místa, kde ztrácíte čas, a navrhnu
+      konkrétní kroky.
     href: /sluzby#audit
   - icon: ⚙️
     title: Automatizace
     desc: >-
-      Navrhnu  workflow, které za vás dělají opakující se práci — 24/7, bez
-      chyb.
+      Nastavím, aby rutinu jako faktury, objednávky nebo e-maily dělal počítač
+      sám a bez chyb.
     href: /sluzby#n8n
   - icon: 🧠
     title: AI Implementace
     desc: >-
-      Integruji AI nástroje vhodně tam, kde vám ušetří čas a přidají hodnotu.
-      Poradím vám jak mít AI pod kontrolou a dostávat spolehlivé opakovatelné
-      výstupy a neplýtvat tokeny.
+      Ukážu, kde vám AI opravdu pomůže, a nastavím ji tak, aby se na ni dalo
+      spolehnout.
     href: /sluzby#ai
 aboutEyebrow: Kdo za tím stojí
 aboutName: Stan Kovařík
 aboutText: >-
   Přes 15 let v manažerských rolích v různých odvětvích. Z praxe vím, jak vypadá
-  procesní chaos i jak ho systematicky řešit. Automatizace a AI nejsou pro mě
-  módní slova — jsou to nástroje, které sám denně používám a implementuji
+  chaos v každodenním provozu i jak z něj systematicky ven. Automatizace a AI
+  pro mě nejsou módní slova, ale nástroje, které sám denně používám a nastavuji
   klientům.
 aboutLinkText: Přečíst celý příběh →
-ctaTitle: Připraveni změnit přístup k procesům?
+ctaTitle: Chcete mít víc času na to důležité?
 ctaText: >-
   První konzultace je zdarma a bez závazků. Zjistíme spolu, kde má největší
   smysl začít.

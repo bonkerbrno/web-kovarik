@@ -1,0 +1,80 @@
+---
+// Shows 11:55:35 ("za pět dvanáct") and ticks in real time while the parent [data-clock-tile] is hovered.
+const START = { hour: 357.79, minute: 333.5, second: 210 };
+const pivot = '[transform-box:view-box] origin-[50px_50px]';
+
+const ticks = Array.from({ length: 60 }, (_, i) => {
+  const major = i % 5 === 0;
+  const a = (i * 6 * Math.PI) / 180;
+  const r1 = major ? 38 : 41;
+  return {
+    major,
+    x1: 50 + r1 * Math.sin(a),
+    y1: 50 - r1 * Math.cos(a),
+    x2: 50 + 44 * Math.sin(a),
+    y2: 50 - 44 * Math.cos(a),
+  };
+});
+---
+
+<div
+  class="pointer-events-none absolute top-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+  aria-hidden="true"
+>
+  <svg width="54" height="54" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" class="fill-ivory-50 stroke-mist-200" stroke-width="2" />
+    <circle cx="50" cy="50" r="45.5" fill="none" class="stroke-mist-100" stroke-width="1" />
+    {ticks.map((t) => (
+      <line
+        x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2}
+        class={t.major ? 'stroke-dusk-600' : 'stroke-mist-300'}
+        stroke-width={t.major ? 2.2 : 1}
+        stroke-linecap="round"
+      />
+    ))}
+    <line data-hand="hour" x1="50" y1="55" x2="50" y2="26" class={`${pivot} stroke-slate-700`} stroke-width="4" stroke-linecap="round" style={`transform: rotate(${START.hour}deg)`} />
+    <line data-hand="minute" x1="50" y1="56" x2="50" y2="15" class={`${pivot} stroke-slate-700`} stroke-width="2.8" stroke-linecap="round" style={`transform: rotate(${START.minute}deg)`} />
+    <line data-hand="second" x1="50" y1="59" x2="50" y2="12" class={`${pivot} stroke-red-400 transition-transform duration-[350ms] ease-[cubic-bezier(0.3,1.7,0.5,1)]`} stroke-width="1.82" stroke-linecap="round" style={`transform: rotate(${START.second}deg)`} />
+    <circle cx="50" cy="50" r="3.2" class="fill-red-400" />
+    <circle cx="50" cy="50" r="1.2" class="fill-ivory-50" />
+  </svg>
+</div>
+
+<script>
+  const START = { hour: 357.79, minute: 333.5, second: 210 };
+  const STEP_SECONDS = 2;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll<HTMLElement>('[data-clock-tile]').forEach((tile) => {
+    const hands = {
+      hour: tile.querySelector<SVGLineElement>('[data-hand="hour"]')!,
+      minute: tile.querySelector<SVGLineElement>('[data-hand="minute"]')!,
+      second: tile.querySelector<SVGLineElement>('[data-hand="second"]')!,
+    };
+    let elapsed = 0;
+    let timer: number | undefined;
+
+    const render = () => {
+      // Angles keep growing past 360° so the second hand never spins backwards.
+      hands.hour.style.transform = `rotate(${START.hour + elapsed / 120}deg)`;
+      hands.minute.style.transform = `rotate(${START.minute + elapsed / 10}deg)`;
+      hands.second.style.transform = `rotate(${START.second + elapsed * 6}deg)`;
+    };
+
+    tile.addEventListener('pointerenter', () => {
+      window.clearInterval(timer);
+      elapsed = 0;
+      hands.second.style.transition = 'none';
+      render();
+      hands.second.getBoundingClientRect();
+      // With reduced motion the hand still ticks, just without the springy transition.
+      if (!reduceMotion) hands.second.style.transition = '';
+      timer = window.setInterval(() => {
+        elapsed += STEP_SECONDS;
+        render();
+      }, STEP_SECONDS * 1000);
+    });
+
+    tile.addEventListener('pointerleave', () => window.clearInterval(timer));
+  });
+</script>
