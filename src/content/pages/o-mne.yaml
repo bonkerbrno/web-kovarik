@@ -47,17 +47,15 @@ experience:
 toolsTitle: Nástroje, se kterými pracuji
 tools:
   - n8n
-  - ChatGPT / GPT-4o
-  - Claude
+  - 'LLM modely: Open Ai , Anthropic, Google Deep mind,  SpaceXAI, Deep Seek'
+  - EU LLM  Mistral, Lokální open source Ai
   - Notion
   - Google Workspace
   - Slack
   - Fakturoid
   - Airtable
-  - Make (Integromat)
-  - Docker
   - GitHub
-  - Keystatic CMS
+  - CRM / ERP
 ctaTitle: Pojďme si promluvit
 ctaText: Rád vám ukážu, jak to, co tu popisuji, může fungovat i u vás.
 ctaButton: Kontaktovat →
