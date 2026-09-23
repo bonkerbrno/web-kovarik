@@ -1,76 +1,79 @@
 heroEyebrow: Co nabízím
 heroTitle: Služby
-heroText: Konkrétní analýza, návrh variant konkrétních řešení
+heroText: >-
+  Rozbor postupů, automatizace rutiny a rozumné využití AI. Vždy s konkrétním
+  výsledkem, ne jen s doporučením.
 auditIcon: 🔍
 auditTitle: Procesní audit
 auditText: >-
-  Systematické zmapování vašich klíčových procesů — od zakázky po fakturaci, od
-  onboardingu po support. Hledám místa, kde se ztrácí čas, peníze a energie.
+  Společně projdeme, jak u vás práce skutečně probíhá: od poptávky po fakturu,
+  od žádosti po vyřízení. Hledám místa, kde se ztrácí čas, peníze a energie.
 auditBullets:
-  - Rozhovory s klíčovými lidmi, analýza stávajících procesů
-  - Písemná zpráva s prioritizovaným plánem optimalizace
-  - Identifikace úzkých hrdel a quick wins
-  - Vizualizace procesní mapy (BPMN / value stream)
-  - Prezentace výsledků managementu
+  - Rozhovory s lidmi, kteří práci dělají, a rozbor současných postupů
+  - Písemná zpráva s plánem zlepšení seřazeným podle přínosu
+  - Kde se práce zasekává a co jde zlepšit hned
+  - Přehledné schéma, jak u vás práce probíhá
+  - Představení výsledků vám i vašemu týmu
 auditCta: Mám zájem o audit
 auditResultsLabel: Typický výsledek
 auditResults:
-  - label: Identifikované úspory
-    value: 15–40 % procesního času
-  - label: Quick wins
+  - label: Nalezené úspory
+    value: 15–40 % času u zmapovaných činností
+  - label: Rychlá zlepšení
     value: 3–7 konkrétních kroků
   - label: Délka auditu
     value: 2–4 týdny
   - label: Výstup
     value: Písemná zpráva + prezentace
 n8nIcon: ⚙️
-n8nTitle: n8n Automatizace
+n8nTitle: Automatizace
 n8nText: >-
-  n8n je open-source alternativa Zapier a Make — provozujete ho na vlastním
-  serveru, workflow, která za vás dělají opakující se práci.
+  Opakující se práci, jako je přepisování údajů, rozesílání e-mailů nebo
+  vystavování faktur, nechám dělat počítač. Používám nástroj n8n, který může
+  běžet i na vašem vlastním serveru, takže data zůstávají u vás.
 n8nBullets:
-  - Analýza vhodných procesů pro automatizaci
-  - Návrh a implementace n8n workflow
-  - Integrace s vašimi stávajícími nástroji (CRM, ERP, e-mail, Slack...)
-  - Testování, dokumentace a předání
-  - 'Volitelně: správa a rozvoj workflow'
+  - Výběr činností, které se automatizovat vyplatí
+  - Návrh a nastavení automatizace na míru
+  - Propojení s tím, co už používáte (e-mail, tabulky, účetnictví, evidence…)
+  - Otestování, srozumitelný návod a předání
+  - 'Volitelně: průběžná správa a úpravy'
 n8nCta: Chci automatizovat
 n8nCodeComment: // n8n workflow — ukázka
 n8nCodeSteps:
-  - Ověř zákazníka (CRM lookup)
-  - Vytvoř fakturu (Fakturoid API)
-  - Odešli potvrzení (e-mail + SMS)
-  - Notifikuj obchodníka (Slack)
-  - Založ úkol (Notion/Asana)
+  - Najdi zákazníka v evidenci
+  - Vystav fakturu (Fakturoid)
+  - Pošli potvrzení (e-mail + SMS)
+  - Upozorni kolegu (Slack)
+  - Založ úkol (Notion / Asana)
 n8nCodeFooter: '// Čas: 0.3 s | Manuálně: ~12 min'
 aiIcon: 🧠
 aiTitle: AI Implementace
 aiText: >-
-  Ne každý problém potřebuje AI. Ale tam, kde smysl dává — v analýze dat,
-  generování obsahu, zákaznické komunikaci nebo interních asistentích — pomůžu
-  vám AI skutečně nasadit, ne jen vyzkoušet.
+  Ne každý problém potřebuje AI. Tam, kde dává smysl, třeba při zpracování
+  dokumentů, psaní textů nebo odpovídání na dotazy zákazníků či občanů, vám
+  pomůžu AI skutečně nasadit, ne jen vyzkoušet.
 aiBullets:
-  - Analýza vhodných use-cases pro AI ve vaší firmě
-  - Výběr správných nástrojů (ChatGPT, Claude, Mistral, lokální modely)
-  - Integrace AI do stávajících workflow a n8n
-  - Interní AI asistenti a knowledge base
-  - Školení týmu a nastavení governance
-aiCta: Probrat AI strategii
+  - Kde vám AI opravdu ušetří čas (a kde ne)
+  - 'Výběr vhodného nástroje: ChatGPT, Claude, Mistral nebo model běžící přímo u vás'
+  - Zapojení AI do automatizací a nástrojů, které už používáte
+  - Asistent, který zná vaše dokumenty a postupy
+  - Zaškolení lidí a jasná pravidla, jak AI bezpečně používat
+aiCta: Probrat využití AI
 aiUseCases:
   - icon: 📧
-    label: E-mail asistent
-    desc: Automatické třídění a drafty odpovědí
+    label: Pošta
+    desc: Třídění e-mailů a návrhy odpovědí
   - icon: 📊
-    label: Analýza dat
-    desc: AI zpracování reportů a dokumentů
+    label: Dokumenty
+    desc: Shrnutí, výtahy a zpracování podkladů
   - icon: 💬
     label: Chatbot
-    desc: Interní KB nebo zákaznický support
+    desc: Odpovědi na časté dotazy zákazníků či občanů
   - icon: ✍️
-    label: Obsah
-    desc: Generování a revize textů, překladů
+    label: Texty
+    desc: Návrhy a korektury textů, překlady
 ctaTitle: Nejste si jistí, kde začít?
 ctaText: >-
-  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhneme, co
+  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhnu, co
   dává největší smysl.
 ctaButton: Domluvit bezplatnou konzultaci →

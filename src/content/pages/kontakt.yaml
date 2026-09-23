@@ -1,14 +1,14 @@
 heroTitle: "Pojďme si promluvit"
 heroText: >-
-  První konzultace je zdarma a bez závazků. Zjistíme, zda a jak mohu vaší
-  firmě pomoci.
+  První konzultace je zdarma a bez závazků. Zjistíme, zda a jak vám mohu
+  pomoci.
 
 formTitle: "Napište mi"
 topics:
   - value: "audit"
     label: "Procesní audit"
   - value: "n8n"
-    label: "n8n Automatizace"
+    label: "Automatizace"
   - value: "ai"
     label: "AI Implementace"
   - value: "other"
