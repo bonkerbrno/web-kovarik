@@ -1,0 +1,108 @@
+{
+  "name": "kovarik.us – kontaktní formulář",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kovarik-kontakt",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://kovarik.us"
+        }
+      },
+      "id": "3f6c1a52-8d4e-4b7a-9c21-5e8f0a1b2c31",
+      "name": "Formulář z webu",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "b8e4d2f1-6a3c-4e5b-8f7d-1c2a3b4d5e61"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "a1b2c3d4-0001-4a5b-9c8d-111111111111",
+              "leftValue": "={{ $json.body.website }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "empty", "singleValue": true }
+            },
+            {
+              "id": "a1b2c3d4-0002-4a5b-9c8d-222222222222",
+              "leftValue": "={{ $json.body.email }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            },
+            {
+              "id": "a1b2c3d4-0003-4a5b-9c8d-333333333333",
+              "leftValue": "={{ $json.body.message }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5d2e7f90-1b3c-4d6e-8a9f-2b3c4d5e6f72",
+      "name": "Skutečná zpráva?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@kovarik.us",
+        "toEmail": "info@kovarik.us",
+        "subject": "=Web kovarik.us: zpráva od {{ $json.body.name }}",
+        "emailFormat": "text",
+        "text": "=Nová zpráva z kontaktního formuláře na kovarik.us\n\nJméno: {{ $json.body.name }}\nE-mail: {{ $json.body.email }}\nFirma / organizace: {{ $json.body.company || '—' }}\nTéma: {{ $json.body.topic || '—' }}\n\nZpráva:\n{{ $json.body.message }}\n\n(Odpovědí na tento e-mail odpovíte přímo odesílateli.)",
+        "options": {
+          "appendAttribution": false,
+          "replyTo": "={{ $json.body.email }}"
+        }
+      },
+      "id": "7a8b9c0d-2e3f-4a5b-9c6d-3e4f5a6b7c83",
+      "name": "Poslat e-mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [480, -100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"ok\": true }",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "9c0d1e2f-3a4b-4c5d-8e6f-4a5b6c7d8e94",
+      "name": "Odpověď webu",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [720, 0]
+    }
+  ],
+  "connections": {
+    "Formulář z webu": {
+      "main": [[{ "node": "Skutečná zpráva?", "type": "main", "index": 0 }]]
+    },
+    "Skutečná zpráva?": {
+      "main": [
+        [{ "node": "Poslat e-mail", "type": "main", "index": 0 }],
+        [{ "node": "Odpověď webu", "type": "main", "index": 0 }]
+      ]
+    },
+    "Poslat e-mail": {
+      "main": [[{ "node": "Odpověď webu", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

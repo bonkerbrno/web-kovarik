@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
+import { CONTACT_WEBHOOK_URL } from '@/config/contact';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const page = await reader.singletons.kontakt.read();
@@ -28,10 +29,15 @@ const page = await reader.singletons.kontakt.read();
           <h2 class="text-2xl font-heading font-bold text-slate-900 mb-6">{page?.formTitle}</h2>
           <form
             name="kontakt"
-            method="POST"
-            data-netlify="true"
+            data-contact-form
+            data-endpoint={CONTACT_WEBHOOK_URL}
+            data-email={page?.email}
             class="space-y-5"
           >
+            <div class="hidden" aria-hidden="true">
+              <label for="website">Toto pole nevyplňujte</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
             <div>
               <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Jméno a příjmení *</label>
               <input
@@ -88,9 +94,11 @@ const page = await reader.singletons.kontakt.read();
                 placeholder="Popište vaši situaci nebo otázku..."
               ></textarea>
             </div>
-            <button type="submit" class="btn-primary w-full justify-center text-base py-3.5">
+            <button type="submit" class="btn-primary w-full justify-center text-base py-3.5 disabled:opacity-60">
               {page?.submitButton}
             </button>
+            <p data-form-status role="status" aria-live="polite" class="hidden"></p>
+            <p class="text-xs text-slate-500">Údaje použiji jen k odpovědi na vaši zprávu.</p>
           </form>
         </div>
 
@@ -132,3 +140,60 @@ const page = await reader.singletons.kontakt.read();
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+
+  if (form) {
+    const status = form.querySelector<HTMLElement>('[data-form-status]')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const topic = form.querySelector<HTMLSelectElement>('#topic')!;
+    const endpoint = form.dataset.endpoint ?? '';
+    const email = form.dataset.email ?? '';
+
+    const show = (text: string, ok: boolean) => {
+      status.textContent = text;
+      status.className = `text-sm ${ok ? 'text-accent-600' : 'text-red-600'}`;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      data.set('topic', topic.value ? topic.selectedOptions[0].text : '');
+
+      // Bots fill the hidden field; pretend success and send nothing.
+      if (data.get('website')) {
+        form.reset();
+        show('Děkuji, zpráva odešla.', true);
+        return;
+      }
+
+      if (!endpoint) {
+        const body = [
+          `Jméno: ${data.get('name')}`,
+          `Firma / organizace: ${data.get('company') || '—'}`,
+          `Téma: ${data.get('topic') || '—'}`,
+          '',
+          String(data.get('message')),
+        ].join('\n');
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent('Dotaz z webu kovarik.us')}&body=${encodeURIComponent(body)}`;
+        return;
+      }
+
+      button.disabled = true;
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: new URLSearchParams(data as unknown as Record<string, string>),
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        form.reset();
+        show('Děkuji, zpráva odešla. Ozvu se do 24 hodin.', true);
+      } catch {
+        show(`Zprávu se nepodařilo odeslat. Napište mi prosím přímo na ${email}.`, false);
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>
