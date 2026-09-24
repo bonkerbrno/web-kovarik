@@ -12,10 +12,10 @@ const page = await reader.singletons.sluzby.read();
   description="Rozbor postupů, automatizace rutiny a rozumné využití AI. Konkrétní řešení pro firmy, OSVČ, obce a neziskovky."
 >
   <!-- Hero -->
-  <section class="section bg-gradient-to-br from-mist-100 via-mist-50 to-ivory">
+  <section class="section bg-hero-blue">
     <div class="container text-center">
       <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{page?.heroEyebrow}</p>
-      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-6">{page?.heroTitle}</h1>
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-navy mb-6">{page?.heroTitle}</h1>
       <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
         {page?.heroText}
       </p>
@@ -28,7 +28,7 @@ const page = await reader.singletons.sluzby.read();
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="text-5xl mb-4">{page?.auditIcon}</div>
-          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">{page?.auditTitle}</h2>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.auditTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.auditText}
           </p>
@@ -58,7 +58,7 @@ const page = await reader.singletons.sluzby.read();
   </section>
 
   <!-- n8n Automatizace -->
-  <section id="n8n" class="section bg-gradient-to-b from-mist-100 to-mist-50">
+  <section id="n8n" class="section bg-stripe-blue">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1 bg-slate-900 rounded-2xl p-8 font-mono text-sm text-green-400 overflow-hidden">
@@ -71,7 +71,7 @@ const page = await reader.singletons.sluzby.read();
         </div>
         <div class="order-1 lg:order-2">
           <div class="text-5xl mb-4">{page?.n8nIcon}</div>
-          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">{page?.n8nTitle}</h2>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.n8nTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.n8nText}
           </p>
@@ -95,7 +95,7 @@ const page = await reader.singletons.sluzby.read();
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="text-5xl mb-4">{page?.aiIcon}</div>
-          <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">{page?.aiTitle}</h2>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.aiTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.aiText}
           </p>
@@ -113,7 +113,7 @@ const page = await reader.singletons.sluzby.read();
           {(page?.aiUseCases ?? []).map(({ icon, label, desc }) => (
             <div class="card text-center">
               <div class="text-3xl mb-2">{icon}</div>
-              <p class="font-semibold text-sm text-slate-900 mb-1">{label}</p>
+              <p class="font-semibold text-sm text-navy mb-1">{label}</p>
               <p class="text-xs text-slate-500">{desc}</p>
             </div>
           ))}

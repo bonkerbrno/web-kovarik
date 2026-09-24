@@ -10,10 +10,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   title="Blog"
   description="Články o tom, jak si ušetřit práci: postupy, automatizace a praktické využití AI ve firmách, obcích i neziskovkách."
 >
-  <section class="section bg-gradient-to-br from-mist-100 via-mist-50 to-ivory">
+  <section class="section bg-hero-blue">
     <div class="container text-center">
       <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">Ze zákulisí praxe</p>
-      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-4">Blog</h1>
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-navy mb-4">Blog</h1>
       <p class="text-xl text-slate-500 max-w-xl mx-auto">
         Konkrétní návody a zkušenosti z praxe: jak zjednodušit práci, automatizovat rutinu a rozumně využít AI.
       </p>
@@ -33,7 +33,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
                   <span class="text-xs bg-mist-100 text-brand-700 px-2 py-1 rounded-full font-medium">{tag}</span>
                 ))}
               </div>
-              <h2 class="font-heading font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug flex-1">
+              <h2 class="font-heading font-bold text-lg text-navy mb-3 group-hover:text-brand-600 transition-colors leading-snug flex-1">
                 {post.data.title}
               </h2>
               <p class="text-slate-600 text-[15px] leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>

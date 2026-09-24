@@ -6,22 +6,29 @@ export default {
     theme: {
           extend: {
                   colors: {
+                            // Derived from the logo blue #2C588F: same hue, calmer than the old indigo.
                             brand: {
-                                        50:  '#f0f4ff',
-                                        100: '#dce6fd',
-                                        500: '#3b5bdb',
-                                        600: '#2f4ecf',
-                                        700: '#2541b2',
-                                        900: '#1a2f80',
+                                        50:  '#EEF3F9',
+                                        100: '#DBE6F2',
+                                        200: '#C5D5E8',
+                                        500: '#4570A8',
+                                        600: '#3A6297',
+                                        700: '#2C588F',
+                                        900: '#1C3A61',
                             },
+                            navy: {
+                                        DEFAULT: '#2C588F',
+                                        dark:    '#23466F',
+                            },
+                            // Muted teal-green with the logo blue's saturation and depth.
                             accent: {
-                                        400: '#38d9a9',
-                                        500: '#20c997',
-                                        600: '#12b886',
+                                        400: '#6FB8A4',
+                                        500: '#3C957E',
+                                        600: '#307E6A',
                             },
                             ivory: {
-                                        DEFAULT: '#FBF8F1',
-                                        50:  '#FEFCF8',
+                                        DEFAULT: '#FCFAF6',
+                                        50:  '#FFFDFA',
                             },
                             mist: {
                                         50:  '#F3F6FA',
@@ -29,6 +36,8 @@ export default {
                                         200: '#DAE3EE',
                                         300: '#C2D0E1',
                                         400: '#9DB2CB',
+                                        mid:  '#E8EEF5',
+                                        deep: '#DCE5F0',
                             },
                             dusk: {
                                         500: '#546E9C',

@@ -18,10 +18,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   description="Pomáhám firmám, OSVČ, obcím a neziskovkám zbavit se zbytečné ruční práce: rozbor postupů, automatizace a rozumné využití AI."
 >
   <!-- Hero -->
-  <section class="section bg-gradient-to-br from-mist-100 via-mist-50 to-ivory">
+  <section class="section bg-hero-blue">
     <div class="container text-center">
       <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{home?.heroEyebrow}</p>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 leading-tight mb-6">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-navy leading-tight mb-6">
         {home?.heroTitleLine1}<br class="hidden sm:block" />
         <span class="text-brand-500">{home?.heroTitleLine2}</span>
       </h1>
@@ -43,7 +43,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <section class="section bg-ivory">
     <div class="container">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900 mb-4">{home?.problemsTitle}</h2>
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">{home?.problemsTitle}</h2>
         <p class="text-slate-500 text-lg">{home?.problemsSubtitle}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -51,7 +51,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           <div class="card relative group" data-clock-tile>
             <FiveToTwelveClock />
             <div class="text-3xl mb-4">{icon}</div>
-            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">{title}</h3>
+            <h3 class="font-heading font-bold text-lg text-navy mb-2">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
           </div>
         ))}
@@ -60,16 +60,16 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   </section>
 
   <!-- Služby přehled -->
-  <section class="section bg-gradient-to-b from-mist-100 to-mist-50">
+  <section class="section bg-stripe-blue">
     <div class="container">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-slate-900 mb-4">{home?.servicesTitle}</h2>
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">{home?.servicesTitle}</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {(home?.services ?? []).map(({ icon, title, desc, href }) => (
           <a href={href} class="card group p-6 hover:border-accent-400/40 hover:shadow-accent-500/30">
             <div class="text-3xl mb-3">{icon}</div>
-            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">{title}</h3>
+            <h3 class="font-heading font-bold text-lg text-navy mb-2 group-hover:text-brand-600 transition-colors">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed mb-3">{desc}</p>
             <span class="text-brand-500 text-sm font-semibold">Více info →</span>
           </a>
@@ -92,7 +92,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         />
         <div>
           <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-2">{home?.aboutEyebrow}</p>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-3">{home?.aboutName}</h2>
+          <h2 class="text-2xl font-heading font-bold text-navy mb-3">{home?.aboutName}</h2>
           <p class="text-slate-600 leading-relaxed mb-4">
             {home?.aboutText}
           </p>
@@ -106,10 +106,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 
   <!-- Poslední články z blogu -->
   {posts.length > 0 && (
-    <section class="section bg-gradient-to-b from-mist-100 to-mist-50">
+    <section class="section bg-stripe-blue">
       <div class="container">
         <div class="flex items-center justify-between mb-10">
-          <h2 class="text-3xl font-heading font-bold text-slate-900">Z blogu</h2>
+          <h2 class="text-3xl font-heading font-bold text-navy">Z blogu</h2>
           <a href="/blog" class="text-brand-500 font-semibold hover:text-brand-700 transition-colors">Všechny články →</a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -120,7 +120,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
                   <span class="text-xs bg-mist-100 text-brand-700 px-2 py-1 rounded-full font-medium">{tag}</span>
                 ))}
               </div>
-              <h3 class="font-heading font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors leading-snug">
+              <h3 class="font-heading font-bold text-navy mb-2 group-hover:text-brand-600 transition-colors leading-snug">
                 {post.data.title}
               </h3>
               <p class="text-slate-600 text-[15px] leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
