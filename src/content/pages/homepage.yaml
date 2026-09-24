@@ -1,20 +1,22 @@
 heroEyebrow: 'procesní optimalizace - automatizace - smysluplná implementace Ai '
-heroTitleLine1: Ať to u vás zase plyne
-heroTitleLine2: a na to důležité vám zbude čas
+heroTitleLine1: Méně stresů, méně chyb
+heroTitleLine2: a na tvorbu důležitého vám zbude čas
 heroText: >-
-  Pomůžu vám najít, kde zbytečně ztrácíte čas, zbavit se ruční práce, kterou
-  zvládne počítač, a rozumně využít AI. Bez velkých investic a bez vlastního IT
-  oddělení.
+  Pomůžu vám najít, kde zbytečně ztrácíte čas, zbavit se ruční nudné práce,
+  kterou lépe zvládne počítač.  Lze rozumně a bezpečně využít AI?  Ano lze. Bez
+  velkých investic a bez vlastního IT oddělení,  méně než byste čekali a vždy
+  lze vědět co a kde dělá. Není cesta tvořit autonomní systémy nad jejichž
+  činností nemáme kontrolu.
 heroCtaPrimary: 'Konzultace '
 heroCtaSecondary: Co nabízím →
 problemsTitle: Poznáváte se?
 problemsSubtitle: Tyhle situace jsou signálem, že je čas jednat.
 problems:
   - icon: ⏱
-    title: Místo plánování hasíte provoz
+    title: Místo plánování a vylepšování jen hasíte provoz
     desc: >-
       Každý den řešíte něco jiného a na to důležité nezbývá čas. Bez vás se nic
-      nepohne.
+      nepohne. Kvalita života a zdraví se zhoršuje
   - icon: 🚧
     title: „Vždycky se to tak dělalo“
     desc: >-
@@ -22,21 +24,30 @@ problems:
       nikde nejsou sepsané.
   - icon: 🤖
     title: AI zatím jen z doslechu
-    desc: O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
+    desc: >-
+      O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
+      Většina komentářů řeší jen senzace. AI však lze využít jednoduše,
+      bezpečně, levně a jen jako jeden z prvků automatizace činnosti. AI není
+      jen chat, agent, asistent. AI je jen jedno kolečko celého soukolí, které
+      funguje opakovaně , automaticky , vždy stejně a přesně.
   - icon: 🔁
     title: Pořád dokola ruční práce
     desc: >-
       Přepisování údajů, pořád stejné e-maily, ruční tabulky a výkazy. Každý
-      týden znovu.
+      týden znovu. A nejen to.  Automatizace rutin vylučuje chyby.
   - icon: 📊
     title: Informace roztroušené všude
     desc: >-
       Excel tu, e-maily tam, papíry v šanonu. Najít jednu informaci zabere půl
-      dne.
+      dne. A hlavně i informace, které si členové týmu drží jen ve své hlavě. To
+      je příčina stresu a chyb.  
   - icon: 💸
     title: Práce přibývá, čas ne
-    desc: Víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá.
-servicesTitle: Jak konkrétně pomáhám
+    desc: >-
+      Věda nám přináší spoustu nástrojů. Reálná kvalita života (wellbeing) .
+      Přibývá víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá
+      protože nejsou. A proto je tlak na výkon a stres.
+servicesTitle: O čem se budeme bavit ?
 services:
   - icon: 🔍
     title: Procesní audit
