@@ -1,13 +1,15 @@
 heroEyebrow: Co nabízím
 heroTitle: Služby
 heroText: >-
-  Rozbor postupů, automatizace rutiny a rozumné využití AI. Vždy s konkrétním
-  výsledkem, ne jen s doporučením.
+  Rozbor postupů, automatizace rutiny a rozumné  minimalizované využití AI . Na
+  základě rozboru a po optimalizaci navrhuji automatizace od úrovně pracoviště
+  až po firmu.
 auditIcon: 🔍
 auditTitle: Procesní audit
 auditText: >-
   Společně projdeme, jak u vás práce skutečně probíhá: od poptávky po fakturu,
-  od žádosti po vyřízení. Hledám místa, kde se ztrácí čas, peníze a energie.
+  od žádosti po vyřízení. Hledám místa, kde se ztrácí čas, peníze a energie a
+  kde vznikají chyby.
 auditBullets:
   - Rozhovory s lidmi, kteří práci dělají, a rozbor současných postupů
   - Písemná zpráva s plánem zlepšení seřazeným podle přínosu
@@ -33,10 +35,10 @@ n8nText: >-
   běžet i na vašem vlastním serveru, takže data zůstávají u vás.
 n8nBullets:
   - Výběr činností, které se automatizovat vyplatí
-  - Návrh a nastavení automatizace na míru
+  - Návrh nastavení automatizace na míru
   - Propojení s tím, co už používáte (e-mail, tabulky, účetnictví, evidence…)
-  - Otestování, srozumitelný návod a předání
-  - 'Volitelně: průběžná správa a úpravy'
+  - Vypracování, srozumitelné dokumentace řešení, kódů a předání
+  - 'Volitelně: Doporučení správce pro průběžnou správu a úpravy'
 n8nCta: Chci automatizovat
 n8nCodeComment: // n8n workflow — ukázka
 n8nCodeSteps:
@@ -54,14 +56,16 @@ aiText: >-
   pomůžu AI skutečně nasadit, ne jen vyzkoušet.
 aiBullets:
   - Kde vám AI opravdu ušetří čas (a kde ne)
-  - 'Výběr vhodného nástroje: ChatGPT, Claude, Mistral nebo model běžící přímo u vás'
+  - >-
+    Výběr vhodného nástroje: Gemini, ChatGPT, Claude, Mistral nebo model běžící
+    přímo u vás
   - Zapojení AI do automatizací a nástrojů, které už používáte
   - Asistent, který zná vaše dokumenty a postupy
   - Zaškolení lidí a jasná pravidla, jak AI bezpečně používat
 aiCta: Probrat využití AI
 aiUseCases:
   - icon: 📧
-    label: Pošta
+    label: Podpora
     desc: Třídění e-mailů a návrhy odpovědí
   - icon: 📊
     label: Dokumenty
@@ -74,6 +78,6 @@ aiUseCases:
     desc: Návrhy a korektury textů, překlady
 ctaTitle: Nejste si jistí, kde začít?
 ctaText: >-
-  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhnu, co
-  dává největší smysl.
+  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhnu, co dává
+  největší smysl.
 ctaButton: Domluvit bezplatnou konzultaci →
