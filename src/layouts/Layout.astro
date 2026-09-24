@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = 'Stan Kovařík: pomáhám firmám, OSVČ, obcím a neziskovkám s procesy, automatizací a rozumným využitím AI.',
+  description = 'Ing. Stanislav Kovařík: pomáhám firmám, OSVČ, obcím a neziskovkám s procesy, automatizací a rozumným využitím AI.',
   image = '/og-image.png',
 } = Astro.props;
 
@@ -27,20 +27,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
-    <title>{title} | Stan Kovařík</title>
+    <title>{title} | Ing. Stanislav Kovařík</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | Stan Kovařík`} />
+    <meta property="og:title" content={`${title} | Ing. Stanislav Kovařík`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | Stan Kovařík`} />
+    <meta name="twitter:title" content={`${title} | Ing. Stanislav Kovařík`} />
     <meta name="twitter:description" content={description} />
   </head>
   <body class="min-h-screen flex flex-col">

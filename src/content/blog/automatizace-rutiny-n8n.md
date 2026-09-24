@@ -2,7 +2,7 @@
 title: "Jak jsem automatizoval 3 hodiny denní rutiny pomocí n8n"
 description: "Praktický návod, jak nastavit n8n workflow, které za vás každý den zpracovává e-maily, generuje reporty a aktualizuje CRM — bez jediného řádku kódu."
 pubDate: 2025-01-15
-author: "Stan Kovařík"
+author: "Ing. Stanislav Kovařík"
 tags: ["n8n", "automatizace", "workflow", "produktivita"]
 draft: false
 ---
