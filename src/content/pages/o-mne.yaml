@@ -3,12 +3,13 @@ locationText: 📍 Česká republika  ·  ✉ info@kovarik.us
 storyTitle: Proč dělám to, co dělám
 storyParagraphs:
   - >-
-    Jsem absolvent VUT v Brně. Přes 15 let jsem pracoval v manažerských rolích —
-    od středního managementu po ředitelské pozice. Od roku 2015 se věnuji
-    optimalizaci procesů a automatizaci.   Často narážím na stejný problém:
-    chytří lidé trávií hodiny prací, která je nudí, vyčerpává přitom se dá
-    automatizovat. Od r. 2023 se věnuji bezpečné a smysluplné minimalizované
-    implementaci Ai.
+    Jsem absolvent VUT v Brně. Jsem architekt a optimalizátor procesů, etik
+    práce a implementace AI.   Přes 15 let jsem pracoval v různých manažerských
+    rolích — od provozních do top.. Od roku 2015 se věnuji optimalizaci procesů
+    a automatizaci.   Často narážím na stejný problém: chytří tvořiví lidé tráví
+    hodiny prací, která je nudí, vyčerpává přitom se dá automatizovat. Tak
+    dlouho dokud nevyhoří. Od r. 2023 se věnuji bezpečné a smysluplné
+    minimalizované etické implementaci AI.
   - >-
     Fascinovalo mě, jak organizace fungují, co je zpomaluje a proč se výsledky
     ztrácejí v chaosu každodenního provozu. Postupně jsem se stal tím, za kým
@@ -43,7 +44,7 @@ experience:
     title: Procesní metodiky
     desc: >-
       Ověřené metody mapování a zlepšování postupů (BPMN, Lean, Value Stream
-      Mapping). Prakticky.
+      Mapping).
 toolsTitle: Nástroje, se kterými pracuji
 tools:
   - n8n
@@ -56,6 +57,9 @@ tools:
   - Airtable
   - GitHub
   - CRM / ERP
-ctaTitle: Pojďme si promluvit
-ctaText: Rád vám ukážu, jak to, co tu popisuji, může fungovat i u vás.
+ctaTitle: Pojďme si promluvit ...
+ctaText: >-
+  Rád vám budu průvodcem džunglí rychle se vyvíjejících nástrojů a  možností. 
+  Vysvětlím jak to, co tu popisuji, může fungovat i u vás, bezpečně,
+  předvídatelně a zákonně.
 ctaButton: Kontaktovat →
