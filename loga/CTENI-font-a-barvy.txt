@@ -1,0 +1,55 @@
+LOGO KOVARIK — přehled souborů, písmo a barvy
+================================================
+
+SOUBORY
+-------
+kovarik-znacka.svg / .jpg           – samotná ikona (ozubené kolo + obvody), bez textu
+kovarik-logo-vodorovne.svg / .jpg   – ikona + KOVARIK + podtitul vedle sebe (hlavní verze, používá web v hlavičce)
+kovarik-logo-svisle.svg / .jpg      – ikona nad nápisem, na výšku
+
+SVG jsou vektory: dají se donekonečna zvětšovat (billboard, plotr) beze ztráty
+kvality a snadno se v nich mění barva v Illustratoru/Figmě/Inkscape.
+JPG jsou stejné motivy vykreslené na bílém pozadí ve vysokém rozlišení
+(~3× zvětšení oproti zobrazení na webu), pro rychlé vložení do Wordu,
+PowerPointu nebo e-mailu.
+
+Pozn.: JPG nemá průhledné pozadí (formát to neumožňuje). Pro vložení na
+barevné/fotografické pozadí použij SVG, nebo PNG s průhledností, které má
+web sám (public/logo.png, public/logo-header.png).
+
+PÍSMO
+-----
+Nápis „KOVARIK“ a podtitul „BUSINESS PROCESS & AI CONSULTANCY“ NEJSOU živý
+text — jsou to obrysy (křivky) vykreslené jako obrázek/logo, stejně jako
+ikona. Soubor s logem proto neobsahuje informaci o použitém písmu a nejde
+jednoduše „zjistit font“ tak, jak by šlo u textového dokumentu.
+
+Vizuálně jde o tučné geometrické bezpatkové písmo (dokonale kulaté O, rovné
+diagonální tahy u K a R) — nejbližší běžně dostupné rodiny jsou:
+  • Poppins ExtraBold / Black
+  • Montserrat ExtraBold / Black
+Je to ale jen vizuální odhad podle tvaru písmen, ne jistota — bez přístupu
+k originálnímu zdrojovému souboru loga (např. z Canvy nebo od grafika,
+který ho dělal) nejde tvrdit na 100 %, které přesně to je.
+
+Pro běžný text na webu a v dokumentech (ne v samotném logu) používá web
+kovarik.us písmo Figtree — moderní, zaoblené, zdarma na Google Fonts:
+  https://fonts.google.com/specimen/Figtree
+V tučném řezu (Bold/ExtraBold) Figtree logu barevně i stylem dobře sekunduje,
+takže ho doporučuji i do prezentací, nabídek a podobných materiálů.
+
+BARVY
+-----
+Tmavě modrá (hlavní)   #2C588F   RGB 44, 88, 143
+Červená (akcent)       #E25C5C   RGB 226, 92, 92
+Slonová kost (pozadí)  #FCFAF6   RGB 252, 250, 246
+
+Vygenerováno z fotografie loga: barvy jsou obarvené podle skutečného
+odstínu modré použité v originále, ne odhadem.
+
+PŮVOD SOUBORŮ
+-------------
+Vytvořeno 24. 9. 2026 vektorizací (trasováním) fotky loga, kterou dodal
+Stanislav Kovařík. Skript pro vygenerování (logo-work/export.cjs) je
+uložený ve stejné složce projektu na GitHubu jako historie, jak vznikly —
+není potřeba ho spouštět znovu.
