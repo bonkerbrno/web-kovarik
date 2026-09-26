@@ -5,6 +5,11 @@ import keystaticConfig from '../../keystatic.config';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const page = await reader.singletons.edu.read();
+
+// fields.image() stores just the filename; the public path is fixed in keystatic.config.ts.
+const IMAGES_PATH = '/images/edu/';
+const schoolsImageSrc = page?.schoolsImage ? IMAGES_PATH + page.schoolsImage : null;
+const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesImage : null;
 ---
 
 <Layout
@@ -67,9 +72,9 @@ const page = await reader.singletons.edu.read();
           <a href="/kontakt" class="btn-primary">{page?.schoolsCta}</a>
         </div>
         <div>
-          {page?.schoolsImage ? (
+          {schoolsImageSrc ? (
             <img
-              src={page.schoolsImage}
+              src={schoolsImageSrc}
               alt={page?.schoolsImageCaption}
               class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg shadow-mist-400/30"
             />
@@ -140,9 +145,9 @@ const page = await reader.singletons.edu.read();
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          {page?.companiesImage ? (
+          {companiesImageSrc ? (
             <img
-              src={page.companiesImage}
+              src={companiesImageSrc}
               alt={page?.companiesImageCaption}
               class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg shadow-mist-400/30"
             />

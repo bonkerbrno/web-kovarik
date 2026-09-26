@@ -17,6 +17,7 @@ schoolsBullets:
   - Umělá inteligence a budoucnost práce a studia
   - Praktická ukázka na místě, studenti si sami zkusí
 schoolsCta: Domluvit přednášku pro školu
+schoolsImage: workshop-stredni-skola.jpg
 schoolsImageCaption: Workshop s třídou na střední škole
 
 universityIcon: 🧑‍💻
@@ -56,6 +57,7 @@ companiesBullets:
   - Vhodné pro vedení i pro tým, který procesy dělá
   - Od tříhodinového workshopu po celodenní seminář
 companiesCta: Domluvit workshop pro firmu
+companiesImage: workshop-firma.jpg
 companiesImageCaption: Workshop pro firemní tým
 
 processTitle: Jak si přednášku nebo workshop domluvit
