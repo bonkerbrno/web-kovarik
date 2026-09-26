@@ -20,11 +20,11 @@ export default {
                                         DEFAULT: '#2C588F',
                                         dark:    '#23466F',
                             },
-                            // Muted teal-green with the logo blue's saturation and depth.
+                            // Blue-only accent (no extra hue): soft blue-grey, navy, mid blue.
                             accent: {
-                                        400: '#6FB8A4',
-                                        500: '#3C957E',
-                                        600: '#307E6A',
+                                        400: '#9DB2CB',
+                                        500: '#2C588F',
+                                        600: '#4570A8',
                             },
                             ivory: {
                                         DEFAULT: '#FCFAF6',

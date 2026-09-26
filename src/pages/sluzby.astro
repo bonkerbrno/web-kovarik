@@ -61,11 +61,11 @@ const page = await reader.singletons.sluzby.read();
   <section id="n8n" class="section bg-stripe-blue">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1 bg-slate-900 rounded-2xl p-8 font-mono text-sm text-green-400 overflow-hidden">
+        <div class="order-2 lg:order-1 bg-slate-900 rounded-2xl p-8 font-mono text-sm text-mist-400 overflow-hidden">
           <p class="text-slate-500 mb-2">{page?.n8nCodeComment}</p>
-          <p><span class="text-blue-400">Trigger:</span> Nová objednávka (webhook)</p>
+          <p><span class="text-brand-200">Trigger:</span> <span class="text-ivory">Nová objednávka (webhook)</span></p>
           {(page?.n8nCodeSteps ?? []).map((step) => (
-            <p>  → <span class="text-yellow-400">{step}</span></p>
+            <p>  → <span class="text-ivory">{step}</span></p>
           ))}
           <p class="mt-4 text-slate-500">{page?.n8nCodeFooter}</p>
         </div>
