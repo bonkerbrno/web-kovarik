@@ -1,0 +1,72 @@
+heroEyebrow: Akademie Kovařík — přednášky a workshopy
+heroTitle: Edu
+heroText: >-
+  Srozumitelně o automatizaci a umělé inteligenci — pro střední i vysoké
+  školy, veřejnost i firmy. Bez sci-fi, bez prodejního tlaku, na konkrétních
+  příkladech.
+
+schoolsIcon: 🎓
+schoolsTitle: Střední školy
+schoolsText: >-
+  Přednáška nebo workshop pro studenty o tom, jak AI skutečně funguje, co umí
+  a co ne, a jak se v tom všem neztratit. Bez katastrofických scénářů i bez
+  přeceňování.
+schoolsBullets:
+  - Jak AI reálně funguje (bez mýtů a strašení)
+  - Jak poznat AI generovaný text, obraz nebo hlas
+  - Umělá inteligence a budoucnost práce a studia
+  - Praktická ukázka na místě, studenti si sami zkusí
+schoolsCta: Domluvit přednášku pro školu
+schoolsImageCaption: Workshop s třídou na střední škole
+
+universityIcon: 🧑‍💻
+universityTitle: Vysoké školy
+universityText: >-
+  Pro studenty technických i netechnických oborů: hlubší vhled do
+  automatizace procesů a nasazení AI v praxi, včetně toho, jak s tím pracují
+  firmy dnes.
+universityBullets:
+  - Automatizace procesů v praxi, na reálném příkladu firmy
+  - Jak firmy dnes skutečně nasazují AI (a kde na to doplácí)
+  - Ukázka nástroje n8n a stavby jednoduchého workflow
+  - Prostor pro odbornou diskuzi a otázky
+universityCta: Domluvit přednášku pro fakultu
+
+publicIcon: 👥
+publicTitle: Veřejnost
+publicText: >-
+  Otevřená beseda pro obec, knihovnu nebo spolek — jak AI bezpečně používat v
+  běžném životě, na co si dát pozor a jak nenaletět podvodníkům.
+publicBullets:
+  - AI v běžném životě — e-mail, fotky, plánování, zdraví
+  - "Jak poznat podvod: deepfake, falešný hlas, phishing"
+  - Odpovědi na otázky bez odborného žargonu
+  - Vhodné i pro seniory a úplné začátečníky
+publicCta: Domluvit besedu pro obec či spolek
+
+companiesIcon: 🏢
+companiesTitle: Firmy a organizace
+companiesText: >-
+  Workshop na míru přímo pro váš tým: na vlastních datech a procesech
+  ukážeme, kde se dá ušetřit čas a kde má smysl automatizace nebo AI nasadit
+  jako první.
+companiesBullets:
+  - Workshop na míru podle oboru a velikosti firmy
+  - Praktická ukázka na reálném procesu vaší firmy
+  - Vhodné pro vedení i pro tým, který procesy dělá
+  - Od tříhodinového workshopu po celodenní seminář
+companiesCta: Domluvit workshop pro firmu
+companiesImageCaption: Workshop pro firemní tým
+
+processTitle: Jak si přednášku nebo workshop domluvit
+processSteps:
+  - Napíšete mi, pro koho je akce určena a kolik lidí se zúčastní
+  - Domluvíme si krátký hovor a upřesníme témata a rozsah
+  - Připravím obsah na míru vaší skupině
+  - Přijedu a odpřednáším — u firem klidně přímo na vašich datech
+  - Materiály a shrnutí dostanete i po skončení
+
+ctaTitle: Máte zájem o přednášku nebo workshop?
+ctaText: >-
+  Napište mi, pro koho akci plánujete, a probereme, co dává největší smysl.
+ctaButton: Domluvit termín →

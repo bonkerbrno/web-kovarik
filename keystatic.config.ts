@@ -156,6 +156,74 @@ export default config({
       },
     }),
 
+    edu: singleton({
+      label: 'Stránka: Edu',
+      path: 'src/content/pages/edu',
+      schema: {
+        heroEyebrow: fields.text({ label: 'Hero – horní popisek' }),
+        heroTitle: fields.text({ label: 'Hero – nadpis' }),
+        heroText: fields.text({ label: 'Hero – text', multiline: true }),
+
+        schoolsIcon: fields.text({ label: 'Střední školy – ikona' }),
+        schoolsTitle: fields.text({ label: 'Střední školy – nadpis' }),
+        schoolsText: fields.text({ label: 'Střední školy – text', multiline: true }),
+        schoolsBullets: fields.array(fields.text({ label: 'Bod' }), {
+          label: 'Střední školy – seznam bodů',
+          itemLabel: (props) => props.value,
+        }),
+        schoolsCta: fields.text({ label: 'Střední školy – text tlačítka' }),
+        schoolsImage: fields.image({
+          label: 'Střední školy – fotka (workshop / třída)',
+          directory: 'public/images/edu',
+          publicPath: '/images/edu/',
+        }),
+        schoolsImageCaption: fields.text({ label: 'Střední školy – popisek fotky' }),
+
+        universityIcon: fields.text({ label: 'Vysoké školy – ikona' }),
+        universityTitle: fields.text({ label: 'Vysoké školy – nadpis' }),
+        universityText: fields.text({ label: 'Vysoké školy – text', multiline: true }),
+        universityBullets: fields.array(fields.text({ label: 'Bod' }), {
+          label: 'Vysoké školy – seznam bodů',
+          itemLabel: (props) => props.value,
+        }),
+        universityCta: fields.text({ label: 'Vysoké školy – text tlačítka' }),
+
+        publicIcon: fields.text({ label: 'Veřejnost – ikona' }),
+        publicTitle: fields.text({ label: 'Veřejnost – nadpis' }),
+        publicText: fields.text({ label: 'Veřejnost – text', multiline: true }),
+        publicBullets: fields.array(fields.text({ label: 'Bod' }), {
+          label: 'Veřejnost – seznam bodů',
+          itemLabel: (props) => props.value,
+        }),
+        publicCta: fields.text({ label: 'Veřejnost – text tlačítka' }),
+
+        companiesIcon: fields.text({ label: 'Firmy – ikona' }),
+        companiesTitle: fields.text({ label: 'Firmy – nadpis' }),
+        companiesText: fields.text({ label: 'Firmy – text', multiline: true }),
+        companiesBullets: fields.array(fields.text({ label: 'Bod' }), {
+          label: 'Firmy – seznam bodů',
+          itemLabel: (props) => props.value,
+        }),
+        companiesCta: fields.text({ label: 'Firmy – text tlačítka' }),
+        companiesImage: fields.image({
+          label: 'Firmy – fotka (workshop)',
+          directory: 'public/images/edu',
+          publicPath: '/images/edu/',
+        }),
+        companiesImageCaption: fields.text({ label: 'Firmy – popisek fotky' }),
+
+        processTitle: fields.text({ label: 'Sekce „Jak to probíhá" – nadpis' }),
+        processSteps: fields.array(fields.text({ label: 'Krok', multiline: true }), {
+          label: 'Kroky domluvy',
+          itemLabel: (props) => props.value,
+        }),
+
+        ctaTitle: fields.text({ label: 'Závěrečné CTA – nadpis' }),
+        ctaText: fields.text({ label: 'Závěrečné CTA – text', multiline: true }),
+        ctaButton: fields.text({ label: 'Závěrečné CTA – text tlačítka' }),
+      },
+    }),
+
     kontakt: singleton({
       label: 'Stránka: Kontakt',
       path: 'src/content/pages/kontakt',

@@ -1,0 +1,208 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '../../keystatic.config';
+
+const reader = createReader(process.cwd(), keystaticConfig);
+const page = await reader.singletons.edu.read();
+---
+
+<Layout
+  title="Edu"
+  description="Akademie Kovařík (Edu): přednášky a workshopy o automatizaci a AI pro střední a vysoké školy, veřejnost i firmy. Srozumitelně, prakticky, bez sci-fi."
+>
+  <!-- Hero -->
+  <section class="section bg-hero-blue">
+    <div class="container text-center">
+      <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{page?.heroEyebrow}</p>
+      <h1 class="text-4xl sm:text-5xl font-heading font-bold text-navy mb-6">{page?.heroTitle}</h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        {page?.heroText}
+      </p>
+    </div>
+  </section>
+
+  <!-- Rychlý přehled cílových skupin -->
+  <section class="section bg-ivory">
+    <div class="container">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="#stredni-skoly" class="card text-center hover:border-brand-200">
+          <div class="text-4xl mb-3">{page?.schoolsIcon}</div>
+          <h3 class="font-heading font-bold text-navy">{page?.schoolsTitle}</h3>
+        </a>
+        <a href="#vysoke-skoly" class="card text-center hover:border-brand-200">
+          <div class="text-4xl mb-3">{page?.universityIcon}</div>
+          <h3 class="font-heading font-bold text-navy">{page?.universityTitle}</h3>
+        </a>
+        <a href="#verejnost" class="card text-center hover:border-brand-200">
+          <div class="text-4xl mb-3">{page?.publicIcon}</div>
+          <h3 class="font-heading font-bold text-navy">{page?.publicTitle}</h3>
+        </a>
+        <a href="#firmy" class="card text-center hover:border-brand-200">
+          <div class="text-4xl mb-3">{page?.companiesIcon}</div>
+          <h3 class="font-heading font-bold text-navy">{page?.companiesTitle}</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Střední školy -->
+  <section id="stredni-skoly" class="section bg-stripe-blue">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-5xl mb-4">{page?.schoolsIcon}</div>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.schoolsTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            {page?.schoolsText}
+          </p>
+          <ul class="space-y-3 mb-8">
+            {(page?.schoolsBullets ?? []).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/kontakt" class="btn-primary">{page?.schoolsCta}</a>
+        </div>
+        <div>
+          {page?.schoolsImage ? (
+            <img
+              src={page.schoolsImage}
+              alt={page?.schoolsImageCaption}
+              class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg shadow-mist-400/30"
+            />
+          ) : (
+            <div class="w-full aspect-[4/3] rounded-2xl border-2 border-dashed border-mist-300 bg-mist-50 flex flex-col items-center justify-center gap-3 text-center p-6">
+              <span class="text-4xl">📷</span>
+              <p class="text-sm text-slate-500">
+                Místo pro fotku<br />
+                <span class="text-slate-400">{page?.schoolsImageCaption}</span>
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vysoké školy -->
+  <section id="vysoke-skoly" class="section bg-ivory">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
+          {(page?.universityBullets ?? []).map((item) => (
+            <div class="card text-sm text-slate-700 flex items-start gap-2">
+              <span class="text-accent-500 font-bold mt-0.5">✓</span>
+              {item}
+            </div>
+          ))}
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="text-5xl mb-4">{page?.universityIcon}</div>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.universityTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            {page?.universityText}
+          </p>
+          <a href="/kontakt" class="btn-primary">{page?.universityCta}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Veřejnost -->
+  <section id="verejnost" class="section bg-stripe-blue">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-5xl mb-4">{page?.publicIcon}</div>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.publicTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            {page?.publicText}
+          </p>
+          <a href="/kontakt" class="btn-primary">{page?.publicCta}</a>
+        </div>
+        <div class="space-y-3">
+          {(page?.publicBullets ?? []).map((item) => (
+            <div class="card flex items-start gap-3 text-slate-700">
+              <span class="text-accent-500 font-bold mt-0.5">✓</span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Firmy a organizace -->
+  <section id="firmy" class="section bg-ivory">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          {page?.companiesImage ? (
+            <img
+              src={page.companiesImage}
+              alt={page?.companiesImageCaption}
+              class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg shadow-mist-400/30"
+            />
+          ) : (
+            <div class="w-full aspect-[4/3] rounded-2xl border-2 border-dashed border-mist-300 bg-mist-50 flex flex-col items-center justify-center gap-3 text-center p-6">
+              <span class="text-4xl">📷</span>
+              <p class="text-sm text-slate-500">
+                Místo pro fotku<br />
+                <span class="text-slate-400">{page?.companiesImageCaption}</span>
+              </p>
+            </div>
+          )}
+        </div>
+        <div>
+          <div class="text-5xl mb-4">{page?.companiesIcon}</div>
+          <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.companiesTitle}</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            {page?.companiesText}
+          </p>
+          <ul class="space-y-3 mb-8">
+            {(page?.companiesBullets ?? []).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/kontakt" class="btn-primary">{page?.companiesCta}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jak to probíhá -->
+  <section class="section bg-stripe-blue">
+    <div class="container max-w-3xl">
+      <h2 class="text-3xl font-heading font-bold text-navy mb-8 text-center">{page?.processTitle}</h2>
+      <ol class="space-y-4">
+        {(page?.processSteps ?? []).map((step, i) => (
+          <li class="card flex items-start gap-4">
+            <span class="w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+              {i + 1}
+            </span>
+            <span class="text-slate-700 pt-1">{step}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-gradient-to-br from-dusk-600 to-dusk-500">
+    <div class="container text-center">
+      <h2 class="text-3xl font-heading font-bold text-ivory mb-4">{page?.ctaTitle}</h2>
+      <p class="text-ivory text-lg mb-8 max-w-xl mx-auto">
+        {page?.ctaText}
+      </p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 px-8 py-4 bg-ivory-50 text-dusk-600 font-bold rounded-xl hover:bg-mist-50 transition-colors shadow-lg shadow-slate-900/15 text-lg">
+        {page?.ctaButton}
+      </a>
+    </div>
+  </section>
+</Layout>
