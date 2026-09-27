@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
+import { ICON_NAMES } from './src/lib/icons.ts';
 
-const integrations = [tailwind(), icon()];
+// Icon names come from the CMS at build time, so the editor's icon list must be bundled.
+const integrations = [tailwind(), icon({ include: { tabler: ICON_NAMES } })];
 
 // Keystatic CMS admin UI is only needed during local development
 // (`astro dev`). It requires on-demand server routes that a static

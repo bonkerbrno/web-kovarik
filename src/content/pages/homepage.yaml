@@ -12,17 +12,17 @@ heroCtaSecondary: Co nabízím →
 problemsTitle: Poznáváte se?
 problemsSubtitle: Tyhle situace jsou signálem, že je čas jednat.
 problems:
-  - icon: ⏱
+  - icon: flame
     title: Místo plánování a vylepšování jen hasíte provoz
     desc: >-
       Každý den řešíte něco jiného a na to důležité nezbývá čas. Bez vás se nic
       nepohne. Kvalita života a zdraví se zhoršuje
-  - icon: 🚧
+  - icon: history
     title: „Vždycky se to tak dělalo“
     desc: >-
       Nikdo už neví proč, ale dělá se to tak. Postupy má každý jen v hlavě a
       nikde nejsou sepsané.
-  - icon: 🤖
+  - icon: robot
     title: AI zatím jen z doslechu
     desc: >-
       O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
@@ -30,18 +30,18 @@ problems:
       bezpečně, levně a jen jako jeden z prvků automatizace činnosti. AI není
       jen chat, agent, asistent. AI je jen jedno kolečko celého soukolí, které
       funguje opakovaně , automaticky , vždy stejně a přesně.
-  - icon: 🔁
+  - icon: repeat
     title: Pořád dokola ruční práce
     desc: >-
       Přepisování údajů, pořád stejné e-maily, ruční tabulky a výkazy. Každý
       týden znovu. A nejen to.  Automatizace rutin vylučuje chyby.
-  - icon: 📊
+  - icon: files
     title: Informace roztroušené všude
     desc: >-
       Excel tu, e-maily tam, papíry v šanonu. Najít jednu informaci zabere půl
       dne. A hlavně i informace, které si členové týmu drží jen ve své hlavě. To
       je příčina stresu a chyb.  
-  - icon: 💸
+  - icon: hourglass
     title: Práce přibývá, čas ne
     desc: >-
       Věda nám přináší spoustu nástrojů. Reálná kvalita života (wellbeing) .
@@ -49,19 +49,19 @@ problems:
       protože nejsou. A proto je tlak na výkon a stres.
 servicesTitle: O čem se budeme bavit ?
 services:
-  - icon: 🔍
+  - icon: zoom-check
     title: Procesní audit
     desc: >-
       Projdu s vámi, jak pracujete, najdu místa, kde ztrácíte čas, a navrhnu
       konkrétní kroky.
     href: /sluzby#audit
-  - icon: ⚙️
+  - icon: settings-automation
     title: Automatizace
     desc: >-
       Nastavím, aby rutinu jako faktury, objednávky nebo e-maily dělal počítač
       sám a bez chyb.
     href: /sluzby#n8n
-  - icon: 🧠
+  - icon: brain
     title: AI Implementace
     desc: >-
       Ukážu, kde vám AI opravdu pomůže, a nastavím ji tak, aby se na ni dalo

@@ -27,22 +27,22 @@ storyParagraphs:
     nejjednodušších a nejlevnějších AI modelů.
 experienceTitle: Zkušenosti a dovednosti
 experience:
-  - icon: 🏢
+  - icon: briefcase
     title: 15+ let v managementu
     desc: >-
       Střední a vyšší management v různých odvětvích — obchod, služby,
       technologie.
-  - icon: ⚙️
+  - icon: settings-automation
     title: Procesní automatizace
     desc: >-
       Z praxe i studia: propojení e-mailu, tabulek, účetnictví, CRM a dalších
       nástrojů, aby spolu komunikovaly samy.
-  - icon: 🧠
+  - icon: brain
     title: AI implementace
     desc: >-
       Praktické nasazení Gemini, Claude, Mistral a lokálních modelů v reálném
       provozu firem i organizací.
-  - icon: 📋
+  - icon: clipboard-list
     title: Procesní metodiky
     desc: >-
       Ověřené metody mapování a zlepšování postupů (BPMN, Lean, Value Stream

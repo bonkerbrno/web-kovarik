@@ -5,7 +5,7 @@ heroText: >-
   školy, veřejnost i firmy. Bez sci-fi, bez prodejního tlaku, na konkrétních
   příkladech.
 
-schoolsIcon: 🎓
+schoolsIcon: school
 schoolsTitle: Střední školy
 schoolsText: >-
   Přednáška nebo workshop pro studenty o tom, jak AI skutečně funguje, co umí
@@ -20,7 +20,7 @@ schoolsCta: Domluvit přednášku pro školu
 schoolsImage: workshop-stredni-skola.jpg
 schoolsImageCaption: Workshop s třídou na střední škole
 
-universityIcon: 🧑‍💻
+universityIcon: building-bank
 universityTitle: Vysoké školy
 universityText: >-
   Pro studenty technických i netechnických oborů: hlubší vhled do
@@ -33,7 +33,7 @@ universityBullets:
   - Prostor pro odbornou diskuzi a otázky
 universityCta: Domluvit přednášku pro fakultu
 
-publicIcon: 👥
+publicIcon: users-group
 publicTitle: Veřejnost
 publicText: >-
   Otevřená beseda pro obec, knihovnu nebo spolek — jak AI bezpečně používat v
@@ -45,7 +45,7 @@ publicBullets:
   - Vhodné i pro seniory a úplné začátečníky
 publicCta: Domluvit besedu pro obec či spolek
 
-companiesIcon: 🏢
+companiesIcon: building
 companiesTitle: Firmy a organizace
 companiesText: >-
   Workshop na míru přímo pro váš tým: na vlastních datech a procesech

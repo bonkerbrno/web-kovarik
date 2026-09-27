@@ -1,4 +1,9 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
+import { ICONS } from './src/lib/icons';
+
+// Line icon picked from a fixed list (see src/lib/icons.ts).
+const iconField = (label: string, defaultValue: string = 'repeat') =>
+  fields.select({ label, options: ICONS.map(({ value, label }) => ({ value, label })), defaultValue });
 
 export default config({
   storage: {
@@ -20,7 +25,7 @@ export default config({
         problemsSubtitle: fields.text({ label: 'Sekce „Poznáváte se?" – podnadpis' }),
         problems: fields.array(
           fields.object({
-            icon: fields.text({ label: 'Ikona (emoji)' }),
+            icon: iconField('Ikona'),
             title: fields.text({ label: 'Nadpis' }),
             desc: fields.text({ label: 'Popis', multiline: true }),
           }),
@@ -33,7 +38,7 @@ export default config({
         servicesTitle: fields.text({ label: 'Sekce „Jak konkrétně pomáhám" – nadpis' }),
         services: fields.array(
           fields.object({
-            icon: fields.text({ label: 'Ikona (emoji)' }),
+            icon: iconField('Ikona'),
             title: fields.text({ label: 'Nadpis' }),
             desc: fields.text({ label: 'Popis', multiline: true }),
             href: fields.text({ label: 'Odkaz (např. /sluzby#audit)' }),
@@ -71,7 +76,7 @@ export default config({
         experienceTitle: fields.text({ label: 'Sekce zkušeností – nadpis' }),
         experience: fields.array(
           fields.object({
-            icon: fields.text({ label: 'Ikona (emoji)' }),
+            icon: iconField('Ikona'),
             title: fields.text({ label: 'Nadpis' }),
             desc: fields.text({ label: 'Popis', multiline: true }),
           }),
@@ -94,14 +99,14 @@ export default config({
     }),
 
     sluzby: singleton({
-      label: 'Stránka: Služby',
+      label: 'Stránka: Consulting',
       path: 'src/content/pages/sluzby',
       schema: {
         heroEyebrow: fields.text({ label: 'Hero – horní popisek' }),
         heroTitle: fields.text({ label: 'Hero – nadpis' }),
         heroText: fields.text({ label: 'Hero – text', multiline: true }),
 
-        auditIcon: fields.text({ label: 'Audit – ikona' }),
+        auditIcon: iconField('Audit – ikona', 'zoom-check'),
         auditTitle: fields.text({ label: 'Audit – nadpis' }),
         auditText: fields.text({ label: 'Audit – text', multiline: true }),
         auditBullets: fields.array(fields.text({ label: 'Bod' }), {
@@ -118,7 +123,7 @@ export default config({
           { label: 'Audit – řádky výsledků', itemLabel: (props) => props.fields.label.value }
         ),
 
-        n8nIcon: fields.text({ label: 'n8n – ikona' }),
+        n8nIcon: iconField('n8n – ikona', 'settings-automation'),
         n8nTitle: fields.text({ label: 'n8n – nadpis' }),
         n8nText: fields.text({ label: 'n8n – text', multiline: true }),
         n8nBullets: fields.array(fields.text({ label: 'Bod' }), {
@@ -133,7 +138,7 @@ export default config({
         }),
         n8nCodeFooter: fields.text({ label: 'n8n – ukázka: spodní komentář' }),
 
-        aiIcon: fields.text({ label: 'AI – ikona' }),
+        aiIcon: iconField('AI – ikona', 'brain'),
         aiTitle: fields.text({ label: 'AI – nadpis' }),
         aiText: fields.text({ label: 'AI – text', multiline: true }),
         aiBullets: fields.array(fields.text({ label: 'Bod' }), {
@@ -143,7 +148,7 @@ export default config({
         aiCta: fields.text({ label: 'AI – text tlačítka' }),
         aiUseCases: fields.array(
           fields.object({
-            icon: fields.text({ label: 'Ikona' }),
+            icon: iconField('Ikona'),
             label: fields.text({ label: 'Název' }),
             desc: fields.text({ label: 'Popis' }),
           }),
@@ -164,7 +169,7 @@ export default config({
         heroTitle: fields.text({ label: 'Hero – nadpis' }),
         heroText: fields.text({ label: 'Hero – text', multiline: true }),
 
-        schoolsIcon: fields.text({ label: 'Střední školy – ikona' }),
+        schoolsIcon: iconField('Střední školy – ikona', 'school'),
         schoolsTitle: fields.text({ label: 'Střední školy – nadpis' }),
         schoolsText: fields.text({ label: 'Střední školy – text', multiline: true }),
         schoolsBullets: fields.array(fields.text({ label: 'Bod' }), {
@@ -179,7 +184,7 @@ export default config({
         }),
         schoolsImageCaption: fields.text({ label: 'Střední školy – popisek fotky' }),
 
-        universityIcon: fields.text({ label: 'Vysoké školy – ikona' }),
+        universityIcon: iconField('Vysoké školy – ikona', 'building-bank'),
         universityTitle: fields.text({ label: 'Vysoké školy – nadpis' }),
         universityText: fields.text({ label: 'Vysoké školy – text', multiline: true }),
         universityBullets: fields.array(fields.text({ label: 'Bod' }), {
@@ -188,7 +193,7 @@ export default config({
         }),
         universityCta: fields.text({ label: 'Vysoké školy – text tlačítka' }),
 
-        publicIcon: fields.text({ label: 'Veřejnost – ikona' }),
+        publicIcon: iconField('Veřejnost – ikona', 'users-group'),
         publicTitle: fields.text({ label: 'Veřejnost – nadpis' }),
         publicText: fields.text({ label: 'Veřejnost – text', multiline: true }),
         publicBullets: fields.array(fields.text({ label: 'Bod' }), {
@@ -197,7 +202,7 @@ export default config({
         }),
         publicCta: fields.text({ label: 'Veřejnost – text tlačítka' }),
 
-        companiesIcon: fields.text({ label: 'Firmy – ikona' }),
+        companiesIcon: iconField('Firmy – ikona', 'building'),
         companiesTitle: fields.text({ label: 'Firmy – nadpis' }),
         companiesText: fields.text({ label: 'Firmy – text', multiline: true }),
         companiesBullets: fields.array(fields.text({ label: 'Bod' }), {

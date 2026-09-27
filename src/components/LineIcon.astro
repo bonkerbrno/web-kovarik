@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+import { ICON_NAMES } from '@/lib/icons';
+
+interface Props {
+  name?: string | null;
+  class?: string;
+}
+
+const { name, class: className = '' } = Astro.props;
+const known = !!name && (ICON_NAMES as readonly string[]).includes(name);
+---
+
+{known && (
+  <Icon name={`tabler:${name}`} class={`line-icon ${className}`} aria-hidden="true" />
+)}

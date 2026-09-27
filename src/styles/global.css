@@ -62,6 +62,10 @@
   .card {
     @apply bg-ivory-50 border border-mist-200/70 rounded-2xl p-6 shadow-sm shadow-mist-400/20 hover:shadow-[0_6px_9px_-1.5px_rgba(0,0,0,0.1),0_3px_6px_-3px_rgba(0,0,0,0.1)] hover:shadow-mist-400/40 transition-shadow duration-200;
   }
+  /* Tabler line icons: slightly thinner stroke than the default 2. */
+  .line-icon * {
+    stroke-width: 1.75;
+  }
   /* Problem tiles only: red "on fire" glow on hover. */
   .card-burn {
     @apply hover:shadow-red-400/30;

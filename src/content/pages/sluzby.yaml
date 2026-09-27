@@ -4,7 +4,7 @@ heroText: >-
   Rozbor postupů, automatizace rutiny a rozumné  minimalizované využití AI . Na
   základě rozboru a po optimalizaci navrhuji automatizace od úrovně pracoviště
   až po firmu.
-auditIcon: 🔍
+auditIcon: zoom-check
 auditTitle: Procesní audit
 auditText: >-
   Společně projdeme, jak u vás práce skutečně probíhá: od poptávky po fakturu,
@@ -27,7 +27,7 @@ auditResults:
     value: 2–4 týdny
   - label: Výstup
     value: Písemná zpráva + prezentace
-n8nIcon: ⚙️
+n8nIcon: settings-automation
 n8nTitle: Automatizace
 n8nText: >-
   Opakující se práci, jako je přepisování údajů, rozesílání e-mailů nebo
@@ -48,7 +48,7 @@ n8nCodeSteps:
   - Upozorni kolegu (Slack)
   - Založ úkol (Notion / Asana)
 n8nCodeFooter: '// Čas: 0.3 s | Manuálně: ~12 min'
-aiIcon: 🧠
+aiIcon: brain
 aiTitle: AI Implementace
 aiText: >-
   Ne každý problém potřebuje AI. Tam, kde dává smysl, třeba při zpracování
@@ -64,16 +64,16 @@ aiBullets:
   - Zaškolení lidí a jasná pravidla, jak AI bezpečně používat
 aiCta: Probrat využití AI
 aiUseCases:
-  - icon: 📧
+  - icon: mail
     label: Podpora
     desc: Třídění e-mailů a návrhy odpovědí
-  - icon: 📊
+  - icon: file-text
     label: Dokumenty
     desc: Shrnutí, výtahy a zpracování podkladů
-  - icon: 💬
+  - icon: message-chatbot
     label: Chatbot
     desc: Odpovědi na časté dotazy zákazníků či občanů
-  - icon: ✍️
+  - icon: writing
     label: Texty
     desc: Návrhy a korektury textů, překlady
 ctaTitle: Nejste si jistí, kde začít?

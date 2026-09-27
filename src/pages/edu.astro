@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import LineIcon from '@/components/LineIcon.astro';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
 
@@ -32,19 +33,19 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <a href="#stredni-skoly" class="card text-center hover:border-brand-200">
-          <div class="text-4xl mb-3">{page?.schoolsIcon}</div>
+          <LineIcon name={page?.schoolsIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
           <h3 class="font-heading font-bold text-navy">{page?.schoolsTitle}</h3>
         </a>
         <a href="#vysoke-skoly" class="card text-center hover:border-brand-200">
-          <div class="text-4xl mb-3">{page?.universityIcon}</div>
+          <LineIcon name={page?.universityIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
           <h3 class="font-heading font-bold text-navy">{page?.universityTitle}</h3>
         </a>
         <a href="#verejnost" class="card text-center hover:border-brand-200">
-          <div class="text-4xl mb-3">{page?.publicIcon}</div>
+          <LineIcon name={page?.publicIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
           <h3 class="font-heading font-bold text-navy">{page?.publicTitle}</h3>
         </a>
         <a href="#firmy" class="card text-center hover:border-brand-200">
-          <div class="text-4xl mb-3">{page?.companiesIcon}</div>
+          <LineIcon name={page?.companiesIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
           <h3 class="font-heading font-bold text-navy">{page?.companiesTitle}</h3>
         </a>
       </div>
@@ -56,7 +57,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="text-5xl mb-4">{page?.schoolsIcon}</div>
+          <LineIcon name={page?.schoolsIcon} class="w-11 h-11 mb-4 text-brand-500" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.schoolsTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.schoolsText}
@@ -105,7 +106,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
           ))}
         </div>
         <div class="order-1 lg:order-2">
-          <div class="text-5xl mb-4">{page?.universityIcon}</div>
+          <LineIcon name={page?.universityIcon} class="w-11 h-11 mb-4 text-brand-500" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.universityTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.universityText}
@@ -121,7 +122,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="text-5xl mb-4">{page?.publicIcon}</div>
+          <LineIcon name={page?.publicIcon} class="w-11 h-11 mb-4 text-brand-500" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.publicTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.publicText}
@@ -162,7 +163,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
           )}
         </div>
         <div>
-          <div class="text-5xl mb-4">{page?.companiesIcon}</div>
+          <LineIcon name={page?.companiesIcon} class="w-11 h-11 mb-4 text-brand-500" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.companiesTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.companiesText}
