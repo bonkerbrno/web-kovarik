@@ -5,6 +5,21 @@ heroText: >-
   školy, veřejnost i firmy. Bez sci-fi, bez prodejního tlaku, na konkrétních
   příkladech.
 
+primaryIcon: book
+primaryTitle: Základní školy
+primaryText: >-
+  Interaktivní 90minutová hodina pro 9. třídu o tom, jak AI funguje, jak nás
+  umí oklamat a jak se nenechat napálit. Bez strašení a bez sci-fi, s kvízy,
+  hrami a spoustou příkladů ze života žáků.
+primaryBullets:
+  - Co je AI a jak "přemýšlí" — hra na hádání dalšího slova
+  - Deepfaky, hoaxy a hra Pravda, nebo fake?
+  - Bezpečně online — hesla, podvodné zprávy, co AI nikdy neříkat
+  - Automatizace "když → tak" a vlastní nápad na robota v n8n
+  - AI jako parťák na učení, ne tahák
+primaryFormat: "Formát: 90 minut, 9. třída, kvízy a hry ve třídě"
+primaryCta: Domluvit hodinu pro základní školu
+
 schoolsIcon: school
 schoolsTitle: Střední školy
 schoolsText: >-

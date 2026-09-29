@@ -169,6 +169,16 @@ export default config({
         heroTitle: fields.text({ label: 'Hero – nadpis' }),
         heroText: fields.text({ label: 'Hero – text', multiline: true }),
 
+        primaryIcon: iconField('Základní školy – ikona', 'book'),
+        primaryTitle: fields.text({ label: 'Základní školy – nadpis' }),
+        primaryText: fields.text({ label: 'Základní školy – text', multiline: true }),
+        primaryBullets: fields.array(fields.text({ label: 'Bod' }), {
+          label: 'Základní školy – seznam bodů',
+          itemLabel: (props) => props.value,
+        }),
+        primaryFormat: fields.text({ label: 'Základní školy – řádek s formátem' }),
+        primaryCta: fields.text({ label: 'Základní školy – text tlačítka' }),
+
         schoolsIcon: iconField('Střední školy – ikona', 'school'),
         schoolsTitle: fields.text({ label: 'Střední školy – nadpis' }),
         schoolsText: fields.text({ label: 'Střední školy – text', multiline: true }),
