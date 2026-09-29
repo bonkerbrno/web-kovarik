@@ -17,7 +17,7 @@ Zlom přišel, když jsem počítal: 3 hodiny denně × 22 pracovních dní = **
 
 ## Řešení: automatizované workflow ve třech blocích
 
-Použil jsem open-source nástroj pro automatizaci pracovních postupů. Na rozdíl od placených cloudových služeb ho můžete provozovat na vlastním serveru a platíte jen za hosting, ne za počet kroků.
+Nástrojů pro automatizaci existuje celá řada (Zapier, Make, Power Automate a další). Já jsem pro tento případ zvolil open-source nástroj n8n. Na rozdíl od placených cloudových služeb ho můžete provozovat na vlastním serveru a platíte jen za hosting, ne za počet kroků.
 
 ### Workflow 1: Třídění a sumarizace e-mailů
 
@@ -61,9 +61,17 @@ Po každém dokončeném hovoru přes Calendly se automaticky:
 
 ## Technické nastavení
 
-Automatizace běží na malém VPS serveru (4 EUR/měsíc) v kontejneru, takže data zůstávají pod mou kontrolou.
+n8n provozuji na VPS (Hostinger, 4 EUR/měsíc) přes Docker:
 
-Celková cena infrastruktury: **4 EUR/měsíc** místo 50+ EUR za placené cloudové nástroje.
+```bash
+docker run -d \
+  --name n8n \
+  -p 5678:5678 \
+  -v ~/.n8n:/home/node/.n8n \
+  n8nio/n8n
+```
+
+Celková cena infrastruktury: **4 EUR/měsíc** místo 50+ EUR za Make nebo Zapier.
 
 ## Výsledek po 3 měsících
 
