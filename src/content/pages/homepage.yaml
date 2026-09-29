@@ -60,7 +60,7 @@ services:
     desc: >-
       Nastavím, aby rutinu jako faktury, objednávky nebo e-maily dělal počítač
       sám a bez chyb.
-    href: /sluzby#n8n
+    href: /sluzby#automatizace
   - icon: brain
     title: AI Implementace
     desc: >-

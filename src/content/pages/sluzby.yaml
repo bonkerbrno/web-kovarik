@@ -31,7 +31,7 @@ n8nIcon: settings-automation
 n8nTitle: Automatizace
 n8nText: >-
   Opakující se práci, jako je přepisování údajů, rozesílání e-mailů nebo
-  vystavování faktur, nechám dělat počítač. Používám nástroj n8n, který může
+  vystavování faktur, nechám dělat počítač. Používám nástroje, které mohou
   běžet i na vašem vlastním serveru, takže data zůstávají u vás.
 n8nBullets:
   - Výběr činností, které se automatizovat vyplatí
@@ -40,7 +40,7 @@ n8nBullets:
   - Vypracování, srozumitelné dokumentace řešení, kódů a předání
   - 'Volitelně: Doporučení správce pro průběžnou správu a úpravy'
 n8nCta: Chci automatizovat
-n8nCodeComment: // n8n workflow — ukázka
+n8nCodeComment: // Automatizace — ukázka workflow
 n8nCodeSteps:
   - Najdi zákazníka v evidenci
   - Vystav fakturu (Fakturoid)

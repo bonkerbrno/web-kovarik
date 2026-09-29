@@ -1,9 +1,9 @@
 ---
-title: "Jak jsem automatizoval 3 hodiny denní rutiny pomocí n8n"
-description: "Praktický návod, jak nastavit n8n workflow, které za vás každý den zpracovává e-maily, generuje reporty a aktualizuje CRM — bez jediného řádku kódu."
+title: "Jak jsem automatizoval 3 hodiny denní rutiny"
+description: "Praktický návod, jak nastavit automatizované workflow, které za vás každý den zpracovává e-maily, generuje reporty a aktualizuje CRM — bez jediného řádku kódu."
 pubDate: 2025-01-15
 author: "Ing. Stanislav Kovařík"
-tags: ["n8n", "automatizace", "workflow", "produktivita"]
+tags: ["automatizace", "workflow", "produktivita"]
 draft: false
 ---
 
@@ -15,9 +15,9 @@ Jako procesní konzultant vím, že každá opakující se manuální činnost j
 
 Zlom přišel, když jsem počítal: 3 hodiny denně × 22 pracovních dní = **66 hodin měsíčně**. Téměř dva pracovní týdny věnované rutině.
 
-## Řešení: n8n workflow v 5 blocích
+## Řešení: automatizované workflow ve třech blocích
 
-n8n je open-source nástroj pro automatizaci pracovních postupů. Na rozdíl od Zapier nebo Make ho můžete provozovat na vlastním serveru a platíte jen za hosting, ne za počet kroků.
+Použil jsem open-source nástroj pro automatizaci pracovních postupů. Na rozdíl od placených cloudových služeb ho můžete provozovat na vlastním serveru a platíte jen za hosting, ne za počet kroků.
 
 ### Workflow 1: Třídění a sumarizace e-mailů
 
@@ -59,19 +59,11 @@ Po každém dokončeném hovoru přes Calendly se automaticky:
 
 **Čas ušetřený:** ~30 minut denně
 
-## Technické nastavení n8n
+## Technické nastavení
 
-Provozuji n8n na VPS (Hostinger, 4 EUR/měsíc) přes Docker:
+Automatizace běží na malém VPS serveru (4 EUR/měsíc) v kontejneru, takže data zůstávají pod mou kontrolou.
 
-```bash
-docker run -d \
-  --name n8n \
-  -p 5678:5678 \
-  -v ~/.n8n:/home/node/.n8n \
-  n8nio/n8n
-```
-
-Celková cena infrastruktury: **4 EUR/měsíc** místo 50+ EUR za Make nebo Zapier.
+Celková cena infrastruktury: **4 EUR/měsíc** místo 50+ EUR za placené cloudové nástroje.
 
 ## Výsledek po 3 měsících
 

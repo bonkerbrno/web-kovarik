@@ -7,7 +7,7 @@ formTitle: "Napište mi"
 topics:
   - value: "audit"
     label: "Procesní audit"
-  - value: "n8n"
+  - value: "automatizace"
     label: "Automatizace"
   - value: "ai"
     label: "AI Implementace"

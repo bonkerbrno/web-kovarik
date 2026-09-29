@@ -123,20 +123,20 @@ export default config({
           { label: 'Audit – řádky výsledků', itemLabel: (props) => props.fields.label.value }
         ),
 
-        n8nIcon: iconField('n8n – ikona', 'settings-automation'),
-        n8nTitle: fields.text({ label: 'n8n – nadpis' }),
-        n8nText: fields.text({ label: 'n8n – text', multiline: true }),
+        n8nIcon: iconField('Automatizace – ikona', 'settings-automation'),
+        n8nTitle: fields.text({ label: 'Automatizace – nadpis' }),
+        n8nText: fields.text({ label: 'Automatizace – text', multiline: true }),
         n8nBullets: fields.array(fields.text({ label: 'Bod' }), {
-          label: 'n8n – seznam bodů',
+          label: 'Automatizace – seznam bodů',
           itemLabel: (props) => props.value,
         }),
-        n8nCta: fields.text({ label: 'n8n – text tlačítka' }),
-        n8nCodeComment: fields.text({ label: 'n8n – ukázka: horní komentář' }),
+        n8nCta: fields.text({ label: 'Automatizace – text tlačítka' }),
+        n8nCodeComment: fields.text({ label: 'Automatizace – ukázka: horní komentář' }),
         n8nCodeSteps: fields.array(fields.text({ label: 'Krok' }), {
-          label: 'n8n – ukázka: kroky workflow',
+          label: 'Automatizace – ukázka: kroky workflow',
           itemLabel: (props) => props.value,
         }),
-        n8nCodeFooter: fields.text({ label: 'n8n – ukázka: spodní komentář' }),
+        n8nCodeFooter: fields.text({ label: 'Automatizace – ukázka: spodní komentář' }),
 
         aiIcon: iconField('AI – ikona', 'brain'),
         aiTitle: fields.text({ label: 'AI – nadpis' }),

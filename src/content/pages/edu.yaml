@@ -15,22 +15,25 @@ primaryBullets:
   - Co je AI a jak "přemýšlí" — hra na hádání dalšího slova
   - Deepfaky, hoaxy a hra Pravda, nebo fake?
   - Bezpečně online — hesla, podvodné zprávy, co AI nikdy neříkat
-  - Automatizace "když → tak" a vlastní nápad na robota v n8n
+  - Automatizace "když → tak" a vlastní nápad na robota
   - AI jako parťák na učení, ne tahák
+  - "... a další zajímavá témata"
 primaryFormat: "Formát: 90 minut, 9. třída, kvízy a hry ve třídě"
 primaryCta: Domluvit hodinu pro základní školu
 
 schoolsIcon: school
 schoolsTitle: Střední školy
 schoolsText: >-
-  Přednáška nebo workshop pro studenty o tom, jak AI skutečně funguje, co umí
-  a co ne, a jak se v tom všem neztratit. Bez katastrofických scénářů i bez
-  přeceňování.
+  Prakticky o tom, co se děje "pod kapotou" jazykového modelu, jak s AI správně
+  mluvit a jak ji propojit s dalšími aplikacemi do vlastní automatizace.
+  Studenti už AI používají — cílem je pochopit ji a používat bezpečně a fér.
 schoolsBullets:
-  - Jak AI reálně funguje (bez mýtů a strašení)
-  - Jak poznat AI generovaný text, obraz nebo hlas
-  - Umělá inteligence a budoucnost práce a studia
-  - Praktická ukázka na místě, studenti si sami zkusí
+  - Jak "přemýšlí" jazykový model — tokeny, trénink, halucinace a zkreslení
+  - Jak psát dobrý prompt a používat AI ve škole fér, ne jako podfuk
+  - Automatizace s AI — návrh vlastního workflow ve skupinách
+  - Propojení aplikací — API, MCP a GitHub jako "uložené pozice" pro kód
+  - Bezpečnost — prompt injection, ochrana dat a deepfaky
+  - "... a další zajímavá témata"
 schoolsCta: Domluvit přednášku pro školu
 schoolsImage: workshop-stredni-skola.jpg
 schoolsImageCaption: Workshop s třídou na střední škole
@@ -38,14 +41,16 @@ schoolsImageCaption: Workshop s třídou na střední škole
 universityIcon: building-bank
 universityTitle: Vysoké školy
 universityText: >-
-  Pro studenty technických i netechnických oborů: hlubší vhled do
-  automatizace procesů a nasazení AI v praxi, včetně toho, jak s tím pracují
-  firmy dnes.
+  Pro studenty technických i netechnických oborů: od jednoho volání modelu k AI
+  agentovi, který používá nástroje. Vždy nejdřív schéma, potom krátká
+  spustitelná ukázka a důraz na to, co může v praxi selhat a jak se bránit.
 universityBullets:
-  - Automatizace procesů v praxi, na reálném příkladu firmy
-  - Jak firmy dnes skutečně nasazují AI (a kde na to doplácí)
-  - Ukázka nástroje n8n a stavby jednoduchého workflow
-  - Prostor pro odbornou diskuzi a otázky
+  - Od jazykového modelu k agentovi — nástroje a agentní smyčka
+  - MCP — architektura protokolu a stavba vlastního serveru
+  - Automatizace v praxi — AI agenti, GitHub a AI review kódu
+  - Bezpečnost — OWASP pro LLM, prompt injection a rizika MCP
+  - Deepfaky, původ obsahu a evropská regulace (AI Act)
+  - "... a další zajímavá témata"
 universityCta: Domluvit přednášku pro fakultu
 
 publicIcon: users-group
