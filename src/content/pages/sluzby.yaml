@@ -1,14 +1,14 @@
-heroEyebrow: Co nabízím
+heroEyebrow: Co nabízíme
 heroTitle: Consulting
 heroText: >-
   Rozbor postupů, automatizace rutiny a rozumné  minimalizované využití AI . Na
-  základě rozboru a po optimalizaci navrhuji automatizace od úrovně pracoviště
+  základě rozboru a po optimalizaci navrhujeme automatizace od úrovně pracoviště
   až po firmu.
 auditIcon: zoom-check
 auditTitle: Procesní audit
 auditText: >-
   Společně projdeme, jak u vás práce skutečně probíhá: od poptávky po fakturu,
-  od žádosti po vyřízení. Hledám místa, kde se ztrácí čas, peníze a energie a
+  od žádosti po vyřízení. Hledáme místa, kde se ztrácí čas, peníze a energie a
   kde vznikají chyby.
 auditBullets:
   - Rozhovory s lidmi, kteří práci dělají, a rozbor současných postupů
@@ -31,7 +31,7 @@ n8nIcon: settings-automation
 n8nTitle: Automatizace
 n8nText: >-
   Opakující se práci, jako je přepisování údajů, rozesílání e-mailů nebo
-  vystavování faktur, nechám dělat počítač. Používám nástroje, které mohou
+  vystavování faktur, necháme dělat počítač. Používáme nástroje, které mohou
   běžet i na vašem vlastním serveru, takže data zůstávají u vás.
 n8nBullets:
   - Výběr činností, které se automatizovat vyplatí
@@ -53,7 +53,7 @@ aiTitle: AI Implementace
 aiText: >-
   Ne každý problém potřebuje AI. Tam, kde dává smysl, třeba při zpracování
   dokumentů, psaní textů nebo odpovídání na dotazy zákazníků či občanů, vám
-  pomůžu AI skutečně nasadit, ne jen vyzkoušet.
+  pomůžeme AI skutečně nasadit, ne jen vyzkoušet.
 aiBullets:
   - Kde vám AI opravdu ušetří čas (a kde ne)
   - >-
@@ -78,6 +78,6 @@ aiUseCases:
     desc: Návrhy a korektury textů, překlady
 ctaTitle: Nejste si jistí, kde začít?
 ctaText: >-
-  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhnu, co dává
+  Úvodní konzultace je zdarma. Společně projdeme vaši situaci a navrhneme, co dává
   největší smysl.
 ctaButton: Domluvit bezplatnou konzultaci →

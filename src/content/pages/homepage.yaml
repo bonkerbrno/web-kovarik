@@ -2,13 +2,13 @@ heroEyebrow: Procesy · Automatizace · AI
 heroTitleLine1: Méně stresů a chyb,
 heroTitleLine2: více času na důležité věci.
 heroText: >-
-  Pomůžu vám najít, kde zbytečně ztrácíte čas, zbavit se ruční nudné práce,
+  Pomůžeme vám najít, kde zbytečně ztrácíte čas, zbavit se ruční nudné práce,
   kterou lépe zvládne počítač.  Lze rozumně a bezpečně využít AI?  Ano lze. Bez
   velkých investic a bez vlastního IT oddělení,  méně než byste čekali a vždy
   lze vědět co a kde dělá. Není cesta tvořit autonomní systémy nad jejichž
   činností nemáme kontrolu.
 heroCtaPrimary: 'Konzultace '
-heroCtaSecondary: Co nabízím →
+heroCtaSecondary: Co nabízíme →
 problemsTitle: Poznáváte se?
 problemsSubtitle: Tyhle situace jsou signálem, že je čas jednat.
 problems:
@@ -52,19 +52,19 @@ services:
   - icon: zoom-check
     title: Procesní audit
     desc: >-
-      Projdu s vámi, jak pracujete, najdu místa, kde ztrácíte čas, a navrhnu
+      Projdeme s vámi, jak pracujete, najdeme místa, kde ztrácíte čas, a navrhneme
       konkrétní kroky.
     href: /sluzby#audit
   - icon: settings-automation
     title: Automatizace
     desc: >-
-      Nastavím, aby rutinu jako faktury, objednávky nebo e-maily dělal počítač
+      Nastavíme, aby rutinu jako faktury, objednávky nebo e-maily dělal počítač
       sám a bez chyb.
     href: /sluzby#automatizace
   - icon: brain
     title: AI Implementace
     desc: >-
-      Ukážu, kde vám AI opravdu pomůže, a nastavím ji tak, aby se na ni dalo
+      Ukážeme, kde vám AI opravdu pomůže, a nastavíme ji tak, aby se na ni dalo
       spolehnout.
     href: /sluzby#ai
 aboutEyebrow: Kdo za tím stojí

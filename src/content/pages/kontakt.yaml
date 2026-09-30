@@ -1,9 +1,9 @@
 heroTitle: "Pojďme si promluvit"
 heroText: >-
-  První konzultace je zdarma a bez závazků. Zjistíme, zda a jak vám mohu
+  První konzultace je zdarma a bez závazků. Zjistíme, zda a jak vám můžeme
   pomoci.
 
-formTitle: "Napište mi"
+formTitle: "Napište nám"
 topics:
   - value: "audit"
     label: "Procesní audit"
@@ -22,8 +22,8 @@ linkedinLabel: "linkedin.com/in/stanley1968cz"
 
 processTitle: "Jak to probíhá?"
 processSteps:
-  - "Napíšete mi — e-mailem nebo formulářem"
-  - "Do 24 hodin se ozvu zpět"
+  - "Napíšete nám — e-mailem nebo formulářem"
+  - "Do 24 hodin se ozveme zpět"
   - "Domluvíme 30minutový hovor (online)"
   - "Zhodnotíme situaci a navrhneme možnosti"
   - "Rozhodnete, jak chcete pokračovat"

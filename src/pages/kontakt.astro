@@ -10,7 +10,7 @@ const page = await reader.singletons.kontakt.read();
 
 <Layout
   title="Kontakt"
-  description="Domluvte si bezplatnou konzultaci. Napište mi na e-mail nebo vyplňte kontaktní formulář."
+  description="Domluvte si bezplatnou konzultaci. Napište nám na e-mail nebo vyplňte kontaktní formulář."
 >
   <section class="section bg-hero-blue">
     <div class="container text-center">
@@ -188,9 +188,9 @@ const page = await reader.singletons.kontakt.read();
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         form.reset();
-        show('Děkuji, zpráva odešla. Ozvu se do 24 hodin.', true);
+        show('Děkujeme, zpráva odešla. Ozveme se do 24 hodin.', true);
       } catch {
-        show(`Zprávu se nepodařilo odeslat. Napište mi prosím přímo na ${email}.`, false);
+        show(`Zprávu se nepodařilo odeslat. Napište nám prosím přímo na ${email}.`, false);
       } finally {
         button.disabled = false;
       }

@@ -84,4 +84,4 @@ Celková cena infrastruktury: **4 EUR/měsíc** místo 50+ EUR za Make nebo Zapi
 
 Nejjednodušší první krok: zmapujte, co děláte více než 3× týdně a trvá to déle než 10 minut. To je váš první kandidát na automatizaci.
 
-Pokud si nejste jistí, kde začít, nebo chcete audit procesů ve vaší firmě — [ozvěte se mi](/kontakt).
+Pokud si nejste jistí, kde začít, nebo chcete audit procesů ve vaší firmě — [ozvěte se nám](/kontakt).
