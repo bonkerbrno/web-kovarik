@@ -1,40 +1,47 @@
-heroEyebrow: Procesy · Automatizace · AI
+heroEyebrow: Procesy · Automatizace · AI · Bezpečně · Levně
 heroTitleLine1: Méně stresů a chyb,
 heroTitleLine2: více času na důležité věci.
 heroText: >-
   Pomůžeme vám najít, kde zbytečně ztrácíte čas, zbavit se ruční nudné práce,
-  kterou lépe zvládne počítač.  Lze rozumně a bezpečně využít AI?  Ano lze. Bez
-  velkých investic a bez vlastního IT oddělení,  méně než byste čekali a vždy
-  lze vědět co a kde dělá. Není cesta tvořit autonomní systémy nad jejichž
-  činností nemáme kontrolu.
+  kterou lépe zvládne počítač.  Lze dnes rozumně a bezpečně využít AI ?  Ano
+  lze. Bez velkých investic a bez vlastního IT oddělení, za méně než byste
+  čekali. Bez nejdražších modelů Ai. Vždy budete vědět co vaše automatizace dělá
+  a kde. Není cesta používat autonomní agenty nad jejichž činností nemáme plnou
+  kontrolu.
 heroCtaPrimary: 'Konzultace '
-heroCtaSecondary: Co nabízíme →
-problemsTitle: Poznáváte se?
+heroCtaSecondary: Co nabízíme
+problemsTitle: Poznáváte se ?
 problemsSubtitle: Tyhle situace jsou signálem, že je čas jednat.
 problems:
   - icon: flame
     title: Místo plánování a vylepšování jen hasíte provoz
     desc: >-
       Každý den řešíte něco jiného a na to důležité nezbývá čas. Bez vás se nic
-      nepohne. Kvalita života a zdraví se zhoršuje
+      nepohne. Kvalita života a zdraví se vám zhoršuje mírou stresů a chyb v
+      procesech a vy nemáte čas procesy vyladit a chybovost snížit.
   - icon: history
     title: „Vždycky se to tak dělalo“
     desc: >-
       Nikdo už neví proč, ale dělá se to tak. Postupy má každý jen v hlavě a
-      nikde nejsou sepsané.
+      nikde nejsou sepsané. Nikdo je nevyladil, nezvážil možnost automatizace.
+      Setup činností je 15 let pozadu.
   - icon: robot
-    title: AI zatím jen z doslechu
+    title: Automatizace  zatím jen z doslechu
     desc: >-
-      O AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám reálně pomohla.
-      Většina komentářů řeší jen senzace. AI však lze využít jednoduše,
-      bezpečně, levně a jen jako jeden z prvků automatizace činnosti. AI není
-      jen chat, agent, asistent. AI je jen jedno kolečko celého soukolí, které
-      funguje opakovaně , automaticky , vždy stejně a přesně.
+      O  automatizaci a AI slyšíte všude, ale nemáte čas zjistit, k čemu by vám
+      reálně pomohla. Většina komentářů řeší jen senzace. AI v automatizaci však
+      lze využít jednoduše, bezpečně, levně a jen jako jeden z prvků
+      automatizace činnosti. AI není jen chat, asistent nebo autonomní agent.
+      AI  v automatizaci je jen jedno kolečko celého soukolí, které funguje
+      bezpečně, spolehlivě a předvídatelně. Dobře postavená automatizace nemůže
+      halucinovat, funguje mnohonásobně levněji i na malých, ale dostatečných
+      levných LLM. Mnohdy i s provozem lokálně, zdarma.
   - icon: repeat
     title: Pořád dokola ruční práce
     desc: >-
       Přepisování údajů, pořád stejné e-maily, ruční tabulky a výkazy. Každý
-      týden znovu. A nejen to.  Automatizace rutin vylučuje chyby.
+      týden znovu. Všichni jsou s tím smíření přitom nestíhají to důležitější. 
+      Automatizace rutin vylučuje chyby a uvolňuje ruce .
   - icon: files
     title: Informace roztroušené všude
     desc: >-
@@ -44,28 +51,28 @@ problems:
   - icon: hourglass
     title: Práce přibývá, čas ne
     desc: >-
-      Věda nám přináší spoustu nástrojů. Reálná kvalita života (wellbeing) .
-      Přibývá víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá
+      Věda nám přináší spoustu nástrojů. Reálná kvalita života (wellbeing) klesá
+      . Přibývá víc zakázek, žádostí i papírování, ale lidí ani hodin nepřibývá
       protože nejsou. A proto je tlak na výkon a stres.
 servicesTitle: O čem se budeme bavit ?
 services:
   - icon: zoom-check
     title: Procesní audit
     desc: >-
-      Projdeme s vámi, jak pracujete, najdeme místa, kde ztrácíte čas, a navrhneme
-      konkrétní kroky.
+      Projdeme s vámi, jak pracujete, najdeme místa, kde ztrácíte čas a
+      navrhneme konkrétní kroky.
     href: /sluzby#audit
   - icon: settings-automation
     title: Automatizace
     desc: >-
-      Nastavíme, aby rutinu jako faktury, objednávky nebo e-maily dělal počítač
-      sám a bez chyb.
+      Ukážeme vám automatizaci rutin jako faktury, objednávky nebo e-maily dělá
+      počítač sám a bez chyb.
     href: /sluzby#automatizace
   - icon: brain
     title: AI Implementace
     desc: >-
-      Ukážeme, kde vám AI opravdu pomůže, a nastavíme ji tak, aby se na ni dalo
-      spolehnout.
+      Ukážeme, kde vám AI opravdu pomůže, aby se na ni dalo spolehnout . V
+      automatizacích využijeme cenově dostupné  modely Ai .
     href: /sluzby#ai
 aboutEyebrow: Kdo za tím stojí
 aboutName: Ing. Stanislav Kovařík
@@ -76,7 +83,7 @@ aboutText: >-
   pro mě nejsou módní slova, ale nástroje, nástroje k osvobození se, nástroje
   které nejsou složité, nástroje s principy které jsem vystudoval a v jejichž
   nasazení osobně věřím. J.F.Y.
-aboutLinkText: Přečíst celý příběh →
+aboutLinkText: Přečíst celý příběh
 ctaTitle: Just Free Yourself ...
 ctaText: Zjistíme spolu, kde má největší smysl začít.
-ctaButton: Domluvit konzultaci →
+ctaButton: Chci konzultaci
