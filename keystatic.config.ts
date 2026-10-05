@@ -38,6 +38,7 @@ export default config({
 
         problemsTitle: fields.text({ label: 'Sekce „Poznáváte se?" – nadpis' }),
         problemsSubtitle: fields.text({ label: 'Sekce „Poznáváte se?" – podnadpis' }),
+        problemsMoreLabel: fields.text({ label: 'Sekce „Poznáváte se?" – text rozbalení dalších karet' }),
         problems: fields.array(
           fields.object({
             icon: iconField('Ikona'),
@@ -83,6 +84,7 @@ export default config({
         locationText: fields.text({ label: 'Řádek s lokací a e-mailem' }),
 
         storyTitle: fields.text({ label: 'Sekce příběh – nadpis' }),
+        storyMoreLabel: fields.text({ label: 'Sekce příběh – text rozbalení' }),
         storyParagraphs: fields.array(
           fields.text({ label: 'Odstavec', multiline: true }),
           { label: 'Odstavce příběhu', itemLabel: (props) => props.value.slice(0, 60) + '…' }
@@ -156,6 +158,8 @@ export default config({
         aiIcon: iconField('AI – ikona', 'brain'),
         aiTitle: fields.text({ label: 'AI – nadpis' }),
         aiText: fields.text({ label: 'AI – text', multiline: true }),
+        aiMoreLabel: fields.text({ label: 'AI – text rozbalení' }),
+        aiMoreText: fields.text({ label: 'AI – rozbalený text', multiline: true }),
         aiBullets: fields.array(fields.text({ label: 'Bod' }), {
           label: 'AI – seznam bodů',
           itemLabel: (props) => props.value,

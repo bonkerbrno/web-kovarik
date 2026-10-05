@@ -101,6 +101,17 @@
   }
   .card-tint:nth-child(3n+1) .icon-chip { @apply bg-ink text-white; }
   .card-tint:nth-child(3n+3) .icon-chip { @apply bg-brand-700 text-white; }
+  /* Expandable "more" block: keeps the page short without dropping content. */
+  details.more > summary {
+    @apply inline-flex items-center gap-2 min-h-11 cursor-pointer list-none font-semibold text-brand-700 underline underline-offset-4 decoration-marker decoration-[3px] hover:text-brand-900;
+  }
+  details.more > summary::-webkit-details-marker { display: none; }
+  details.more > summary::before {
+    content: '+';
+    @apply inline-flex items-center justify-center w-6 h-6 rounded-full bg-marker text-ink text-base leading-none no-underline;
+  }
+  details.more[open] > summary::before { content: '–'; }
+  details.more > .more-body { @apply mt-4; }
   /* Tabler line icons: slightly thinner stroke than the default 2. */
   .line-icon * {
     stroke-width: 1.75;

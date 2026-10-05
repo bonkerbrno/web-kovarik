@@ -21,17 +21,27 @@ audiences:
     desc: Beseda o bezpečné AI
     href: /edu#verejnost
 problemsTitle: Poznáváte se?
-problemsSubtitle: Tři situace, které slyšíme nejčastěji.
+problemsSubtitle: Situace, které slyšíme nejčastěji.
+problemsMoreLabel: Další situace
 problems:
   - icon: flame
     title: Hasíte místo plánování
-    desc: Každý den řešíte něco jiného a na to důležité nezbývá čas.
-  - icon: history
-    title: „Vždycky se to tak dělalo“
-    desc: Postupy jsou jen v hlavách lidí a nikdo je nikdy nevyladil.
+    desc: Každý den řešíte něco jiného a na důležité nezbývá čas. Bez vás se nic nepohne, chyby i stres rostou.
   - icon: repeat
     title: Ruční práce pořád dokola
-    desc: Přepisování údajů a stejné e-maily. Každý týden znovu.
+    desc: Přepisování údajů, stejné e-maily, ruční tabulky. Rutina, kterou lze automatizovat a vyloučit tak chyby.
+  - icon: history
+    title: „Vždycky se to tak dělalo“
+    desc: Postupy jsou jen v hlavách lidí. Nikdo je nesepsal, nevyladil ani nezvážil automatizaci.
+  - icon: robot
+    title: Automatizace jen z doslechu
+    desc: O AI se mluví všude, ale nevíte, co by vám reálně pomohlo. Dobře postavená automatizace nehalucinuje a běží i na levných modelech.
+  - icon: files
+    title: Informace roztroušené všude
+    desc: Excel, e-maily, papíry v šanonu. Hledání jedné informace zabere půl dne a část je jen v hlavách lidí.
+  - icon: hourglass
+    title: Práce přibývá, čas ne
+    desc: Zakázek i papírování přibývá, lidí a hodin ne. Roste tlak na výkon a s ním stres.
 servicesTitle: O čem se budeme bavit?
 services:
   - icon: zoom-check

@@ -1,15 +1,11 @@
 heroEyebrow: Co nabízíme
 heroTitle: Consulting
-heroText: >-
-  Rozbor postupů, automatizace rutiny a rozumné  minimalizované využití AI . Na
-  základě rozboru a po optimalizaci navrhujeme automatizace od úrovně pracoviště
-  až po firmu.
+heroText: Rozbor postupů, automatizace rutiny a rozumné využití AI, od jednotlivého pracoviště po celou firmu.
 auditIcon: zoom-check
 auditTitle: Procesní audit
 auditText: >-
-  Společně projdeme, jak u vás práce skutečně probíhá: od poptávky po fakturu,
-  od žádosti po vyřízení. Hledáme místa, kde se ztrácí čas, peníze a energie a
-  kde vznikají chyby.
+  Projdeme, jak u vás práce skutečně probíhá, od poptávky po fakturu. Hledáme
+  místa, kde se ztrácí čas, peníze a energie a kde vznikají chyby.
 auditBullets:
   - Rozhovory s lidmi, kteří práci dělají, a rozbor současných postupů
   - Písemná zpráva s plánem zlepšení seřazeným podle přínosu
@@ -30,15 +26,15 @@ auditResults:
 n8nIcon: settings-automation
 n8nTitle: Automatizace
 n8nText: >-
-  Opakující se práci, jako je přepisování údajů, rozesílání e-mailů nebo
-  vystavování faktur, necháme dělat počítač. Používáme nástroje, které mohou
-  běžet i na vašem vlastním serveru, takže data zůstávají u vás.
+  Opakující se práci, třeba přepisování údajů, e-maily nebo faktury, předáme
+  počítači. Používáme nástroje, které mohou běžet na vašem serveru, takže data
+  zůstávají u vás.
 n8nBullets:
   - Výběr činností, které se automatizovat vyplatí
   - Návrh nastavení automatizace na míru
   - Propojení s tím, co už používáte (e-mail, tabulky, účetnictví, evidence…)
-  - Vypracování, srozumitelné dokumentace řešení, kódů a předání
-  - 'Volitelně: Doporučení správce pro průběžnou správu a úpravy'
+  - Srozumitelná dokumentace řešení a předání
+  - 'Volitelně: správce pro průběžnou správu a úpravy'
 n8nCta: Chci automatizovat
 n8nCodeComment: // Automatizace — ukázka workflow
 n8nCodeSteps:
@@ -51,9 +47,16 @@ n8nCodeFooter: '// Čas: 0.3 s | Manuálně: ~12 min'
 aiIcon: brain
 aiTitle: AI Implementace
 aiText: >-
-  Ne každý problém potřebuje AI. Tam, kde dává smysl, třeba při zpracování
-  dokumentů, psaní textů nebo odpovídání na dotazy zákazníků či občanů, vám
-  pomůžeme AI skutečně nasadit, ne jen vyzkoušet.
+  Ne každý problém potřebuje AI. Tam, kde dává smysl, ji nasadíme tak, aby se na
+  ni dalo spolehnout, ne jen vyzkoušet.
+aiMoreLabel: Proč nenasazujeme autonomní agenty
+aiMoreText: >-
+  AI v automatizaci je jen jedno kolečko soukolí. Úlohu jí zadáme přesně, výstup
+  ověříme pravidlem a o důležitém rozhoduje člověk, jako ve schématu na úvodní
+  straně. Taková automatizace nehalucinuje, je předvídatelná a vždy víte, co
+  dělá a kde. Proto stačí malé a levné modely, často i lokální a zdarma.
+  Autonomní agenty, nad jejichž činností bychom neměli plnou kontrolu,
+  nenasazujeme.
 aiBullets:
   - Kde vám AI opravdu ušetří čas (a kde ne)
   - >-

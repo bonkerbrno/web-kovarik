@@ -71,7 +71,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         <p class="text-slate-500 text-lg">{home?.problemsSubtitle}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {(home?.problems ?? []).map(({ icon, title, desc }) => (
+        {(home?.problems ?? []).slice(0, 3).map(({ icon, title, desc }) => (
           <div class="card card-tint card-burn relative group" data-clock-tile>
             <FiveToTwelveClock />
             <LineIcon name={icon} class="icon-chip" />
@@ -80,6 +80,21 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           </div>
         ))}
       </div>
+      {(home?.problems ?? []).length > 3 && (
+        <details class="more mt-8">
+          <summary>{home?.problemsMoreLabel ?? 'Další situace'}</summary>
+          <div class="more-body grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {(home?.problems ?? []).slice(3).map(({ icon, title, desc }) => (
+          <div class="card card-tint card-burn relative group" data-clock-tile>
+            <FiveToTwelveClock />
+            <LineIcon name={icon} class="icon-chip" />
+            <h3 class="font-heading font-bold text-lg text-navy mb-2">{title}</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
+          </div>
+        ))}
+          </div>
+        </details>
+      )}
     </div>
   </section>
 

@@ -33,14 +33,27 @@ const page = await reader.singletons.sluzby.read();
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.auditText}
           </p>
-          <ul class="space-y-3 mb-8">
-            {(page?.auditBullets ?? []).map((item) => (
+          <ul class="space-y-3 mb-6">
+            {(page?.auditBullets ?? []).slice(0, 3).map((item) => (
               <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
             ))}
           </ul>
+          {(page?.auditBullets ?? []).length > 3 && (
+            <details class="more mb-8">
+              <summary>Co dalšího dostanete</summary>
+              <ul class="more-body space-y-3">
+                {(page?.auditBullets ?? []).slice(3).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+              </ul>
+            </details>
+          )}
           <a href="/kontakt" class="btn-primary">{page?.auditCta}</a>
         </div>
         <div class="bg-mist-100 rounded-2xl p-8">
@@ -76,14 +89,27 @@ const page = await reader.singletons.sluzby.read();
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.n8nText}
           </p>
-          <ul class="space-y-3 mb-8">
-            {(page?.n8nBullets ?? []).map((item) => (
+          <ul class="space-y-3 mb-6">
+            {(page?.n8nBullets ?? []).slice(0, 3).map((item) => (
               <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
             ))}
           </ul>
+          {(page?.n8nBullets ?? []).length > 3 && (
+            <details class="more mb-8">
+              <summary>Co dalšího dostanete</summary>
+              <ul class="more-body space-y-3">
+                {(page?.n8nBullets ?? []).slice(3).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+              </ul>
+            </details>
+          )}
           <a href="/kontakt" class="btn-primary">{page?.n8nCta}</a>
         </div>
       </div>
@@ -100,14 +126,33 @@ const page = await reader.singletons.sluzby.read();
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.aiText}
           </p>
-          <ul class="space-y-3 mb-8">
-            {(page?.aiBullets ?? []).map((item) => (
+          <ul class="space-y-3 mb-6">
+            {(page?.aiBullets ?? []).slice(0, 3).map((item) => (
               <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
             ))}
           </ul>
+          {(page?.aiBullets ?? []).length > 3 && (
+            <details class="more mb-8">
+              <summary>Co dalšího dostanete</summary>
+              <ul class="more-body space-y-3">
+                {(page?.aiBullets ?? []).slice(3).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+              </ul>
+            </details>
+          )}
+          {page?.aiMoreText && (
+            <details class="more mb-8">
+              <summary>{page?.aiMoreLabel}</summary>
+              <p class="more-body text-slate-600 leading-relaxed">{page?.aiMoreText}</p>
+            </details>
+          )}
           <a href="/kontakt" class="btn-primary">{page?.aiCta}</a>
         </div>
         <div class="grid grid-cols-2 gap-4">

@@ -1,39 +1,35 @@
 heroEyebrow: Akademie — přednášky a workshopy
 heroTitle: Edu
 heroText: >-
-  Srozumitelně o automatizaci a umělé inteligenci — pro střední i vysoké
-  školy, veřejnost i firmy. Bez sci-fi, bez prodejního tlaku, na konkrétních
-  příkladech.
+  Srozumitelně o automatizaci a AI pro školy, veřejnost i firmy. Bez sci-fi a bez
+  prodejního tlaku, na konkrétních příkladech.
 
 primaryIcon: book
 primaryTitle: Základní školy
 primaryText: >-
-  Interaktivní 90minutová hodina pro 9. třídu o tom, jak AI funguje, jak nás
-  umí oklamat a jak se nenechat napálit. Bez strašení a bez sci-fi, s kvízy,
-  hrami a spoustou příkladů ze života žáků.
+  Interaktivní 90minutová hodina pro 9. třídu: jak AI funguje, jak nás umí oklamat
+  a jak se nenechat napálit. Kvízy, hry a příklady ze života žáků.
 primaryBullets:
   - Co je AI a jak "přemýšlí" — hra na hádání dalšího slova
   - Deepfaky, hoaxy a hra Pravda, nebo fake?
   - Bezpečně online — hesla, podvodné zprávy, co AI nikdy neříkat
   - Automatizace "když → tak" a vlastní nápad na robota
   - AI jako parťák na učení, ne tahák
-  - "... a další zajímavá témata"
 primaryFormat: "Formát: 90 minut, 9. třída, kvízy a hry ve třídě"
 primaryCta: Domluvit hodinu pro základní školu
 
 schoolsIcon: school
 schoolsTitle: Střední školy
 schoolsText: >-
-  Prakticky o tom, co se děje "pod kapotou" jazykového modelu, jak s AI správně
-  mluvit a jak ji propojit s dalšími aplikacemi do vlastní automatizace.
-  Studenti už AI používají — cílem je pochopit ji a používat bezpečně a fér.
+  Co se děje pod kapotou jazykového modelu, jak s AI správně mluvit a jak ji
+  propojit s dalšími aplikacemi. Studenti ji už používají, cílem je používat ji
+  bezpečně a fér.
 schoolsBullets:
   - Jak "přemýšlí" jazykový model — tokeny, trénink, halucinace a zkreslení
   - Jak psát dobrý prompt a používat AI ve škole fér, ne jako podfuk
   - Automatizace s AI — návrh vlastního workflow ve skupinách
   - Propojení aplikací — API, MCP a GitHub jako "uložené pozice" pro kód
   - Bezpečnost — prompt injection, ochrana dat a deepfaky
-  - "... a další zajímavá témata"
 schoolsCta: Domluvit přednášku pro školu
 schoolsImage: workshop-stredni-skola.jpg
 schoolsImageCaption: Workshop s třídou na střední škole
@@ -41,23 +37,22 @@ schoolsImageCaption: Workshop s třídou na střední škole
 universityIcon: building-bank
 universityTitle: Vysoké školy
 universityText: >-
-  Pro studenty technických i netechnických oborů: od jednoho volání modelu k AI
-  agentovi, který používá nástroje. Vždy nejdřív schéma, potom krátká
-  spustitelná ukázka a důraz na to, co může v praxi selhat a jak se bránit.
+  Pro technické i netechnické obory: od jednoho volání modelu k agentovi s
+  nástroji. Nejdřív schéma, pak krátká spustitelná ukázka a důraz na to, co může
+  selhat a jak se bránit.
 universityBullets:
   - Od jazykového modelu k agentovi — nástroje a agentní smyčka
   - MCP — architektura protokolu a stavba vlastního serveru
   - Automatizace v praxi — AI agenti, GitHub a AI review kódu
   - Bezpečnost — OWASP pro LLM, prompt injection a rizika MCP
   - Deepfaky, původ obsahu a evropská regulace (AI Act)
-  - "... a další zajímavá témata"
 universityCta: Domluvit přednášku pro fakultu
 
 publicIcon: users-group
 publicTitle: Veřejnost
 publicText: >-
-  Otevřená beseda pro obec, knihovnu nebo spolek — jak AI bezpečně používat v
-  běžném životě, na co si dát pozor a jak nenaletět podvodníkům.
+  Otevřená beseda pro obec, knihovnu nebo spolek: jak AI bezpečně používat v
+  běžném životě a nenaletět podvodníkům.
 publicBullets:
   - AI v běžném životě — e-mail, fotky, plánování, zdraví
   - "Jak poznat podvod: deepfake, falešný hlas, phishing"
@@ -68,9 +63,8 @@ publicCta: Domluvit besedu pro obec či spolek
 companiesIcon: building
 companiesTitle: Firmy a organizace
 companiesText: >-
-  Workshop na míru přímo pro váš tým: na vlastních datech a procesech
-  ukážeme, kde se dá ušetřit čas a kde má smysl automatizace nebo AI nasadit
-  jako první.
+  Workshop na míru pro váš tým: na vašich datech a procesech ukážeme, kde
+  ušetříte čas a kde začít s automatizací nebo AI.
 companiesBullets:
   - Workshop na míru podle oboru a velikosti firmy
   - Praktická ukázka na reálném procesu vaší firmy

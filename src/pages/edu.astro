@@ -70,12 +70,25 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
           <a href="/kontakt" class="btn-primary">{page?.primaryCta}</a>
         </div>
         <div class="space-y-3">
-          {(page?.primaryBullets ?? []).map((item) => (
+          {(page?.primaryBullets ?? []).slice(0, 3).map((item) => (
             <div class="card card-tint flex items-start gap-3 text-slate-700">
               <span class="text-accent-500 font-bold mt-0.5">✓</span>
               {item}
             </div>
           ))}
+          {(page?.primaryBullets ?? []).length > 3 && (
+            <details class="more">
+              <summary>Další témata ({(page?.primaryBullets ?? []).length - 3})</summary>
+              <div class="more-body space-y-3">
+                {(page?.primaryBullets ?? []).slice(3).map((item) => (
+            <div class="card card-tint flex items-start gap-3 text-slate-700">
+              <span class="text-accent-500 font-bold mt-0.5">✓</span>
+              {item}
+            </div>
+          ))}
+              </div>
+            </details>
+          )}
         </div>
       </div>
     </div>
@@ -92,12 +105,25 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
             {page?.schoolsText}
           </p>
           <ul class="space-y-3 mb-8">
-            {(page?.schoolsBullets ?? []).map((item) => (
+            {(page?.schoolsBullets ?? []).slice(0, 3).map((item) => (
               <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
             ))}
+          {(page?.schoolsBullets ?? []).length > 3 && (
+            <details class="more">
+              <summary>Další témata ({(page?.schoolsBullets ?? []).length - 3})</summary>
+              <div class="more-body space-y-3">
+                {(page?.schoolsBullets ?? []).slice(3).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+              </div>
+            </details>
+          )}
           </ul>
           <a href="/kontakt" class="btn-primary">{page?.schoolsCta}</a>
         </div>
@@ -127,12 +153,25 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
-          {(page?.universityBullets ?? []).map((item) => (
+          {(page?.universityBullets ?? []).slice(0, 3).map((item) => (
             <div class="card card-tint text-sm text-slate-700 flex items-start gap-2">
               <span class="text-accent-500 font-bold mt-0.5">✓</span>
               {item}
             </div>
           ))}
+          {(page?.universityBullets ?? []).length > 3 && (
+            <details class="more">
+              <summary>Další témata ({(page?.universityBullets ?? []).length - 3})</summary>
+              <div class="more-body space-y-3">
+                {(page?.universityBullets ?? []).slice(3).map((item) => (
+            <div class="card card-tint text-sm text-slate-700 flex items-start gap-2">
+              <span class="text-accent-500 font-bold mt-0.5">✓</span>
+              {item}
+            </div>
+          ))}
+              </div>
+            </details>
+          )}
         </div>
         <div class="order-1 lg:order-2">
           <LineIcon name={page?.universityIcon} class="icon-chip" />
@@ -159,12 +198,25 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
           <a href="/kontakt" class="btn-primary">{page?.publicCta}</a>
         </div>
         <div class="space-y-3">
-          {(page?.publicBullets ?? []).map((item) => (
+          {(page?.publicBullets ?? []).slice(0, 3).map((item) => (
             <div class="card card-tint flex items-start gap-3 text-slate-700">
               <span class="text-accent-500 font-bold mt-0.5">✓</span>
               {item}
             </div>
           ))}
+          {(page?.publicBullets ?? []).length > 3 && (
+            <details class="more">
+              <summary>Další témata ({(page?.publicBullets ?? []).length - 3})</summary>
+              <div class="more-body space-y-3">
+                {(page?.publicBullets ?? []).slice(3).map((item) => (
+            <div class="card card-tint flex items-start gap-3 text-slate-700">
+              <span class="text-accent-500 font-bold mt-0.5">✓</span>
+              {item}
+            </div>
+          ))}
+              </div>
+            </details>
+          )}
         </div>
       </div>
     </div>
@@ -198,12 +250,25 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
             {page?.companiesText}
           </p>
           <ul class="space-y-3 mb-8">
-            {(page?.companiesBullets ?? []).map((item) => (
+            {(page?.companiesBullets ?? []).slice(0, 3).map((item) => (
               <li class="flex items-start gap-3 text-slate-700">
                 <span class="text-accent-500 font-bold mt-0.5">✓</span>
                 {item}
               </li>
             ))}
+          {(page?.companiesBullets ?? []).length > 3 && (
+            <details class="more">
+              <summary>Další témata ({(page?.companiesBullets ?? []).length - 3})</summary>
+              <div class="more-body space-y-3">
+                {(page?.companiesBullets ?? []).slice(3).map((item) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="text-accent-500 font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+              </div>
+            </details>
+          )}
           </ul>
           <a href="/kontakt" class="btn-primary">{page?.companiesCta}</a>
         </div>
