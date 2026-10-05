@@ -1,4 +1,6 @@
 ---
+import LangSwitch from '@/components/LangSwitch.astro';
+
 const navItems = [
   { href: '/', label: 'Domů' },
   { href: '/sluzby', label: 'Consulting' },
@@ -12,7 +14,7 @@ const isActive = (href: string) =>
   href === '/' ? currentPath === '/' : currentPath === href || currentPath.startsWith(href + '/');
 ---
 
-<header class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-mist-200/70 shadow-sm shadow-mist-400/10">
+<header class="sticky top-0 z-50 bg-slate-900 border-b border-ivory/10 shadow-sm shadow-slate-900/20">
   <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-[84px]">
       <!-- Logo -->
@@ -22,7 +24,7 @@ const isActive = (href: string) =>
           alt="be-agile – Processes, Automation, AI, Education"
           width="247"
           height="56"
-          class="h-10 sm:h-14 w-auto"
+          class="h-10 sm:h-14 w-auto brightness-0 invert"
         />
       </a>
 
@@ -34,19 +36,20 @@ const isActive = (href: string) =>
             aria-current={isActive(href) ? 'page' : undefined}
             class={`px-4 py-2 rounded-lg text-[15px] font-medium whitespace-nowrap transition-colors duration-150 ${
               isActive(href)
-                ? 'bg-mist-100 text-brand-700'
-                : 'text-slate-700 hover:text-brand-700 hover:bg-mist-50'
+                ? 'bg-ivory/10 text-ivory'
+                : 'text-ivory/80 hover:text-ivory hover:bg-ivory/10'
             }`}
           >
             {label}
           </a>
         ))}
+        <LangSwitch class="ml-3" />
       </nav>
 
       <!-- Mobile hamburger -->
       <button
         id="menu-toggle"
-        class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-mist-50 transition-colors"
+        class="lg:hidden p-2 rounded-lg text-ivory/80 hover:text-ivory hover:bg-ivory/10 transition-colors"
         aria-label="Otevřít menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,13 +67,14 @@ const isActive = (href: string) =>
             aria-current={isActive(href) ? 'page' : undefined}
             class={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
               isActive(href)
-                ? 'bg-mist-100 text-brand-700'
-                : 'text-slate-700 hover:text-brand-700 hover:bg-mist-50'
+                ? 'bg-ivory/10 text-ivory'
+                : 'text-ivory/80 hover:text-ivory hover:bg-ivory/10'
             }`}
           >
             {label}
           </a>
         ))}
+        <LangSwitch class="px-4 py-3" />
       </nav>
     </div>
   </div>
