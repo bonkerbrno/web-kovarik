@@ -1,0 +1,87 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<!-- Přepínač jazyků: EN/DE spustí Google Translate. Původní jazyk (CZ) se vrací tlačítkem CZ.
+     Google skript se načítá jen když je zvolen cizí jazyk (cookie googtrans). -->
+<div class={`lang-switch flex items-center gap-1 ${className}`} translate="no" data-lang-switch>
+  <button type="button" data-lang="en" class="lang-btn" aria-label="Translate to English">EN</button>
+  <button type="button" data-lang="de" class="lang-btn" aria-label="Auf Deutsch übersetzen">DE</button>
+</div>
+
+<div id="google_translate_element" class="hidden" translate="no"></div>
+
+<style is:global>
+  .lang-btn {
+    min-width: 2.25rem;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid rgb(252 250 246 / 0.3);
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgb(252 250 246 / 0.9);
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+  .lang-btn:hover { background: rgb(252 250 246 / 0.12); border-color: rgb(252 250 246 / 0.6); }
+  .lang-btn[aria-pressed='true'] { background: rgb(252 250 246 / 0.18); border-color: rgb(252 250 246 / 0.6); }
+  /* Skrýt Google lištu a nechat stránku na původním místě */
+  .skiptranslate iframe.goog-te-banner-frame, iframe.skiptranslate { display: none !important; }
+  body { top: 0 !important; }
+  .goog-text-highlight { background: none !important; box-shadow: none !important; }
+</style>
+
+<script>
+  const COOKIE = 'googtrans';
+
+  const current = (): string => {
+    const m = document.cookie.match(/(?:^|;\s*)googtrans=\/[^/]*\/([a-z-]+)/i);
+    return m && m[1] !== 'cs' ? m[1] : 'cs';
+  };
+
+  const setCookie = (value: string, days: number) => {
+    const exp = new Date(Date.now() + days * 864e5).toUTCString();
+    const host = location.hostname;
+    // Google čte cookie jak pro host, tak pro doménu; nastavíme obě varianty.
+    document.cookie = `${COOKIE}=${value}; expires=${exp}; path=/`;
+    if (host.includes('.')) document.cookie = `${COOKIE}=${value}; expires=${exp}; path=/; domain=${host}`;
+  };
+
+  const lang = current();
+
+  document.querySelectorAll<HTMLElement>('[data-lang-switch]').forEach((box) => {
+    const buttons = box.querySelectorAll<HTMLButtonElement>('[data-lang]');
+    buttons.forEach((btn) => {
+      const target = btn.dataset.lang!;
+      // Aktivní překlad: tlačítko aktivního jazyka se změní na CZ (návrat do češtiny).
+      if (target === lang) {
+        btn.textContent = 'CZ';
+        btn.dataset.lang = 'cs';
+        btn.setAttribute('aria-label', 'Zpět do češtiny');
+        btn.setAttribute('aria-pressed', 'true');
+      }
+      btn.addEventListener('click', () => {
+        const to = btn.dataset.lang!;
+        if (to === 'cs') setCookie('/cs/cs', -1);
+        else setCookie(`/cs/${to}`, 30);
+        location.reload();
+      });
+    });
+  });
+
+  if (lang !== 'cs') {
+    (window as any).googleTranslateElementInit = () => {
+      new (window as any).google.translate.TranslateElement(
+        { pageLanguage: 'cs', includedLanguages: 'en,de', autoDisplay: false },
+        'google_translate_element',
+      );
+    };
+    const s = document.createElement('script');
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+</script>
