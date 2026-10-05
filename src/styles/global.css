@@ -66,11 +66,16 @@
   .bg-hero-blue .text-slate-500,
   .bg-hero-blue .text-slate-600 { @apply text-ivory/85; }
   .bg-hero-blue img { @apply ring-2 ring-marker shadow-none; }
-  /* Closing call-to-action band. */
+  /* Closing call-to-action band: marker yellow with ink text, so the page does not end in two blue blocks. */
   .cta-band {
-    @apply bg-grid-board text-ivory rounded-[1.75rem] mx-3 sm:mx-6 mb-6;
+    @apply bg-marker text-ink border-2 border-ink rounded-[1.75rem] mx-3 sm:mx-6 mb-6;
+    background-image:
+      linear-gradient(rgb(20 37 60 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(20 37 60 / 0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
-  .cta-band h2, .cta-band p { @apply text-ivory; }
+  .cta-band h2, .cta-band p { @apply text-ink; }
+  .cta-band .btn-light { @apply bg-ink text-ivory hover:bg-board shadow-[4px_4px_0_theme(colors.ivory)]; }
   /* Light tint for alternating sections (flat, no gradient). */
   .bg-stripe-blue { background-color: theme('colors.mist.50'); }
   /* Marker pen over the letters: the text keeps its colour, yellow sits behind it. */
