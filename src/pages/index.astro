@@ -20,6 +20,15 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 >
   <!-- Hero -->
   <section class="section bg-hero-blue">
+    <svg
+      class="pointer-events-none absolute right-[6%] top-12 hidden h-24 w-24 lg:block"
+      viewBox="-60 -60 120 120"
+      aria-hidden="true"
+    >
+      <circle r="52" fill="none" stroke="#2C588F" stroke-opacity=".35" stroke-dasharray="2 7" stroke-width="2" stroke-linecap="round" />
+      <polygon points="38,0 19,33 -19,33 -38,0 -19,-33 19,-33" fill="#2C588F" fill-opacity=".1" stroke="#2C588F" stroke-width="3" stroke-linejoin="round" />
+      <text y="10" text-anchor="middle" font-family="Figtree, system-ui, sans-serif" font-weight="800" font-size="28" fill="#2C588F">AI</text>
+    </svg>
     <div class="container text-center">
       <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{home?.heroEyebrow}</p>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-navy leading-tight mb-6">

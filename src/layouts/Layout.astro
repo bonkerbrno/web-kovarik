@@ -1,6 +1,7 @@
 ---
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import BackgroundFlow from '@/components/BackgroundFlow.astro';
 import '@/styles/global.css';
 
 interface Props {
@@ -51,7 +52,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />
-    <main class="flex-1">
+    <main class="flex-1 relative isolate">
+      <BackgroundFlow />
       <slot />
     </main>
     <Footer />
