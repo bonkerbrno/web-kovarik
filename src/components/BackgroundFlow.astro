@@ -1,0 +1,215 @@
+---
+// Vodoznak z automatizačních schémat (varianta D): vzor 480×320 px po stranách,
+// pod sloupcem s textem slabší. Červené tečky náhodně putují po spojnicích.
+---
+
+<div class="bg-flow" aria-hidden="true"></div>
+<canvas id="flow-dots" class="bg-flow-dots" aria-hidden="true"></canvas>
+
+<style is:global>
+  :root {
+    --flow-fade: linear-gradient(
+      90deg,
+      #000 0,
+      #000 calc(50% - 716px),
+      rgb(0 0 0 / 0.4) calc(50% - 576px),
+      rgb(0 0 0 / 0.4) calc(50% + 576px),
+      #000 calc(50% + 716px)
+    );
+  }
+  .bg-flow,
+  .bg-flow-dots {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .bg-flow {
+    background: #7e8ca0;
+    opacity: 0.1;
+  }
+  /* Dvě masky: vzor a vyblednutí pod textem. */
+  .bg-flow {
+    -webkit-mask-image: url('/pozadi-schema.svg'), var(--flow-fade);
+    mask-image: url('/pozadi-schema.svg'), var(--flow-fade);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    -webkit-mask-size: 480px 320px, 100% 100%;
+    mask-size: 480px 320px, 100% 100%;
+    -webkit-mask-repeat: repeat, no-repeat;
+    mask-repeat: repeat, no-repeat;
+  }
+  /* Plátno s tečkami je pevné na výšku okna, aby nebylo obří. */
+  .bg-flow-dots {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bg-flow-dots {
+      display: none;
+    }
+  }
+  /* Tónování sekcí se vytrácí do průhledna, aby pod ním byl vidět vzor. */
+  .section.bg-ivory {
+    background-color: transparent;
+  }
+  .section.bg-hero-blue,
+  .section.bg-stripe-blue {
+    position: relative;
+    background-image: none;
+  }
+  .bg-hero-blue::before,
+  .bg-stripe-blue::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image: linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.50'));
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  }
+  .bg-stripe-blue::before {
+    background-image: linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.mid'));
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 15%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 15%, transparent 100%);
+  }
+</style>
+
+<script>
+  import graph from '@/lib/flow-graph.json';
+
+  type Pt = [number, number];
+  type Edge = { p: Pt[]; s: number[] | null; d: number[] | null; len: number };
+  type Walker = {
+    e: Edge; pts: Pt[]; len: number; d: number; ox: number; oy: number;
+    hop: boolean; next: Edge | null; trail: Pt[];
+  };
+
+  const cv = document.getElementById('flow-dots') as HTMLCanvasElement | null;
+  const main = cv?.parentElement;
+  const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const ctx = cv?.getContext('2d');
+
+  if (cv && main && ctx && !rm.matches) {
+    const W = graph.W, H = graph.H, SPEED = 120;
+    const plen = (p: Pt[]) => {
+      let l = 0;
+      for (let i = 1; i < p.length; i++) l += Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]);
+      return l;
+    };
+    const E: Edge[] = (graph.e as unknown as Omit<Edge, 'len'>[]).map((e) => ({ ...e, len: plen(e.p) }));
+    const out = new Map<string, Edge[]>();
+    for (const e of E) if (e.s) out.set(e.s.join(), [...(out.get(e.s.join()) ?? []), e]);
+    const near = (a: number, b: number) => Math.abs(a - b) < 1;
+    const wrapNext = (e: Edge) => {
+      const en = e.p[e.p.length - 1];
+      for (const c of E) {
+        if (c.s) continue;
+        const st = c.p[0];
+        if (near(en[0], W) && near(st[0], 0) && near(st[1], en[1])) return { e: c, dx: W, dy: 0 };
+        if (near(en[1], H) && near(st[1], 0) && near(st[0], en[0])) return { e: c, dx: 0, dy: H };
+      }
+      return null;
+    };
+    const wraps = new Map(E.map((e) => [e, wrapNext(e)]));
+
+    let cw = 0, ch = 0, dpr = 1, top = 0;
+    let walkers: Walker[] = [];
+    const size = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cw = cv.clientWidth;
+      ch = cv.clientHeight;
+      cv.width = cw * dpr;
+      cv.height = ch * dpr;
+    };
+    const seg = (w: Walker, pts: Pt[], ox: number, oy: number, hop: boolean, next: Edge | null) => {
+      w.pts = pts; w.len = plen(pts); w.d = 0; w.ox = ox; w.oy = oy; w.hop = hop; w.next = next;
+    };
+    const startEdge = (w: Walker, e: Edge, ox: number, oy: number) => { w.e = e; seg(w, e.p, ox, oy, false, null); };
+    const spawn = (w: Walker) => {
+      const e = E[Math.floor(Math.random() * E.length)];
+      // dlaždice viditelná právě teď (souřadnice vzhledem k elementu main)
+      const ox = Math.floor(Math.random() * Math.max(1, cw / W)) * W;
+      const rows = Math.max(1, Math.ceil(ch / H));
+      const oy = (Math.floor(-top / H) + Math.floor(Math.random() * rows)) * H;
+      startEdge(w, e, ox, oy);
+      w.d = Math.random() * e.len;
+      w.trail = [];
+    };
+    const advance = (w: Walker) => {
+      if (w.hop && w.next) { startEdge(w, w.next, w.ox, w.oy); return; }
+      const e = w.e;
+      if (e.d) {
+        const c = out.get(e.d.join());
+        if (!c?.length) { spawn(w); return; }
+        const n = c[Math.floor(Math.random() * c.length)];
+        seg(w, [e.p[e.p.length - 1], n.p[0]], w.ox, w.oy, true, n);
+        return;
+      }
+      const x = wraps.get(e);
+      if (!x) { spawn(w); return; }
+      startEdge(w, x.e, w.ox + x.dx, w.oy + x.dy);
+    };
+    const pos = (w: Walker): Pt => {
+      let d = w.d;
+      const p = w.pts;
+      for (let i = 1; i < p.length; i++) {
+        const l = Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]);
+        if (d <= l || i === p.length - 1) {
+          const t = l ? Math.min(d / l, 1) : 1;
+          return [w.ox + p[i - 1][0] + (p[i][0] - p[i - 1][0]) * t, w.oy + p[i - 1][1] + (p[i][1] - p[i - 1][1]) * t];
+        }
+        d -= l;
+      }
+      return [w.ox, w.oy];
+    };
+    const init = () => {
+      size();
+      top = main.getBoundingClientRect().top;
+      const n = Math.max(2, Math.min(7, Math.round((cw * ch) / (W * H * 3.2))));
+      walkers = Array.from({ length: n }, () => { const w = {} as Walker; spawn(w); return w; });
+    };
+
+    let last = 0;
+    const frame = (ts: number) => {
+      requestAnimationFrame(frame);
+      if (document.hidden || rm.matches) { last = 0; return; }
+      const dt = last ? Math.min((ts - last) / 1000, 0.05) : 0;
+      last = ts;
+      top = main.getBoundingClientRect().top;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, cw, ch);
+      for (const w of walkers) {
+        w.d += SPEED * dt;
+        let g = 0;
+        while (w.d >= w.len && g++ < 4) { const r = w.d - w.len; advance(w); w.d = r; }
+        const [px, py] = pos(w);
+        const y = py + top;
+        if (px < -W || y < -H || px > cw + W || y > ch + H) { spawn(w); continue; }
+        w.trail.push([px, y]);
+        if (w.trail.length > 40) w.trail.shift();
+        const tr = w.trail;
+        for (let i = 1; i < tr.length; i++) {
+          if (Math.hypot(tr[i][0] - tr[i - 1][0], tr[i][1] - tr[i - 1][1]) > 30) continue;
+          const a = i / tr.length;
+          ctx.strokeStyle = `rgba(226,92,92,${(a * 0.8).toFixed(3)})`;
+          ctx.lineWidth = 1.5 + a * 3.5;
+          ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(tr[i - 1][0], tr[i - 1][1]); ctx.lineTo(tr[i][0], tr[i][1]); ctx.stroke();
+        }
+        ctx.shadowColor = 'rgba(226,92,92,.9)';
+        ctx.shadowBlur = 16;
+        ctx.fillStyle = '#E25C5C';
+        ctx.beginPath(); ctx.arc(px, y, 5.5, 0, Math.PI * 2); ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    };
+    init();
+    requestAnimationFrame(frame);
+    let t: number | undefined;
+    window.addEventListener('resize', () => { clearTimeout(t); t = window.setTimeout(init, 200); });
+  }
+</script>
