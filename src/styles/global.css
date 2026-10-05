@@ -43,7 +43,7 @@
     @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base bg-ivory text-ink font-semibold rounded-xl hover:bg-white transition-colors duration-200 shadow-[4px_4px_0_theme(colors.marker)];
   }
   .section {
-    @apply py-16 lg:py-24 px-3 sm:px-[1.125rem] lg:px-6;
+    @apply py-12 lg:py-[4.75rem] px-3 sm:px-[1.125rem] lg:px-6;
   }
   .container {
     @apply max-w-6xl mx-auto;
@@ -86,6 +86,16 @@
   .card {
     @apply bg-white border-2 border-ink rounded-2xl p-6 transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_theme(colors.ink)];
   }
+  /* Soft colour tints for cards in a row (blue, yellow, pale blue). */
+  .card-tint:nth-child(3n+1) { background-color: theme('colors.mist.100'); }
+  .card-tint:nth-child(3n+2) { background-color: #FFF4C9; }
+  .card-tint:nth-child(3n+3) { background-color: #DCEAFB; }
+  /* Icon in a solid chip; colour cycles with the card. */
+  .icon-chip {
+    @apply block w-[3.25rem] h-[3.25rem] p-[0.7rem] mb-4 rounded-2xl bg-marker text-ink ring-2 ring-ink;
+  }
+  .card-tint:nth-child(3n+1) .icon-chip { @apply bg-ink text-white; }
+  .card-tint:nth-child(3n+3) .icon-chip { @apply bg-brand-700 text-white; }
   /* Tabler line icons: slightly thinner stroke than the default 2. */
   .line-icon * {
     stroke-width: 1.75;

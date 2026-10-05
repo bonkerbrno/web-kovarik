@@ -52,7 +52,7 @@ const page = await reader.singletons.oMne.read();
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
         {(page?.experience ?? []).map(({ icon, title, desc }) => (
           <div class="card">
-            <LineIcon name={icon} class="w-8 h-8 mb-3 text-brand-500" />
+            <LineIcon name={icon} class="icon-chip" />
             <h3 class="font-heading font-bold text-navy mb-2">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
           </div>

@@ -106,14 +106,14 @@ const page = await reader.singletons.kontakt.read();
         <div>
           <h2 class="text-2xl font-heading font-bold text-navy mb-6">{page?.contactTitle}</h2>
           <div class="space-y-6 mb-10">
-            <a href={`mailto:${page?.email}`} class="card flex items-center gap-4 hover:border-brand-200 group">
+            <a href={`mailto:${page?.email}`} class="card card-tint flex items-center gap-4 hover:border-brand-200 group">
               <div class="w-12 h-12 bg-mist-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">✉</div>
               <div>
                 <p class="text-xs text-slate-500 mb-0.5">E-mail</p>
                 <p class="font-semibold text-navy group-hover:text-brand-600 transition-colors">{page?.email}</p>
               </div>
             </a>
-            <a href={page?.linkedinUrl} target="_blank" rel="noopener" class="card flex items-center gap-4 hover:border-brand-200 group">
+            <a href={page?.linkedinUrl} target="_blank" rel="noopener" class="card card-tint flex items-center gap-4 hover:border-brand-200 group">
               <div class="w-12 h-12 bg-mist-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
               <div>
                 <p class="text-xs text-slate-500 mb-0.5">LinkedIn</p>

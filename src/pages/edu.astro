@@ -32,24 +32,24 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
   <section class="section bg-ivory">
     <div class="container">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        <a href="#zakladni-skoly" class="card text-center hover:border-brand-200">
-          <LineIcon name={page?.primaryIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
+        <a href="#zakladni-skoly" class="card card-tint text-center hover:border-brand-200">
+          <LineIcon name={page?.primaryIcon} class="icon-chip mx-auto" />
           <h3 class="font-heading font-bold text-navy">{page?.primaryTitle}</h3>
         </a>
-        <a href="#stredni-skoly" class="card text-center hover:border-brand-200">
-          <LineIcon name={page?.schoolsIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
+        <a href="#stredni-skoly" class="card card-tint text-center hover:border-brand-200">
+          <LineIcon name={page?.schoolsIcon} class="icon-chip mx-auto" />
           <h3 class="font-heading font-bold text-navy">{page?.schoolsTitle}</h3>
         </a>
-        <a href="#vysoke-skoly" class="card text-center hover:border-brand-200">
-          <LineIcon name={page?.universityIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
+        <a href="#vysoke-skoly" class="card card-tint text-center hover:border-brand-200">
+          <LineIcon name={page?.universityIcon} class="icon-chip mx-auto" />
           <h3 class="font-heading font-bold text-navy">{page?.universityTitle}</h3>
         </a>
-        <a href="#verejnost" class="card text-center hover:border-brand-200">
-          <LineIcon name={page?.publicIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
+        <a href="#verejnost" class="card card-tint text-center hover:border-brand-200">
+          <LineIcon name={page?.publicIcon} class="icon-chip mx-auto" />
           <h3 class="font-heading font-bold text-navy">{page?.publicTitle}</h3>
         </a>
-        <a href="#firmy" class="card text-center hover:border-brand-200">
-          <LineIcon name={page?.companiesIcon} class="w-9 h-9 mx-auto mb-3 text-brand-500" />
+        <a href="#firmy" class="card card-tint text-center hover:border-brand-200">
+          <LineIcon name={page?.companiesIcon} class="icon-chip mx-auto" />
           <h3 class="font-heading font-bold text-navy">{page?.companiesTitle}</h3>
         </a>
       </div>
@@ -61,7 +61,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <LineIcon name={page?.primaryIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.primaryIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.primaryTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.primaryText}
@@ -71,7 +71,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
         </div>
         <div class="space-y-3">
           {(page?.primaryBullets ?? []).map((item) => (
-            <div class="card flex items-start gap-3 text-slate-700">
+            <div class="card card-tint flex items-start gap-3 text-slate-700">
               <span class="text-accent-500 font-bold mt-0.5">✓</span>
               {item}
             </div>
@@ -86,7 +86,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <LineIcon name={page?.schoolsIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.schoolsIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.schoolsTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.schoolsText}
@@ -128,14 +128,14 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1 grid grid-cols-2 gap-4">
           {(page?.universityBullets ?? []).map((item) => (
-            <div class="card text-sm text-slate-700 flex items-start gap-2">
+            <div class="card card-tint text-sm text-slate-700 flex items-start gap-2">
               <span class="text-accent-500 font-bold mt-0.5">✓</span>
               {item}
             </div>
           ))}
         </div>
         <div class="order-1 lg:order-2">
-          <LineIcon name={page?.universityIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.universityIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.universityTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.universityText}
@@ -151,7 +151,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <LineIcon name={page?.publicIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.publicIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.publicTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.publicText}
@@ -160,7 +160,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
         </div>
         <div class="space-y-3">
           {(page?.publicBullets ?? []).map((item) => (
-            <div class="card flex items-start gap-3 text-slate-700">
+            <div class="card card-tint flex items-start gap-3 text-slate-700">
               <span class="text-accent-500 font-bold mt-0.5">✓</span>
               {item}
             </div>
@@ -192,7 +192,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
           )}
         </div>
         <div>
-          <LineIcon name={page?.companiesIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.companiesIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.companiesTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.companiesText}
@@ -217,7 +217,7 @@ const companiesImageSrc = page?.companiesImage ? IMAGES_PATH + page.companiesIma
       <h2 class="text-3xl font-heading font-bold text-navy mb-8 text-center">{page?.processTitle}</h2>
       <ol class="space-y-4">
         {(page?.processSteps ?? []).map((step, i) => (
-          <li class="card flex items-start gap-4">
+          <li class="card card-tint flex items-start gap-4">
             <span class="w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
               {i + 1}
             </span>

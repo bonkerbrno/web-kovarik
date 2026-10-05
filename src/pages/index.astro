@@ -66,15 +66,15 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <!-- Problémy, které řeším -->
   <section class="section bg-ivory">
     <div class="container">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">{home?.problemsTitle}</h2>
         <p class="text-slate-500 text-lg">{home?.problemsSubtitle}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {(home?.problems ?? []).map(({ icon, title, desc }) => (
-          <div class="card card-burn relative group" data-clock-tile>
+          <div class="card card-tint card-burn relative group" data-clock-tile>
             <FiveToTwelveClock />
-            <LineIcon name={icon} class="w-8 h-8 mb-4 text-brand-700" />
+            <LineIcon name={icon} class="icon-chip" />
             <h3 class="font-heading font-bold text-lg text-navy mb-2">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
           </div>
@@ -86,13 +86,13 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <!-- Služby přehled -->
   <section class="section bg-stripe-blue">
     <div class="container">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">{home?.servicesTitle}</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {(home?.services ?? []).map(({ icon, title, desc, href }) => (
-          <a href={href} class="card group hover:border-brand-200">
-            <LineIcon name={icon} class="w-8 h-8 mb-3 text-brand-500" />
+          <a href={href} class="card card-tint group hover:border-brand-200">
+            <LineIcon name={icon} class="icon-chip" />
             <h3 class="font-heading font-bold text-lg text-navy mb-2 group-hover:text-brand-600 transition-colors">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed mb-3">{desc}</p>
             <span class="text-brand-700 text-sm font-semibold underline decoration-marker decoration-[3px] underline-offset-4">Více info →</span>
@@ -140,7 +140,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           posts.length === 1 ? 'max-w-2xl' : posts.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'
         }`}>
           {posts.map((post) => (
-            <a href={`/blog/${post.slug}`} class="card group">
+            <a href={`/blog/${post.slug}`} class="card card-tint group">
               <div class="flex flex-wrap gap-2 mb-3">
                 {post.data.tags.slice(0, 2).map((tag) => (
                   <span class="text-xs bg-mist-100 text-brand-700 px-2 py-1 rounded-full font-medium">{tag}</span>

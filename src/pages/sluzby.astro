@@ -28,7 +28,7 @@ const page = await reader.singletons.sluzby.read();
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <LineIcon name={page?.auditIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.auditIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.auditTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.auditText}
@@ -71,7 +71,7 @@ const page = await reader.singletons.sluzby.read();
           <p class="mt-4 text-slate-500">{page?.n8nCodeFooter}</p>
         </div>
         <div class="order-1 lg:order-2">
-          <LineIcon name={page?.n8nIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.n8nIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.n8nTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.n8nText}
@@ -95,7 +95,7 @@ const page = await reader.singletons.sluzby.read();
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <LineIcon name={page?.aiIcon} class="w-11 h-11 mb-4 text-brand-500" />
+          <LineIcon name={page?.aiIcon} class="icon-chip" />
           <h2 class="text-3xl font-heading font-bold text-navy mb-4">{page?.aiTitle}</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
             {page?.aiText}
@@ -112,8 +112,8 @@ const page = await reader.singletons.sluzby.read();
         </div>
         <div class="grid grid-cols-2 gap-4">
           {(page?.aiUseCases ?? []).map(({ icon, label, desc }) => (
-            <div class="card text-center">
-              <LineIcon name={icon} class="w-8 h-8 mx-auto mb-2 text-brand-500" />
+            <div class="card card-tint text-center">
+              <LineIcon name={icon} class="icon-chip mx-auto" />
               <p class="font-semibold text-sm text-navy mb-1">{label}</p>
               <p class="text-xs text-slate-500">{desc}</p>
             </div>
