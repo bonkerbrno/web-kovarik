@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title,
-  description = 'Ing. Stanislav Kovařík: pomáháme firmám, OSVČ, obcím a neziskovkám s procesy, automatizací a rozumným využitím AI.',
+  description = 'Ing. Stanislav Kovařík a tým: pomáháme firmám, OSVČ, obcím a neziskovkám s procesy, automatizací a rozumným využitím AI.',
   image = '/og-image.png',
 } = Astro.props;
 
@@ -30,24 +30,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#2F5BEA" />
+    <meta name="theme-color" content="#1C3A61" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
-    <title>{title} | Ing. Stanislav Kovařík</title>
+    <title>{title} | Kovařík a tým</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | Ing. Stanislav Kovařík`} />
+    <meta property="og:title" content={`${title} | Kovařík a tým`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | Ing. Stanislav Kovařík`} />
+    <meta name="twitter:title" content={`${title} | Kovařík a tým`} />
     <meta name="twitter:description" content={description} />
   </head>
   <body class="min-h-screen flex flex-col">

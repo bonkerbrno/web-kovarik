@@ -20,6 +20,21 @@ export default config({
         heroText: fields.text({ label: 'Hero – text pod nadpisem', multiline: true }),
         heroCtaPrimary: fields.text({ label: 'Hero – text tlačítka 1' }),
         heroCtaSecondary: fields.text({ label: 'Hero – text tlačítka 2' }),
+        heroChips: fields.array(fields.text({ label: 'Text' }), {
+          label: 'Hero – krátké důkazy pod textem',
+          itemLabel: (props) => props.value || 'Důkaz',
+        }),
+        audiences: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Nadpis' }),
+            desc: fields.text({ label: 'Popis' }),
+            href: fields.text({ label: 'Odkaz (např. /edu)' }),
+          }),
+          {
+            label: 'Hero – dlaždice Firmy / Školy / Veřejnost',
+            itemLabel: (props) => props.fields.title.value || 'Dlaždice',
+          }
+        ),
 
         problemsTitle: fields.text({ label: 'Sekce „Poznáváte se?" – nadpis' }),
         problemsSubtitle: fields.text({ label: 'Sekce „Poznáváte se?" – podnadpis' }),

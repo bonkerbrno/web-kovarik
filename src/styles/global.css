@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@300..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,20 +27,20 @@
 }
 
 @layer components {
-  /* Buttons: 16px text, 48px tall. */
+  /* Buttons: 16px text, 48px tall. Primary has a hard marker-yellow offset shadow. */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base bg-brand-700 text-white font-semibold rounded-lg hover:bg-brand-900 transition-colors duration-200 shadow-sm shadow-brand-700/20;
+    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base bg-brand-700 text-white font-semibold rounded-xl hover:bg-brand-900 transition-colors duration-200 shadow-[4px_4px_0_theme(colors.marker)];
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base border border-brand-700/60 text-brand-700 font-semibold rounded-lg hover:bg-mist-50 hover:border-brand-700 transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base border-2 border-ink text-ink font-semibold rounded-xl hover:bg-mist-50 transition-colors duration-200;
   }
   /* Secondary action next to a primary button: text only, so the primary stands out. */
   .btn-link {
-    @apply inline-flex items-center justify-center gap-2 min-h-12 px-4 py-3 text-base text-brand-700 font-semibold hover:text-brand-900 hover:underline underline-offset-4 transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 min-h-12 px-4 py-3 text-base text-brand-700 font-semibold underline underline-offset-4 decoration-marker decoration-[3px] hover:text-brand-900 transition-colors duration-200;
   }
-  /* Light button on the dark CTA band. */
+  /* Light button on dark board areas (hero, CTA band). */
   .btn-light {
-    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base bg-ivory-50 text-dusk-600 font-semibold rounded-lg hover:bg-mist-50 transition-colors duration-200 shadow-sm shadow-slate-900/15;
+    @apply inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-base bg-ivory text-ink font-semibold rounded-xl hover:bg-white transition-colors duration-200 shadow-[4px_4px_0_theme(colors.marker)];
   }
   .section {
     @apply py-16 lg:py-24 px-3 sm:px-[1.125rem] lg:px-6;
@@ -48,26 +48,50 @@
   .container {
     @apply max-w-6xl mx-auto;
   }
-  /* Blue backgrounds: a gentle left-to-right tint that fades top-to-bottom into ivory. */
-  .bg-hero-blue {
+  /* Very fine technical grid, used on the dark board and (lighter) on paper. */
+  .bg-grid-board {
+    background-color: theme('colors.board');
     background-image:
-      linear-gradient(to bottom, rgb(252 250 246 / 0) 0%, theme('colors.ivory.DEFAULT') 100%),
-      linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.50'));
+      linear-gradient(rgb(246 241 230 / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(246 241 230 / 0.045) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
-  .bg-stripe-blue {
-    background-image:
-      linear-gradient(to bottom, rgb(252 250 246 / 0) 15%, theme('colors.ivory.DEFAULT') 100%),
-      linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.mid'));
+  /* Page hero: dark board with rounded bottom edge. */
+  .bg-hero-blue {
+    @apply bg-grid-board text-ivory rounded-b-[2.25rem];
+  }
+  .bg-hero-blue h1 { @apply text-ivory; }
+  .bg-hero-blue p { @apply text-ivory/85; }
+  .bg-hero-blue .text-accent-600 { @apply text-marker; }
+  .bg-hero-blue .text-slate-500,
+  .bg-hero-blue .text-slate-600 { @apply text-ivory/85; }
+  .bg-hero-blue img { @apply ring-2 ring-marker shadow-none; }
+  /* Closing call-to-action band. */
+  .cta-band {
+    @apply bg-grid-board text-ivory rounded-[1.75rem] mx-3 sm:mx-6 mb-6;
+  }
+  .cta-band h2, .cta-band p { @apply text-ivory; }
+  /* Light tint for alternating sections (flat, no gradient). */
+  .bg-stripe-blue { background-color: theme('colors.mist.50'); }
+  /* Marker pen over the letters: the text keeps its colour, yellow sits behind it. */
+  .hl {
+    color: theme('colors.ink');
+    background: linear-gradient(100deg, rgb(255 214 92 / 0) 0, rgb(255 214 92 / 0.96) 0.5em, rgb(255 214 92 / 0.9) calc(100% - 0.6em), rgb(255 214 92 / 0) 100%);
+    padding: 0.03em 0.35em;
+    margin-inline: -0.2em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    border-radius: 0.25em 0.5em 0.3em 0.5em;
   }
   .card {
-    @apply bg-ivory-50 border border-mist-200/70 rounded-2xl p-6 shadow-sm shadow-mist-400/20 hover:shadow-[0_6px_9px_-1.5px_rgba(0,0,0,0.1),0_3px_6px_-3px_rgba(0,0,0,0.1)] hover:shadow-mist-400/40 transition-shadow duration-200;
+    @apply bg-white border-2 border-ink rounded-2xl p-6 transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_theme(colors.ink)];
   }
   /* Tabler line icons: slightly thinner stroke than the default 2. */
   .line-icon * {
     stroke-width: 1.75;
   }
-  /* Problem tiles only: red "on fire" glow on hover. */
+  /* Problem tiles only: a touch of red on hover (the dots from the background). */
   .card-burn {
-    @apply hover:shadow-red-400/30;
+    @apply hover:shadow-[5px_5px_0_theme(colors.red.400)];
   }
 }

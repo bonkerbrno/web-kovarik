@@ -39,6 +39,10 @@ export default {
                                         mid:  '#E8EEF5',
                                         deep: '#DCE5F0',
                             },
+                            // F1 "Tabule": dark board blue, ink for outlines, marker yellow for highlights.
+                            board: '#1C3A61',
+                            ink: '#14253C',
+                            marker: '#FFD65C',
                             dusk: {
                                         500: '#546E9C',
                                         600: '#48608E',
@@ -46,7 +50,7 @@ export default {
                   },
                   fontFamily: {
                             sans: ['Figtree', 'system-ui', 'sans-serif'],
-                            heading: ['Figtree', 'system-ui', 'sans-serif'],
+                            heading: ['"Bricolage Grotesque"', 'Figtree', 'system-ui', 'sans-serif'],
                   },
                   fontWeight: {
                             bold: '650',

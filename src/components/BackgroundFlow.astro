@@ -55,26 +55,9 @@
   .section.bg-ivory {
     background-color: transparent;
   }
-  .section.bg-hero-blue,
+  /* Tónované sekce střídají klidné mist a vodoznak je pod nimi vidět. */
   .section.bg-stripe-blue {
-    position: relative;
-    background-image: none;
-  }
-  .bg-hero-blue::before,
-  .bg-stripe-blue::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-    background-image: linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.50'));
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-  }
-  .bg-stripe-blue::before {
-    background-image: linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.mid'));
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 15%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 15%, transparent 100%);
+    background-color: rgb(243 246 250 / 0.7);
   }
 </style>
 
