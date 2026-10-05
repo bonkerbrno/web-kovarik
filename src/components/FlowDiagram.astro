@@ -1,0 +1,57 @@
+---
+// Schéma automatizace pro úvodní stránku: e-mail → AI přečte → rozhodovací uzel
+// (částka?) → ano: úložiště, ne: člověk. Dvě červené tečky putují oběma větvemi.
+// Barvy jsou nastavené pro tmavou „tabuli“ (hero).
+const id = 'flow-hero';
+---
+
+<svg
+  viewBox="0 0 480 270"
+  class="w-full h-auto"
+  role="img"
+  aria-label="Schéma: e-mail, AI přečte fakturu, rozhodovací uzel. Při vyšší částce schvaluje člověk, jinak jde výsledek do úložiště."
+>
+  <path id={`${id}-a`} d="M65 70 H425" fill="none" stroke="#F6F1E6" stroke-opacity=".8" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round" />
+  <path id={`${id}-b`} d="M305 108 V210 H427 V104" fill="none" stroke="#F6F1E6" stroke-opacity=".8" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round" />
+  <path id={`${id}-c`} d="M65 70 H305 V210 H427 V104" fill="none" stroke="none" />
+
+  <g>
+    <rect x="14" y="50" width="100" height="40" rx="10" fill="#1C3A61" stroke="#F6F1E6" stroke-width="2" />
+    <text x="64" y="75" text-anchor="middle" class="fill-ivory font-mono" font-size="12">e-mail</text>
+  </g>
+  <g>
+    <rect x="136" y="50" width="108" height="40" rx="10" fill="#FFD65C" />
+    <text x="190" y="75" text-anchor="middle" class="fill-ink font-mono" font-size="12" font-weight="500">AI přečte</text>
+  </g>
+  <g>
+    <path d="M305 30 L347 70 L305 110 L263 70 Z" fill="#F6F1E6" />
+    <text x="305" y="74" text-anchor="middle" class="fill-ink font-mono" font-size="11" font-weight="500">částka?</text>
+  </g>
+  <text x="360" y="62" class="fill-ivory font-mono" font-size="11" opacity=".85">ano</text>
+  <text x="314" y="150" class="fill-ivory font-mono" font-size="11" opacity=".85">ne</text>
+  <g>
+    <rect x="255" y="190" width="100" height="40" rx="10" fill="#1C3A61" stroke="#F6F1E6" stroke-width="2" />
+    <text x="305" y="215" text-anchor="middle" class="fill-ivory font-mono" font-size="12">člověk</text>
+  </g>
+  <g>
+    <path d="M395 52 v36 a32 12 0 0 0 64 0 v-36" fill="#1C3A61" stroke="#F6F1E6" stroke-width="2" />
+    <ellipse cx="427" cy="52" rx="32" ry="12" fill="#1C3A61" stroke="#F6F1E6" stroke-width="2" />
+    <path d="M395 70 a32 12 0 0 0 64 0" fill="none" stroke="#F6F1E6" stroke-opacity=".6" stroke-width="2" />
+  </g>
+  <text x="427" y="30" text-anchor="middle" class="fill-ivory font-mono" font-size="11" opacity=".85">úložiště</text>
+
+  <g class="flow-dots">
+    <circle r="6" fill="#E5484D">
+      <animateMotion dur="5s" repeatCount="indefinite"><mpath href={`#${id}-a`} /></animateMotion>
+    </circle>
+    <circle r="6" fill="#E5484D" opacity=".6">
+      <animateMotion dur="6s" begin="-3s" repeatCount="indefinite"><mpath href={`#${id}-c`} /></animateMotion>
+    </circle>
+  </g>
+</svg>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .flow-dots { display: none; }
+  }
+</style>

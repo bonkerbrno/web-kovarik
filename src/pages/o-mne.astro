@@ -9,7 +9,7 @@ const page = await reader.singletons.oMne.read();
 ---
 
 <Layout
-  title="O mně"
+  title="O nás"
   description="Ing. Stanislav Kovařík: přes 15 let v manažerských rolích. Pomáhám firmám, OSVČ, obcím a neziskovkám s procesy, automatizací a rozumným využitím AI."
 >
   <!-- Hero -->
@@ -24,8 +24,8 @@ const page = await reader.singletons.oMne.read();
           class="w-40 h-40 rounded-full object-cover bg-mist-200 flex-shrink-0 shadow-lg shadow-mist-400/30"
         />
         <div>
-          <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-3">O mně</p>
-          <h1 class="text-4xl font-heading font-bold text-navy mb-4">Ing. Stanislav Kovařík</h1>
+          <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-3">O nás</p>
+          <h1 class="text-4xl font-heading font-bold text-navy mb-4">Ing. Stanislav Kovařík a tým</h1>
           <p class="text-xl text-slate-500 mb-2">{page?.subtitle}</p>
           <p class="text-slate-500">{page?.locationText}</p>
         </div>
@@ -38,10 +38,20 @@ const page = await reader.singletons.oMne.read();
     <div class="container max-w-3xl">
       <h2 class="text-3xl font-heading font-bold text-navy mb-6">{page?.storyTitle}</h2>
       <div class="prose prose-lg text-slate-600 space-y-5">
-        {(page?.storyParagraphs ?? []).map((paragraph) => (
+        {(page?.storyParagraphs ?? []).slice(0, 2).map((paragraph) => (
           <p>{paragraph}</p>
         ))}
       </div>
+      {(page?.storyParagraphs ?? []).length > 2 && (
+        <details class="more mt-6">
+          <summary>{page?.storyMoreLabel ?? 'Celý příběh'}</summary>
+          <div class="more-body prose prose-lg text-slate-600 space-y-5">
+            {(page?.storyParagraphs ?? []).slice(2).map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </details>
+      )}
     </div>
   </section>
 
@@ -52,7 +62,7 @@ const page = await reader.singletons.oMne.read();
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
         {(page?.experience ?? []).map(({ icon, title, desc }) => (
           <div class="card">
-            <LineIcon name={icon} class="w-8 h-8 mb-3 text-brand-500" />
+            <LineIcon name={icon} class="icon-chip" />
             <h3 class="font-heading font-bold text-navy mb-2">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
           </div>
@@ -72,7 +82,7 @@ const page = await reader.singletons.oMne.read();
   </section>
 
   <!-- CTA -->
-  <section class="section bg-gradient-to-br from-dusk-600 to-dusk-500">
+  <section class="section cta-band">
     <div class="container text-center">
       <h2 class="text-3xl font-heading font-bold text-ivory mb-4">{page?.ctaTitle}</h2>
       <p class="text-ivory text-lg mb-8 max-w-xl mx-auto">

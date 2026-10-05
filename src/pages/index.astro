@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import LineIcon from '@/components/LineIcon.astro';
 import FiveToTwelveClock from '@/components/FiveToTwelveClock.astro';
+import FlowDiagram from '@/components/FlowDiagram.astro';
 import { getCollection } from 'astro:content';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
@@ -20,68 +21,96 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 >
   <!-- Hero -->
   <section class="section bg-hero-blue">
-    <svg
-      class="pointer-events-none absolute right-[6%] top-12 hidden h-24 w-24 lg:block"
-      viewBox="-60 -60 120 120"
-      aria-hidden="true"
-    >
-      <circle r="52" fill="none" stroke="#2C588F" stroke-opacity=".35" stroke-dasharray="2 7" stroke-width="2" stroke-linecap="round" />
-      <polygon points="38,0 19,33 -19,33 -38,0 -19,-33 19,-33" fill="#2C588F" fill-opacity=".1" stroke="#2C588F" stroke-width="3" stroke-linejoin="round" />
-      <text y="10" text-anchor="middle" font-family="Figtree, system-ui, sans-serif" font-weight="800" font-size="28" fill="#2C588F">AI</text>
-    </svg>
-    <div class="container text-center">
-      <p class="text-accent-600 font-semibold text-sm uppercase tracking-widest mb-4">{home?.heroEyebrow}</p>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-navy leading-tight mb-6">
-        {home?.heroTitleLine1}<br class="hidden sm:block" />
-        <span class="text-brand-500">{home?.heroTitleLine2}</span>
-      </h1>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-        {home?.heroText}
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-        <a href="/kontakt" class="btn-primary w-full sm:w-auto">
-          {home?.heroCtaPrimary}
-        </a>
-        <a href="/sluzby" class="btn-link">
-          {home?.heroCtaSecondary}
-        </a>
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-10 lg:gap-12 items-center">
+        <div>
+          <p class="inline-block bg-marker text-ink font-medium text-xs sm:text-sm uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">{home?.heroEyebrow}</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold leading-[1.05] mb-6">
+            {home?.heroTitleLine1}<br class="hidden sm:block" />
+            <span class="hl">{home?.heroTitleLine2}</span>
+          </h1>
+          <p class="text-lg sm:text-xl max-w-xl mb-8 leading-relaxed">
+            {home?.heroText}
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center">
+            <a href="/kontakt" class="btn-light w-full sm:w-auto">
+              {home?.heroCtaPrimary}
+            </a>
+            <a href="/sluzby" class="inline-flex items-center min-h-12 px-2 text-ivory font-semibold underline underline-offset-4 decoration-marker decoration-[3px] hover:text-marker transition-colors">
+              {home?.heroCtaSecondary}
+            </a>
+          </div>
+          <ul class="flex flex-wrap gap-2 mt-7">
+            {(home?.heroChips ?? []).map((chip) => (
+              <li class="text-sm px-3 py-1 rounded-full border border-dashed border-ivory/50 bg-ivory/10">{chip}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="min-w-0">
+          <FlowDiagram />
+        </div>
       </div>
+      <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-12">
+        {(home?.audiences ?? []).map(({ title, desc, href }) => (
+          <li>
+            <a href={href} class="block h-full border-2 border-ivory rounded-2xl px-4 py-3 hover:bg-ivory/10 transition-colors">
+              <span class="block font-heading font-bold text-lg text-marker">{title}</span>
+              <span class="block text-sm text-ivory/85">{desc}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
   <!-- Problémy, které řeším -->
   <section class="section bg-ivory">
     <div class="container">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">{home?.problemsTitle}</h2>
         <p class="text-slate-500 text-lg">{home?.problemsSubtitle}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {(home?.problems ?? []).map(({ icon, title, desc }) => (
-          <div class="card card-burn relative group" data-clock-tile>
+        {(home?.problems ?? []).slice(0, 3).map(({ icon, title, desc }) => (
+          <div class="card card-tint card-burn relative group" data-clock-tile>
             <FiveToTwelveClock />
-            <LineIcon name={icon} class="w-8 h-8 mb-4 text-brand-500" />
+            <LineIcon name={icon} class="icon-chip" />
             <h3 class="font-heading font-bold text-lg text-navy mb-2">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
           </div>
         ))}
       </div>
+      {(home?.problems ?? []).length > 3 && (
+        <details class="more mt-8">
+          <summary>{home?.problemsMoreLabel ?? 'Další situace'}</summary>
+          <div class="more-body grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {(home?.problems ?? []).slice(3).map(({ icon, title, desc }) => (
+          <div class="card card-tint card-burn relative group" data-clock-tile>
+            <FiveToTwelveClock />
+            <LineIcon name={icon} class="icon-chip" />
+            <h3 class="font-heading font-bold text-lg text-navy mb-2">{title}</h3>
+            <p class="text-slate-600 text-[15px] leading-relaxed">{desc}</p>
+          </div>
+        ))}
+          </div>
+        </details>
+      )}
     </div>
   </section>
 
   <!-- Služby přehled -->
   <section class="section bg-stripe-blue">
     <div class="container">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">{home?.servicesTitle}</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {(home?.services ?? []).map(({ icon, title, desc, href }) => (
-          <a href={href} class="card group hover:border-brand-200">
-            <LineIcon name={icon} class="w-8 h-8 mb-3 text-brand-500" />
+          <a href={href} class="card card-tint group hover:border-brand-200">
+            <LineIcon name={icon} class="icon-chip" />
             <h3 class="font-heading font-bold text-lg text-navy mb-2 group-hover:text-brand-600 transition-colors">{title}</h3>
             <p class="text-slate-600 text-[15px] leading-relaxed mb-3">{desc}</p>
-            <span class="text-brand-500 text-sm font-semibold">Více info →</span>
+            <span class="text-brand-700 text-sm font-semibold underline decoration-marker decoration-[3px] underline-offset-4">Více info →</span>
           </a>
         ))}
       </div>
@@ -126,7 +155,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           posts.length === 1 ? 'max-w-2xl' : posts.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'
         }`}>
           {posts.map((post) => (
-            <a href={`/blog/${post.slug}`} class="card group">
+            <a href={`/blog/${post.slug}`} class="card card-tint group">
               <div class="flex flex-wrap gap-2 mb-3">
                 {post.data.tags.slice(0, 2).map((tag) => (
                   <span class="text-xs bg-mist-100 text-brand-700 px-2 py-1 rounded-full font-medium">{tag}</span>
@@ -147,10 +176,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   )}
 
   <!-- CTA -->
-  <section class="section bg-gradient-to-br from-dusk-600 to-dusk-500">
+  <section class="section cta-band">
     <div class="container text-center">
-      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-ivory mb-4">{home?.ctaTitle}</h2>
-      <p class="text-ivory text-lg mb-8 max-w-xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold mb-4">{home?.ctaTitle}</h2>
+      <p class="text-lg mb-8 max-w-xl mx-auto">
         {home?.ctaText}
       </p>
       <a href="/kontakt" class="btn-light">

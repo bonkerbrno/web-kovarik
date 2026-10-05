@@ -12,8 +12,8 @@
       90deg,
       #000 0,
       #000 calc(50% - 716px),
-      rgb(0 0 0 / 0.4) calc(50% - 576px),
-      rgb(0 0 0 / 0.4) calc(50% + 576px),
+      rgb(0 0 0 / 0.55) calc(50% - 576px),
+      rgb(0 0 0 / 0.55) calc(50% + 576px),
       #000 calc(50% + 716px)
     );
   }
@@ -25,8 +25,8 @@
     pointer-events: none;
   }
   .bg-flow {
-    background: #7e8ca0;
-    opacity: 0.1;
+    background: #6a84a8;
+    opacity: 0.32;
   }
   /* Dvě masky: vzor a vyblednutí pod textem. */
   .bg-flow {
@@ -55,26 +55,9 @@
   .section.bg-ivory {
     background-color: transparent;
   }
-  .section.bg-hero-blue,
+  /* Tónované sekce střídají klidné mist a vodoznak je pod nimi vidět. */
   .section.bg-stripe-blue {
-    position: relative;
-    background-image: none;
-  }
-  .bg-hero-blue::before,
-  .bg-stripe-blue::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-    background-image: linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.50'));
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-  }
-  .bg-stripe-blue::before {
-    background-image: linear-gradient(to right, theme('colors.mist.deep'), theme('colors.mist.mid'));
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 15%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 15%, transparent 100%);
+    background-color: rgb(243 246 250 / 0.5);
   }
 </style>
 
