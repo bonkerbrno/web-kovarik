@@ -5,6 +5,7 @@ const navItems = [
   { href: '/', label: 'Domů' },
   { href: '/sluzby', label: 'Consulting' },
   { href: '/edu', label: 'Edu' },
+  { href: '/o-mne', label: 'O nás' },
   { href: '/blog', label: 'Blog' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
@@ -51,6 +52,8 @@ const isActive = (href: string) =>
         id="menu-toggle"
         class="lg:hidden p-2 rounded-lg text-ivory/80 hover:text-ivory hover:bg-ivory/10 transition-colors"
         aria-label="Otevřít menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -84,6 +87,7 @@ const isActive = (href: string) =>
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   toggle?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    const open = !menu?.classList.toggle('hidden');
+    toggle?.setAttribute('aria-expanded', String(open));
   });
 </script>

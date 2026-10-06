@@ -6,6 +6,7 @@ heroText: >-
   velkých investic, bez vlastního IT a s AI, která dělá jen to, co jí zadáme.
 heroCtaPrimary: Konzultace zdarma →
 heroCtaSecondary: Co nabízíme
+heroCtaNote: První hovor trvá 30 minut, je online a nezávazný. Ozveme se do 24 hodin.
 heroChips:
   - Bez vlastního IT
   - Levné modely, i lokálně
@@ -42,20 +43,31 @@ problems:
   - icon: hourglass
     title: Práce přibývá, čas ne
     desc: Zakázek i papírování přibývá, lidí a hodin ne. Roste tlak na výkon a s ním stres.
-servicesTitle: O čem se budeme bavit?
+servicesTitle: S čím vám pomůžeme
 services:
   - icon: zoom-check
     title: Procesní audit
-    desc: Projdeme, kde ztrácíte čas, a navrhneme konkrétní kroky.
+    desc: Projdeme, kde ztrácíte čas, a navrhneme konkrétní kroky. Víte, co se vyplatí, ještě než cokoli zaplatíte za vývoj.
     href: /sluzby#audit
+    linkText: Jak probíhá audit →
   - icon: settings-automation
     title: Automatizace
-    desc: Faktury, objednávky a e-maily budou dělat počítače sami a bez chyb.
+    desc: Faktury, objednávky a e-maily zpracuje počítač sám. Každý krok je vidět a člověk schvaluje to, na čem záleží.
     href: /sluzby#automatizace
+    linkText: Co lze automatizovat →
   - icon: brain
     title: AI implementace
-    desc: Nasadíme ji tam, kde pomůže a kde se na ni dá spolehnout. Na levných modelech.
+    desc: Nasadíme ji jen tam, kde pomůže a dá se ověřit. Většinou stačí malé a levné modely, i na vlastním počítači.
     href: /sluzby#ai
+    linkText: Kde AI dává smysl →
+stepsTitle: Jak to probíhá
+steps:
+  - title: Krátký hovor zdarma
+    desc: Za 30 minut zjistíme, kde vás rutina nejvíc brzdí, a řekneme na rovinu, jestli vám umíme pomoci.
+  - title: Návrh s jasnou cenou
+    desc: Popíšeme konkrétní kroky, co přinesou a kolik budou stát. Rozhodujete vy, bez tlaku.
+  - title: Spuštění pod kontrolou
+    desc: Automatizaci postavíme, společně vyzkoušíme a předáme i s návodem. Vždy víte, co dělá a proč.
 aboutEyebrow: Kdo za tím stojí
 aboutName: Ing. Stanislav Kovařík a tým
 aboutText: >-
@@ -64,5 +76,5 @@ aboutText: >-
   Automatizace pro nás není módní slovo, ale nástroj k osvobození.
 aboutLinkText: Přečíst celý příběh
 ctaTitle: Be agile. Just free yourself ...
-ctaText: Buďte připraveni a osvoboďte se. Společně zjistíme, kde má největší smysl začít.
-ctaButton: Chceme konzultaci
+ctaText: Osvoboďte se od rutiny. Za 30 minut společně najdeme místo, kde vám automatizace ušetří nejvíc času.
+ctaButton: Domluvit hovor zdarma

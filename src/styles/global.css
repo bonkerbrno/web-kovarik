@@ -75,7 +75,7 @@
     background-size: 26px 26px;
   }
   .cta-band h2, .cta-band p { @apply text-ink; }
-  .cta-band .btn-light { @apply bg-ink text-ivory hover:bg-board shadow-[4px_4px_0_theme(colors.ivory)]; }
+  .cta-band .btn-light { @apply bg-ink text-ivory hover:bg-board shadow-[4px_4px_0_theme(colors.ivory.DEFAULT)]; }
   /* Light tint for alternating sections (flat, no gradient). */
   .bg-stripe-blue { background-color: theme('colors.mist.50'); }
   /* Marker pen over the letters: the text keeps its colour, yellow sits behind it. */

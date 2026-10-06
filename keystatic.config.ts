@@ -20,6 +20,7 @@ export default config({
         heroText: fields.text({ label: 'Hero – text pod nadpisem', multiline: true }),
         heroCtaPrimary: fields.text({ label: 'Hero – text tlačítka 1' }),
         heroCtaSecondary: fields.text({ label: 'Hero – text tlačítka 2' }),
+        heroCtaNote: fields.text({ label: 'Hero – drobný text pod tlačítky (snižuje obavy z prvního kroku)' }),
         heroChips: fields.array(fields.text({ label: 'Text' }), {
           label: 'Hero – krátké důkazy pod textem',
           itemLabel: (props) => props.value || 'Důkaz',
@@ -58,10 +59,23 @@ export default config({
             title: fields.text({ label: 'Nadpis' }),
             desc: fields.text({ label: 'Popis', multiline: true }),
             href: fields.text({ label: 'Odkaz (např. /sluzby#audit)' }),
+            linkText: fields.text({ label: 'Text odkazu (např. Jak probíhá audit →)' }),
           }),
           {
             label: 'Kartičky služeb',
             itemLabel: (props) => props.fields.title.value || 'Služba',
+          }
+        ),
+
+        stepsTitle: fields.text({ label: 'Sekce „Jak to probíhá" – nadpis' }),
+        steps: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Nadpis kroku' }),
+            desc: fields.text({ label: 'Popis kroku', multiline: true }),
+          }),
+          {
+            label: 'Kroky spolupráce',
+            itemLabel: (props) => props.fields.title.value || 'Krok',
           }
         ),
 
