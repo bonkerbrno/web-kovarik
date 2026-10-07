@@ -104,7 +104,7 @@ export function createHandler({ getTransport = defaultTransport, fetchImpl = fet
     const tokenOk =
       Number.isFinite(t) &&
       typeof body.sig === 'string' &&
-      body.sig.length === 64 &&
+      /^[0-9a-f]{64}$/.test(body.sig) &&
       crypto.timingSafeEqual(Buffer.from(body.sig), Buffer.from(sign(t)));
     if (!tokenOk || age > MAX_TOKEN_AGE_MS) return send(400, { ok: false, error: 'token' });
     if (age < MIN_FILL_MS) return send(429, { ok: false, error: 'too_fast' });

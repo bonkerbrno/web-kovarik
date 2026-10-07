@@ -37,6 +37,16 @@ Nastavují se ve Vercelu: Project, Settings, Environment Variables (Production, 
 | `TURNSTILE_SECRET` | ne | tajný klíč Cloudflare Turnstile. Když je nastavený, funkce ověřuje každé odeslání. |
 | `PUBLIC_TURNSTILE_SITE_KEY` | ne | veřejný klíč Turnstile. Čte se při sestavení webu, takže po změně je nutný Redeploy. Musí být nastavený spolu s `TURNSTILE_SECRET`. |
 
+### Postup nastavení ve Vercelu (krok za krokem)
+
+1. Vercel, projekt navázaný na repozitář `bonkerbrno/web-kovarik`, Settings, Environment Variables.
+2. Přidat `SMTP_USER` (Production + Preview) a `SMTP_PASS` (Production + Preview, typ Sensitive).
+3. Volitelně přidat `FORM_SECRET` (dlouhý náhodný řetězec).
+4. Deployments, u posledního nasazení Redeploy (bez použití cache). Proměnné se do již hotového nasazení nepropíšou samy.
+5. Ověřit podle části „Ověření po nasazení“.
+
+Hostitel webu je Vercel (napojený na GitHub, nasazení při každém sloučení do `main`). Workflow `.github/workflows/deploy.yml` pro GitHub Pages je pozůstatek a pro web neplatí. Složka `api/` se na Vercelu automaticky stane funkcemi, žádný `vercel.json` není potřeba.
+
 ## Zapnutí Cloudflare Turnstile (později)
 
 1. V Cloudflare (zdarma) vytvořte Turnstile widget pro doménu `kovarik.us`.
