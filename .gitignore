@@ -21,3 +21,6 @@ npm-debug.log*
 
 # Keystatic local storage
 .keystatic/
+
+# wrangler
+.wrangler/
