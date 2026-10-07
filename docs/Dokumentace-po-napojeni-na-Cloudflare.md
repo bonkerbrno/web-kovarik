@@ -77,7 +77,7 @@ Formulář na stránce `https://kovarik.us/kontakt` se z prohlížeče návště
 
 **Cloudflare Pages, projekt `web-kovarik` = kontaktní formulář** (neověřeno z cloudu)
 - Napojeno na Git (repozitář web-kovarik, větev `main`), build `npm run build`, výstup `dist`, proměnná `NODE_VERSION=22`.
-- Při každém push do `main` se znovu sestaví web i funkce. Pro pull requesty Cloudflare standardně dělá náhledová nasazení.
+- Při každém push do `main` se znovu sestaví web i funkce. Pro každý pull request dělá Cloudflare náhledové nasazení (ověřeno na PR #10).
 - Web na `web-kovarik.pages.dev` je jen vedlejší kopie. Doména kovarik.us sem nevede.
 - Neaktivní zóna kovarik.us v Cloudflare existuje, ale **nepoužívá se** (nameservery u registrátora Stanley změnit nemůže).
 
@@ -104,7 +104,7 @@ Formulář na stránce `https://kovarik.us/kontakt` se z prohlížeče návště
 3. Tento commit spustí paralelně:
    - **GitHub Actions `deploy.yml`** → nový produkční web na kovarik.us. Dnešní běhy trvaly **40 až 60 sekund** (ověřeno v historii Actions). GitHub Pages a prohlížeče drží starou verzi v mezipaměti až cca 10 minut, takže změna může být vidět o pár minut později (pomůže Ctrl+F5).
    - **Cloudflare Pages `web-kovarik`** → nové sestavení kopie a funkce formuláře (obvykle 1 až 3 minuty, neověřeno z cloudu). Na kovarik.us to vliv nemá, jen zbytečně běží.
-   - Pokud je ve Vercelu stále napojený projekt `web-kovarik`, sestaví se i tam (neověřeno, na produkci vliv nemá).
+   - Vercel projekt `web-kovarik` je stále napojený na repozitář a sestavuje se taky (ověřeno na PR #10, na produkci vliv nemá).
 4. Administrace se při úpravě textu **nepřestavuje** (není potřeba, texty čte živě z GitHubu).
 
 Četnost: kdykoli Stanley uloží. Každé uložení = jeden commit = jedno nasazení. Více uložení rychle po sobě se zařadí do fronty (`concurrency: pages`), nasadí se postupně.
@@ -112,7 +112,7 @@ Formulář na stránce `https://kovarik.us/kontakt` se z prohlížeče návště
 ### 3.2 Změna vzhledu nebo kódu webu (přes Claude)
 
 1. Claude udělá změnu ve větvi a otevře pull request (PR) do `main`.
-2. Na PR se spouští jen náhled Cloudflare Pages (pokud je zapnutý). GitHub Pages se z PR nenasazuje.
+2. Na PR se spouští náhled Cloudflare Pages a Vercelu (ověřeno na PR #10). GitHub Pages se z PR nenasazuje.
 3. **Slučuje se až poté, co Stanley napíše „sluč“** (výjimky výslovně povolil jen u PR #4 a #5).
 4. Sloučení = commit do `main` → stejný průběh jako v 3.1 (GitHub Pages do 1 minuty, Cloudflare souběžně).
 
