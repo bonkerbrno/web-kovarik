@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
-import { CONTACT_WEBHOOK_URL } from '@/config/contact';
+import { CONTACT_ENDPOINT, TURNSTILE_SITE_KEY } from '@/config/contact';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const page = await reader.singletons.kontakt.read();
@@ -30,7 +30,8 @@ const page = await reader.singletons.kontakt.read();
           <form
             name="kontakt"
             data-contact-form
-            data-endpoint={CONTACT_WEBHOOK_URL}
+            data-endpoint={CONTACT_ENDPOINT}
+            data-turnstile={TURNSTILE_SITE_KEY}
             data-email={page?.email}
             class="space-y-5"
           >
@@ -94,6 +95,7 @@ const page = await reader.singletons.kontakt.read();
                 placeholder="Popište vaši situaci nebo otázku..."
               ></textarea>
             </div>
+            {TURNSTILE_SITE_KEY && <div data-turnstile-box></div>}
             <button type="submit" class="btn-primary w-full disabled:opacity-60">
               {page?.submitButton}
             </button>
@@ -148,12 +150,61 @@ const page = await reader.singletons.kontakt.read();
     const status = form.querySelector<HTMLElement>('[data-form-status]')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const topic = form.querySelector<HTMLSelectElement>('#topic')!;
-    const endpoint = form.dataset.endpoint ?? '';
+    const endpoint = form.dataset.endpoint ?? '/api/kontakt';
     const email = form.dataset.email ?? '';
+    const siteKey = form.dataset.turnstile ?? '';
+
+    // Podepsaný čas načtení formuláře: server z něj pozná, že formulář nevyplnil robot v zlomku sekundy.
+    let guard: { t: number; sig: string } | null = null;
+    let notConfigured = false;
+    const loadGuard = async () => {
+      try {
+        const response = await fetch(endpoint, { cache: 'no-store' });
+        if (response.status === 503) notConfigured = true;
+        else if (response.ok) guard = await response.json();
+      } catch {
+        /* použije se náhradní odeslání e-mailem */
+      }
+    };
+    loadGuard();
+
+    // Cloudflare Turnstile se načte jen tehdy, když je nastavený veřejný klíč.
+    let turnstileToken = '';
+    if (siteKey) {
+      (window as any).onTurnstile = (token: string) => (turnstileToken = token);
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.async = true;
+      script.onload = () =>
+        (window as any).turnstile?.render('[data-turnstile-box]', {
+          sitekey: siteKey,
+          callback: (token: string) => (turnstileToken = token),
+          'expired-callback': () => (turnstileToken = ''),
+        });
+      document.head.appendChild(script);
+    }
 
     const show = (text: string, ok: boolean) => {
       status.textContent = text;
       status.className = `text-sm ${ok ? 'text-accent-600' : 'text-red-600'}`;
+    };
+
+    const openMailClient = (data: FormData) => {
+      const body = [
+        `Jméno: ${data.get('name')}`,
+        `Firma / organizace: ${data.get('company') || '—'}`,
+        `Téma: ${data.get('topic') || '—'}`,
+        '',
+        String(data.get('message')),
+      ].join('\n');
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent('Dotaz z webu kovarik.us')}&body=${encodeURIComponent(body)}`;
+    };
+
+    const errors: Record<string, string> = {
+      too_fast: 'Formulář se odeslal příliš rychle. Počkejte prosím chvilku a zkuste to znovu.',
+      rate_limit: 'Z vaší adresy přišlo hodně zpráv. Zkuste to prosím později nebo nám napište e-mailem.',
+      captcha: 'Ověření, že nejste robot, se nepovedlo. Zkuste to prosím znovu.',
+      invalid: 'Zkontrolujte prosím jméno, e-mail a zprávu.',
     };
 
     form.addEventListener('submit', async (event) => {
@@ -161,34 +212,51 @@ const page = await reader.singletons.kontakt.read();
       const data = new FormData(form);
       data.set('topic', topic.value ? topic.selectedOptions[0].text : '');
 
-      // Bots fill the hidden field; pretend success and send nothing.
+      // Roboti vyplňují skryté pole: předstíráme úspěch a nic neposíláme.
       if (data.get('website')) {
         form.reset();
-        show('Děkuji, zpráva odešla.', true);
-        return;
-      }
-
-      if (!endpoint) {
-        const body = [
-          `Jméno: ${data.get('name')}`,
-          `Firma / organizace: ${data.get('company') || '—'}`,
-          `Téma: ${data.get('topic') || '—'}`,
-          '',
-          String(data.get('message')),
-        ].join('\n');
-        window.location.href = `mailto:${email}?subject=${encodeURIComponent('Dotaz z webu kovarik.us')}&body=${encodeURIComponent(body)}`;
+        show('Děkujeme, zpráva odešla.', true);
         return;
       }
 
       button.disabled = true;
       try {
+        if (!guard && !notConfigured) await loadGuard();
+        if (notConfigured || !guard) {
+          openMailClient(data);
+          return;
+        }
         const response = await fetch(endpoint, {
           method: 'POST',
-          body: new URLSearchParams(data as unknown as Record<string, string>),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: data.get('name'),
+            email: data.get('email'),
+            company: data.get('company'),
+            topic: data.get('topic'),
+            message: data.get('message'),
+            website: data.get('website'),
+            t: guard.t,
+            sig: guard.sig,
+            turnstile: turnstileToken,
+          }),
         });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        form.reset();
-        show('Děkujeme, zpráva odešla. Ozveme se do 24 hodin.', true);
+        const result = await response.json().catch(() => ({}));
+        if (response.ok && result.ok) {
+          form.reset();
+          guard = null;
+          loadGuard();
+          (window as any).turnstile?.reset();
+          show('Děkujeme, zpráva odešla. Ozveme se do 24 hodin.', true);
+        } else if (result.error === 'token') {
+          guard = null;
+          loadGuard();
+          show('Formulář vypršel. Odešlete ho prosím ještě jednou.', false);
+        } else if (errors[result.error]) {
+          show(errors[result.error], false);
+        } else {
+          throw new Error(`HTTP ${response.status}`);
+        }
       } catch {
         show(`Zprávu se nepodařilo odeslat. Napište nám prosím přímo na ${email}.`, false);
       } finally {
