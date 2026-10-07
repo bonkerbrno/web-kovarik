@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { createReader } from '@keystatic/core/reader';
 import keystaticConfig from '../../keystatic.config';
-import { CONTACT_ENDPOINT, TURNSTILE_SITE_KEY } from '@/config/contact';
+import { CONTACT_ENDPOINT, CONTACT_REMOTE_ENDPOINT, TURNSTILE_SITE_KEY } from '@/config/contact';
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const page = await reader.singletons.kontakt.read();
@@ -31,6 +31,7 @@ const page = await reader.singletons.kontakt.read();
             name="kontakt"
             data-contact-form
             data-endpoint={CONTACT_ENDPOINT}
+            data-remote-endpoint={CONTACT_REMOTE_ENDPOINT}
             data-turnstile={TURNSTILE_SITE_KEY}
             data-email={page?.email}
             class="space-y-5"
@@ -150,7 +151,8 @@ const page = await reader.singletons.kontakt.read();
     const status = form.querySelector<HTMLElement>('[data-form-status]')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const topic = form.querySelector<HTMLSelectElement>('#topic')!;
-    const endpoint = form.dataset.endpoint ?? '/api/kontakt';
+    const onProduction = /^(www\.)?kovarik\.us$/.test(location.hostname);
+    const endpoint = onProduction ? (form.dataset.remoteEndpoint ?? '/api/kontakt') : (form.dataset.endpoint ?? '/api/kontakt');
     const email = form.dataset.email ?? '';
     const siteKey = form.dataset.turnstile ?? '';
 

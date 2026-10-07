@@ -9,6 +9,8 @@ const RATE_LIMIT = 5; // odeslání na IP za hodinu (na jednu instanci funkce)
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 const LIMITS = { name: 120, email: 200, company: 200, topic: 120, message: 5000 };
 const ALLOWED_HOSTS = new Set(['kovarik.us', 'www.kovarik.us', 'localhost']);
+// Weby, které smějí funkci volat z jiné domény (CORS). Web na kovarik.us běží na GitHub Pages.
+const CORS_ORIGINS = new Set(['https://kovarik.us', 'https://www.kovarik.us']);
 
 const hits = new Map();
 const encoder = new TextEncoder();
@@ -47,6 +49,30 @@ const originAllowed = (request) => {
   } catch {
     return false;
   }
+};
+
+const corsHeaders = (request) => {
+  const origin = request.headers.get('origin');
+  let allowed = false;
+  if (origin) {
+    if (CORS_ORIGINS.has(origin)) allowed = true;
+    else {
+      try {
+        const { protocol, hostname } = new URL(origin);
+        allowed = protocol === 'https:' && hostname.endsWith('.pages.dev');
+      } catch {
+        allowed = false;
+      }
+    }
+  }
+  if (!allowed) return {};
+  return {
+    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+    Vary: 'Origin',
+  };
 };
 
 const rateLimited = (ip) => {
@@ -95,8 +121,13 @@ export function createHandler({ sendMail = defaultSend, fetchImpl = fetch } = {}
     const send = (status, body) =>
       new Response(JSON.stringify(body), {
         status,
-        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
+        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', ...corsHeaders(request) },
       });
+
+    // Předběžný dotaz prohlížeče (CORS) na odeslání z kovarik.us.
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: corsHeaders(request) });
+    }
 
     if (!secretKey(env)) return send(503, { ok: false, error: 'not_configured' });
 

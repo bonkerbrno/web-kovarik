@@ -1,6 +1,6 @@
 # Kontaktní formulář
 
-Formulář na `/kontakt` odesílá data na Cloudflare Pages Function `functions/api/kontakt.js` (adresa `/api/kontakt`, stejná doména jako web). Funkce zprávu zkontroluje a pošle e-mailem na `team@kovarik.us` přes SMTP (`smtp.webhosting.fm`, port 587, STARTTLS). Nepoužívá se n8n ani služba třetí strany (kromě volitelného Cloudflare Turnstile).
+Formulář na `/kontakt` odesílá data na Cloudflare Pages Function `functions/api/kontakt.js` (adresa `/api/kontakt`). Web na kovarik.us běží na GitHub Pages, proto formulář tam volá funkci na `https://web-kovarik.pages.dev/api/kontakt` přes CORS (na `*.pages.dev` a lokálně se volá stejná doména). Funkce zprávu zkontroluje a pošle e-mailem na `team@kovarik.us` přes SMTP (`smtp.webhosting.fm`, port 587, STARTTLS). Nepoužívá se n8n ani služba třetí strany (kromě volitelného Cloudflare Turnstile).
 
 ## Jak to funguje
 
@@ -17,7 +17,7 @@ Formulář na `/kontakt` odesílá data na Cloudflare Pages Function `functions/
 | Podepsaný čas načtení | Token `t` + `sig` (HMAC-SHA256). Bez platného podpisu je odpověď 400, starší než 2 hodiny také. |
 | Minimální doba vyplnění | Odeslání dříve než za 3 sekundy od načtení se odmítne (429). |
 | Omezení počtu odeslání | 5 zpráv za hodinu z jedné IP adresy (v rámci jedné instance funkce). |
-| Kontrola původu | Požadavek s hlavičkou `Origin` mimo kovarik.us, localhost a `*.pages.dev` se odmítne (403). |
+| Kontrola původu | Požadavek s hlavičkou `Origin` mimo kovarik.us, localhost a `*.pages.dev` se odmítne (403). CORS (včetně předběžného `OPTIONS`) povoluje jen `https://kovarik.us`, `https://www.kovarik.us` a `https://*.pages.dev`. |
 | Kontrola vstupu | Povinné jméno, platný e-mail a zpráva. Omezené délky polí. Z hlaviček e-mailu se odstraňují nové řádky (ochrana proti vkládání dalších příjemců). |
 | Cloudflare Turnstile (volitelné) | Zapne se doplněním dvou proměnných (viz dále). |
 
@@ -60,7 +60,7 @@ Workflow `.github/workflows/deploy.yml` pro GitHub Pages se po přepnutí domén
 
 ## Ověření po nasazení
 
-1. Otevřít `https://kovarik.us/api/kontakt`. Správná odpověď je JSON s `t` a `sig`. Odpověď `{"ok":false,"error":"not_configured"}` znamená, že chybí `SMTP_PASS` nebo `FORM_SECRET`.
+1. Otevřít `https://web-kovarik.pages.dev/api/kontakt`. Správná odpověď je JSON s `t` a `sig`. Odpověď `{"ok":false,"error":"not_configured"}` znamená, že chybí `SMTP_PASS` nebo `FORM_SECRET`.
 2. Odeslat zkušební zprávu z `/kontakt` a zkontrolovat doručení na `team@kovarik.us`.
 3. Při chybě 502 (`send_failed`) se v logu funkce (Cloudflare, projekt, Functions, Real-time logs) objeví kód chyby SMTP. Nejčastější příčiny jsou špatné heslo nebo adresa odesílatele, kterou server nepovoluje.
 
