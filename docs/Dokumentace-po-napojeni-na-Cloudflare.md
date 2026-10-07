@@ -1,4 +1,4 @@
-# Architektura webu kovarik.us a administrace
+# Dokumentace po napojení na Cloudflare (web kovarik.us a administrace)
 
 **Stav k 7. 10. 2026.** Stručná verze projektové dokumentace: zapojení, průběh změn, tajné hodnoty (jen názvy), poruchy a úklid. Formulář podrobně: `docs/KONTAKTNI-FORMULAR.md`. Popisuje, co kde běží, co je na co napojené, jak a jak často se web mění, kde jsou tajné hodnoty, co dělat při poruše a co zbývá uklidit.
 

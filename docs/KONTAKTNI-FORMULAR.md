@@ -23,7 +23,7 @@ Formulář na `/kontakt` odesílá data na Cloudflare Pages Function `functions/
 
 ## Nastavení v Cloudflare
 
-Funkce běží v Cloudflare Pages projektu `web-kovarik` napojeném na GitHub repozitář `bonkerbrno/web-kovarik` (nové nasazení při každém sloučení do `main`, náhled pro pull request). Konfigurace je v `wrangler.toml` (výstup `dist`, příznak `nodejs_compat`). Samotný web kovarik.us dál běží na GitHub Pages (`.github/workflows/deploy.yml`), Cloudflare slouží jen pro funkci formuláře. Celkové zapojení popisuje `docs/ARCHITEKTURA.md`.
+Funkce běží v Cloudflare Pages projektu `web-kovarik` napojeném na GitHub repozitář `bonkerbrno/web-kovarik` (nové nasazení při každém sloučení do `main`, náhled pro pull request). Konfigurace je v `wrangler.toml` (výstup `dist`, příznak `nodejs_compat`). Samotný web kovarik.us dál běží na GitHub Pages (`.github/workflows/deploy.yml`), Cloudflare slouží jen pro funkci formuláře. Celkové zapojení popisuje `docs/Dokumentace-po-napojeni-na-Cloudflare.md`.
 
 ### Proměnné a tajné hodnoty
 
