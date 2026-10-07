@@ -23,7 +23,7 @@ Formulář na `/kontakt` odesílá data na Cloudflare Pages Function `functions/
 
 ## Nastavení v Cloudflare
 
-Hostitel webu je Cloudflare Pages napojený na GitHub repozitář `bonkerbrno/web-kovarik` (nasazení při každém sloučení do `main`, náhled pro každý pull request). Konfigurace je v `wrangler.toml` (výstup `dist`, příznak `nodejs_compat`).
+Funkce běží v Cloudflare Pages projektu `web-kovarik` napojeném na GitHub repozitář `bonkerbrno/web-kovarik` (nové nasazení při každém sloučení do `main`, náhled pro pull request). Konfigurace je v `wrangler.toml` (výstup `dist`, příznak `nodejs_compat`). Samotný web kovarik.us dál běží na GitHub Pages (`.github/workflows/deploy.yml`), Cloudflare slouží jen pro funkci formuláře. Celkové zapojení popisuje `docs/ARCHITEKTURA.md`.
 
 ### Proměnné a tajné hodnoty
 
@@ -47,10 +47,9 @@ Nastavují se v Cloudflare: Workers & Pages, projekt `web-kovarik`, Settings, Va
 2. Build command `npm run build`, output directory `dist`, proměnná buildu `NODE_VERSION` = `22`.
 3. Po prvním nasazení v Settings, Variables and Secrets přidat `SMTP_USER` a `SMTP_PASS` (Secret) pro Production i Preview.
 4. Deployments, u posledního nasazení Retry deployment. Proměnné se do hotového nasazení nepropíšou samy.
-5. Custom domains: přidat `kovarik.us` a `www.kovarik.us`. DNS u we.cz se změní podle pokynů Cloudflare (MX a SPF záznamy pošty se nesmí měnit).
-6. Ověřit podle části „Ověření po nasazení“.
+5. Ověřit podle části „Ověření po nasazení“.
 
-Workflow `.github/workflows/deploy.yml` pro GitHub Pages se po přepnutí domény na Cloudflare zruší, ať se web nepublikuje na dvou místech.
+Doména kovarik.us se do Cloudflare **nepřidává** (nameservery u registrátora nejdou změnit). Web zůstává na GitHub Pages a formulář volá funkci na `web-kovarik.pages.dev` přes CORS. Tento stav je nastavený a funkční od 7. 10. 2026.
 
 ## Zapnutí Cloudflare Turnstile (později)
 
