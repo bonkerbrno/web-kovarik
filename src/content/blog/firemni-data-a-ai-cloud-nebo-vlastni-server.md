@@ -1,75 +1,59 @@
 ---
 title: "Firemní data a AI: cloud, nebo vlastní server?"
-description: "Smí faktura se jménem zákazníka do ChatGPT? A kdy se vyplatí provozovat jazykový model na vlastním serveru? Praktický průvodce rozhodováním o tom, kam s firemními daty, když chcete využít umělou inteligenci."
+description: "Klíče od bytu taky nedáváte každému. Smí faktura se jménem zákazníka do ChatGPT? A kdy se vyplatí mít AI doma na vlastním serveru? Jednoduchý průvodce tím, kam s firemními daty."
 pubDate: 2026-09-29
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "data", "GDPR", "bezpečnost"]
 draft: false
 ---
 
-Jedna z prvních otázek, které při rozhovorech o AI slyšíme, nezní „co to umí“, ale „kam ta data vlastně odcházejí“. A je to správná otázka. Jakmile začnete AI používat na skutečnou práci, posíláte jí skutečné dokumenty: smlouvy, faktury, e-maily zákazníků, mzdové podklady.
+Když odjíždíte na dovolenou, klíče od bytu nedáte prvnímu kolemjdoucímu. Sousedce, které věříte, je možná svěříte. Rodinné stříbro ale zamknete do trezoru, a klíč od trezoru si necháte.
 
-Odpověď není černobílá. Existují zhruba tři cesty a každá se hodí na něco jiného.
+S firemními daty a umělou inteligencí to funguje úplně stejně. Jedna z prvních otázek, které od klientů slyšíme, nezní „co to umí“, ale „kam ta data vlastně odcházejí“. A je to správná otázka. Jakmile AI používáte na skutečnou práci, posíláte jí skutečné smlouvy, faktury a e-maily zákazníků.
 
-## Cesta 1: Bezplatný nebo osobní účet v chatu
+Možnosti jsou v zásadě tři.
 
-Zaměstnanec si otevře webový chat, vloží text a dostane odpověď. Rychlé, pohodlné, zadarmo.
+## Klíče pod rohožkou: bezplatný chat na soukromém účtu
 
-Pro firemní data je to ale **nejrizikovější varianta**. U bezplatných a osobních účtů si poskytovatelé obvykle vyhrazují právo použít konverzace ke zlepšování svých modelů, pokud to uživatel výslovně nevypne. Firma navíc nemá přehled o tom, co kdo kam vložil, a když zaměstnanec odejde, historie odchází s jeho soukromým účtem.
+Rychlé, pohodlné, zadarmo. A pro firemní data nejrizikovější. U bezplatných a osobních účtů si poskytovatelé obvykle vyhrazují právo použít konverzace k vylepšování svých modelů, pokud to uživatel nevypne. Firma navíc netuší, kdo co kam vložil. A když zaměstnanec odejde, historie odchází s ním.
 
-**Vhodné pro:** obecné dotazy, formulaci textů bez citlivého obsahu, učení a zkoušení.
-**Nevhodné pro:** cokoli s osobními údaji, obchodním tajemstvím nebo interními čísly.
+**Hodí se na:** obecné dotazy a stylistiku bez citlivého obsahu.
+**Nehodí se na:** nic s osobními údaji, obchodním tajemstvím nebo interními čísly.
 
-## Cesta 2: Firemní účet nebo API velkého poskytovatele
+## Klíče u sousedky: firemní účet velkého poskytovatele
 
-Velcí poskytovatelé (OpenAI, Anthropic, Google, Microsoft) nabízejí firemní tarify a přístup přes API. U nich se smluvně zavazují, že vaše data **nepoužijí k trénování modelů**, a nabízejí smlouvu o zpracování osobních údajů, kterou GDPR vyžaduje. U některých lze zvolit i zpracování v datových centrech v EU.
+Velcí hráči (OpenAI, Anthropic, Google, Microsoft) nabízejí firemní tarify. Smluvně se v nich zavazují, že vaše data **nepoužijí k trénování**, a podepíšou smlouvu o zpracování osobních údajů, kterou chce GDPR. U některých si můžete vybrat zpracování v datových centrech v EU.
 
-Pro většinu firem je to rozumný výchozí bod. Získáte nejschopnější modely, nemusíte se starat o provoz a máte papírově podložené, co se s daty děje.
+Pro většinu firem je to rozumný start. Než ale začnete, ověřte si tři věci: máte podepsanou smlouvu o zpracování, kde se data zpracovávají a jak dlouho se uchovávají.
 
-Než ale začnete, ověřte si tři věci:
+**Hodí se na:** běžnou agendu, zákaznickou komunikaci, dokumenty bez zvlášť citlivých údajů.
 
-- **Máte podepsanou smlouvu o zpracování (DPA)?** Bez ní byste osobní údaje do služby posílat neměli.
-- **Kde se data zpracovávají?** Při přenosu mimo EU musí být splněny podmínky GDPR pro předávání do třetích zemí.
-- **Jak dlouho se data uchovávají?** I u firemních služeb se vstupy obvykle po určitou dobu drží kvůli odhalování zneužití. Zjistěte jak dlouho.
+## Trezor: model na vlastním serveru
 
-**Vhodné pro:** běžnou firemní agendu, zákaznickou komunikaci, zpracování dokumentů bez zvlášť citlivých údajů.
+Otevřené modely (třeba Llama, Mistral, Qwen nebo Gemma) si můžete pustit na vlastním nebo pronajatém serveru. Data pak **neopustí vaši firmu**. Nikdo třetí je nevidí.
 
-## Cesta 3: Model na vlastním serveru
+Daň za to? Modely, které rozumně poběží na dostupném hardwaru, jsou menší než ty nejlepší v cloudu. Na úzké úlohy, jako je třídění nebo vytažení údajů z dokumentu, to ale většinou stačí. Víc v článku [Nepotřebujete drahý model](/blog/male-modely-a-dobre-workflow). A někdo musí server hlídat, aktualizovat a zálohovat. To je náklad, na který se v kalkulacích rád zapomíná.
 
-Otevřené jazykové modely (například rodiny Llama, Mistral, Qwen nebo Gemma) si můžete stáhnout a provozovat na vlastním hardwaru nebo na pronajatém serveru. Data pak **neopouštějí vaši infrastrukturu**. Nikdo třetí je nevidí, nic se nikam neposílá.
+**Hodí se na:** zdravotní údaje, mzdy, smlouvy s mlčenlivostí, právní agendu.
 
-Za to se platí jinak než penězi za každý dotaz:
+## Jak se rozhodnout
 
-- **Výkon.** Modely, které rozumně poběží na dostupném hardwaru, jsou menší a slabší než ty nejlepší v cloudu. Na úzké úlohy typu třídění nebo vytažení údajů z dokumentu to ale často stačí. Více o tom v článku [Nepotřebujete drahý model](/blog/male-modely-a-dobre-workflow).
-- **Hardware.** Pro plynulý provoz potřebujete server s grafickou kartou, nebo se smíříte s pomalejší odezvou. Na dávkové zpracování přes noc stačí i skromnější stroj.
-- **Správa.** Někdo musí server aktualizovat, zálohovat a hlídat. To je reálný náklad, který se v kalkulacích často zapomíná.
+Neřešte „cloud ano, nebo ne“ pro celou firmu. Projděte každý proces zvlášť a položte si tři otázky. Jaká data v něm tečou? Co by se stalo, kdyby unikla? A jak náročná je samotná úloha?
 
-**Vhodné pro:** zdravotní údaje, mzdy a personalistiku, smlouvy s doložkou mlčenlivosti, právní agendu, firmy s přísnými požadavky klientů na důvěrnost.
+Výsledkem bývá kombinace. Běžné dotazy zákazníků zpracuje model v cloudu, personální dokumenty malý model doma. Obojí může běžet v jednom postupu, který jen podle typu dokumentu rozhodne, kam ho poslat.
 
-## Jak se rozhodnout: tři otázky
+## Malý trik: přezdívky místo jmen
 
-Místo obecného „cloud ano, nebo ne“ doporučujeme projít každý proces zvlášť:
-
-1. **Jaká data v něm tečou?** Rozdělte je na veřejná, interní, osobní údaje a zvlášť citlivé údaje (zdraví, mzdy, soudní spory).
-2. **Co by se stalo, kdyby unikla?** Nepříjemnost, ztráta zakázky, nebo pokuta a ztráta důvěry?
-3. **Jak náročná je úloha?** Potřebujete psát dlouhé texty a uvažovat nad složitými souvislostmi, nebo jen zařadit dokument do kategorie?
-
-Výsledkem bývá kombinace. Například běžné dotazy zákazníků zpracovává model v cloudu přes firemní API, zatímco personální dokumenty čte malý model na vlastním serveru. Obojí může běžet ve stejném workflow, které jen podle typu dokumentu rozhodne, kam ho poslat.
-
-## Pomůže i pseudonymizace
-
-Mezi cloudem a vlastním serverem existuje užitečný mezikrok. Workflow může **před odesláním do AI nahradit osobní údaje zástupnými značkami**: místo „Jana Nováková, Lipová 12, Brno“ odejde „[JMÉNO_1], [ADRESA_1]“. Model odpoví, workflow značky vrátí zpět. Model tak pracuje s obsahem, aniž by viděl, o koho jde.
-
-Nefunguje to všude, například u volného textu, kde se jméno skrývá v kontextu. U strukturovaných dokumentů, jako jsou faktury nebo objednávky, je to ale jednoduchá a účinná ochrana.
+Mezi sousedkou a trezorem je ještě užitečná mezicesta. Postup může **před odesláním do AI nahradit osobní údaje zástupnými značkami**. Místo „Jana Nováková, Lipová 12, Brno“ odejde „[JMÉNO_1], [ADRESA_1]“. Model odpoví a značky se vrátí zpátky. AI tak pracuje s obsahem, aniž by věděla, o koho jde. U faktur a objednávek je to jednoduchá a účinná ochrana.
 
 ## A co AI Act?
 
-Evropský AI Act se pro běžné firemní použití týká hlavně tří věcí. Firmy, které AI nasazují, mají **podporovat, aby jejich lidé AI rozuměli** a uměli ji používat odpovědně. Od srpna 2026 platí **povinnosti transparentnosti**, například že lidé mají vědět, když komunikují s chatbotem, a že uměle vytvořený obsah má být jako takový rozpoznatelný. A přísná pravidla pro takzvané vysoce rizikové systémy (například hodnocení uchazečů o práci nebo bonity klientů) se po letošní novele odsunula na konec roku 2027.
+Pro běžnou firmu znamená hlavně tohle: podporovat, aby lidé AI rozuměli, dát vědět, když zákazník mluví s chatbotem, a u důležitých rozhodnutí nechat poslední slovo člověku. Přísná pravidla pro takzvané vysoce rizikové systémy se po letošní novele odsunula na konec roku 2027. Jako u GDPR platí, že dobře vedená evidence ušetří spoustu starostí.
 
-Pro většinu malých a středních firem z toho plyne praktický závěr: vědět, kde a jak AI používáte, mít to sepsané a zajistit, aby u důležitých rozhodnutí měl poslední slovo člověk. Podobně jako u GDPR platí, že dobře vedená evidence ušetří spoustu starostí.
+*Tohle je praktický přehled, ne právní rada. U citlivých případů se poraďte s odborníkem na ochranu osobních údajů.*
 
-*Tento článek je praktický přehled, nikoli právní rada. U citlivých případů doporučujeme konzultaci s právníkem specializovaným na ochranu osobních údajů.*
+## Jak to děláme my
 
----
+Na většinu automatizací stačí menší modely, a ty se dají provozovat bezpečně, často přímo u vás. Kde to jde, necháme práci obyčejným pravidlům, která citlivá data nikam neposílají vůbec. AI zapojíme jen tam, kde pravidla nestačí.
 
-Chcete projít, která data ve vašich procesech smějí do cloudu a kde se vyplatí vlastní řešení? [Ozvěte se nám](/kontakt), rádi vám pomůžeme najít rozumnou kombinaci.
+Chcete projít, co smí do cloudu a co patří do trezoru? S tím umíme poradit, [ozvěte se nám](/kontakt).

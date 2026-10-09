@@ -1,87 +1,49 @@
 ---
 title: "Jak jsem automatizoval 3 hodiny denní rutiny"
-description: "Praktický návod, jak nastavit automatizované workflow, které za vás každý den zpracovává e-maily, generuje reporty a aktualizuje CRM — bez jediného řádku kódu."
+description: "Třídění e-mailů, přepisování do CRM, pondělní reporty. Tři hodiny denně, které jsem dával práci, kterou umí udělat počítač. Jak jsem si je vzal zpátky, a proč mě to stojí míň než jedno kafe měsíčně."
 pubDate: 2025-01-15
 author: "Ing. Stanislav Kovařík"
 tags: ["automatizace", "workflow", "produktivita"]
 draft: false
 ---
 
-Každý den jsem trávil přibližně 3 hodiny na opakujících se úkolech: třídění e-mailů od klientů, ruční přepis dat do CRM, generování týdenních reportů a odesílání statusových zpráv. Klasické stojatá voda.
+Kdysi jsme doma nádobí myli ručně. Pak přišla myčka a nikdo už nechápe, jak jsme to mohli dělat jinak. S kancelářskou prací je to stejné. Jen většina z nás pořád stojí u dřezu.
 
-## Problém: Čas strávený rutinou je čas ztracený pro strategii
+Já jsem u něj stál taky. A to přitom dělám procesy a automatizace profesionálně. Kovářova kobyla chodí bosa, to přísloví nevymysleli pro nic za nic.
 
-Jako procesní konzultant vím, že každá opakující se manuální činnost je kandidát na automatizaci. Přesto jsem sám spadl do pasti — dělal jsem to proto, že "vím jak" a bylo to pohodlné.
+## Tři hodiny, které nikdo nevidí
 
-Zlom přišel, když jsem počítal: 3 hodiny denně × 22 pracovních dní = **66 hodin měsíčně**. Téměř dva pracovní týdny věnované rutině.
+Každý den jsem třídil e-maily od klientů, ručně přepisoval údaje do CRM, skládal týdenní reporty a posílal statusové zprávy. Nic těžkého. Prostě rutina. Ctrl+C, Ctrl+V, dvě nejpoužívanější klávesy mé kariéry.
 
-## Řešení: automatizované workflow ve třech blocích
+Pak jsem to jednou spočítal. Tři hodiny denně krát dvaadvacet pracovních dní je **66 hodin měsíčně**. Skoro dva celé pracovní týdny. Každý měsíc. Na práci, kterou za mě zvládne počítač.
 
-Nástrojů pro automatizaci existuje celá řada (Zapier, Make, Power Automate a další). Já jsem pro tento případ zvolil open-source nástroj n8n. Na rozdíl od placených cloudových služeb ho můžete provozovat na vlastním serveru a platíte jen za hosting, ne za počet kroků.
+V tu chvíli to přestalo být pohodlné.
 
-### Workflow 1: Třídění a sumarizace e-mailů
+## Co jsem postavil
 
-```
-Gmail Trigger → AI Summarize (OpenAI) → Label → Notion Note
-```
+Nejdřív jsem nic nekupoval. Sedl jsem si s papírem a rozepsal, co přesně dělám, v jakém pořadí a proč. Polovina kroků se ukázala jako zbytečná, zvyk z doby, kdy to tak „vždycky bylo“. Ty jsem rovnou zrušil. Teprve zbytek jsem automatizoval, a to třemi jednoduchými postupy v open-source nástroji n8n.
 
-Každý příchozí e-mail od klienta je automaticky:
-1. Rozpoznán jako klientský (podle domény)
-2. Shrnut do 2 vět pomocí GPT-4o
-3. Označen prioritou (urgentní / běžné / informační)
-4. Uložen jako poznámka do Notion CRM
+**Pošta se třídí sama.** E-mail od klienta se pozná podle domény, dostane štítek podle priority a uloží se do přehledu klientů. Jen na krátké shrnutí dlouhých zpráv jsem nasadil jazykový model, protože tam obyčejné pravidlo nestačí. Úspora asi 45 minut denně.
 
-**Čas ušetřený:** ~45 minut denně
+**Pondělní report se napíše sám.** V osm ráno si automatizace stáhne data z tabulky, sestaví přehled a pošle ho klientům. Já u toho ještě piju kafe. Úspora zhruba hodina týdně.
 
-### Workflow 2: Automatický report každé pondělí
+**Po hovoru se nic nezapomene.** Když skončí schůzka domluvená přes kalendář, vznikne záznam s datem a klientem, nastaví se připomínka na follow-up a mně přijde zpráva. Dalších 30 minut denně.
 
-```
-Cron (Po 8:00) → Google Sheets → Generuj PDF → Odešli e-mail
-```
+Všimněte si, že AI je tu jen v jednom malém kroku. Zbytek dělají obyčejná pravidla typu „když přijde tohle, udělej tamto“. Ta se nespletou, nic si nevymýšlejí a stojí prakticky nula.
 
-Každé pondělí v 8:00 workflow:
-- Stáhne data z Google Sheets (sledování projektů)
-- Sestaví HTML report
-- Odešle ho klientům a mně jako PDF přílohu
+## Kolik to stojí
 
-**Čas ušetřený:** ~60 minut týdně
+Celé to běží na malém pronajatém serveru za zhruba 4 eura měsíčně. Hotové cloudové služby by za stejnou práci chtěly desetkrát víc, protože si účtují každý krok. Za cenu jednoho kafe tak mám asistenta, který nechodí na obědy, nemá dovolenou a v pondělí ráno nemá blbou náladu.
 
-### Workflow 3: CRM aktualizace po hovoru
+## Výsledek po třech měsících
 
-```
-Calendly Webhook → Záznam v Notion → Slack notifikace
-```
+- **Vrátilo se mi 55–65 hodin měsíčně.**
+- **Chyb ubylo zhruba o 90 %.** Ruční přepisování je největší továrna na překlepy, jakou znám.
+- **Klienti dostávají reporty včas.** Každé pondělí, bez výjimky a bez „omlouvám se, trochu jsem se zasekl“.
+- **Konečně dělám, co mě baví.** Místo administrativy radím firmám.
 
-Po každém dokončeném hovoru přes Calendly se automaticky:
-- Vytvoří záznam v Notion s datem, klientem a délkou hovoru
-- Nastaví follow-up reminder na 48 hodin
-- Pošle mi Slack zprávu se shrnutím
+## Jak začít
 
-**Čas ušetřený:** ~30 minut denně
+Vezměte si na týden papír a zapisujte, co děláte víc než třikrát týdně a co trvá déle než deset minut. To je váš seznam kandidátů. Než ale cokoli automatizujete, zeptejte se: *musí se to vůbec dělat?* Nejlevnější automatizace je ta, kterou nepotřebujete, protože jste zbytečný krok rovnou zrušili.
 
-## Technické nastavení
-
-n8n provozuji na VPS (Hostinger, 4 EUR/měsíc) přes Docker:
-
-```bash
-docker run -d \
-  --name n8n \
-  -p 5678:5678 \
-  -v ~/.n8n:/home/node/.n8n \
-  n8nio/n8n
-```
-
-Celková cena infrastruktury: **4 EUR/měsíc** místo 50+ EUR za Make nebo Zapier.
-
-## Výsledek po 3 měsících
-
-- **Ušetřeno:** 55–65 hodin měsíčně
-- **Chyby:** Sníženy o ~90 % (ruční přepis dat = zdroj chyb)
-- **Spokojenost klientů:** Reporty dorazí přesně, každé pondělí, bez výjimky
-- **Moje kapacita:** Přesunuta na strategické poradenství místo administrativy
-
-## Kde začít?
-
-Nejjednodušší první krok: zmapujte, co děláte více než 3× týdně a trvá to déle než 10 minut. To je váš první kandidát na automatizaci.
-
-Pokud si nejste jistí, kde začít, nebo chcete audit procesů ve vaší firmě — [ozvěte se nám](/kontakt).
+Přesně takhle pracujeme i s klienty. Nejdřív procesy narovnáme, pak automatizujeme běžnými nástroji a AI přidáme jen tam, kde opravdu pomůže. A hlavně: automatizujeme jen to, co dává ekonomický smysl nebo vám ubere otravnou práci. S tím umíme poradit, [ozvěte se nám](/kontakt).

@@ -1,80 +1,62 @@
 ---
 title: "Pravidla pro AI ve firmě: směrnice na jednu stránku"
-description: "Zakázat AI nefunguje a nechat ji bez pravidel je riskantní. Ukazujeme, jak sepsat jednoduchou firemní směrnici pro používání umělé inteligence, které zaměstnanci porozumí, a přikládáme vzor, ze kterého můžete vyjít."
+description: "Když dáte kolegovi klíčky od firemního auta, taky mu řeknete, že se v něm nekouří a pokuty si platí sám. S umělou inteligencí je to stejné. Jak sepsat jednoduchá pravidla, kterým zaměstnanci porozumí, i se vzorem, který můžete rovnou převzít."
 pubDate: 2026-10-03
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "směrnice", "bezpečnost", "tým"]
 draft: false
 ---
 
-Ať už jste to ve firmě oficiálně povolili, nebo ne, vaši lidé umělou inteligenci s velkou pravděpodobností používají. Obchodník si nechá vylepšit nabídku, účetní si nechá vysvětlit novou vyhlášku, asistentka přeloží e-mail. Většinou v dobré víře a s dobrým výsledkem.
+Když kolegovi předáváte firemní auto, nedáváte mu k tomu stostránkovou příručku. Řeknete mu pár věcí: nekouří se v něm, tankuje se na kartu, pokuty si platí řidič. Hotovo. Všichni vědí, na čem jsou.
 
-Problém nastává ve chvíli, kdy do bezplatného chatu na soukromém účtu putuje seznam zákazníků s telefonními čísly, nebo když nikdo nezkontroluje, že AI v nabídce „vylepšila“ i cenu. Ne ze zlé vůle, ale proto, že **nikdo neřekl, kde je hranice**.
+S umělou inteligencí ve firmě je to podobné. Ať jste ji oficiálně povolili, nebo ne, vaši lidé ji nejspíš používají. Obchodník si nechá učesat nabídku, účetní si nechá vysvětlit novou vyhlášku, asistentka přeloží e-mail. Většinou v dobré víře a s dobrým výsledkem.
+
+Potíž přijde, když do bezplatného chatu na soukromém účtu odputuje seznam zákazníků i s telefony. Nebo když nikdo nezkontroluje, že AI v nabídce „vylepšila“ i cenu. Ne ze zlé vůle, ale proto, že **nikdo neřekl, kde je hranice**.
 
 ## Proč zákaz nefunguje
 
-Některé firmy reagují zákazem. Zkušenost ukazuje, že to má dva důsledky: AI se dál používá, jen potají na soukromých telefonech, a firma přichází o skutečný přínos, který by jí mohla přinést. Zákaz tak riziko nezmenší, jen ho schová.
+Zákaz zní jako jistota. Ve skutečnosti se pak AI používá dál, jen potají na soukromých telefonech. Riziko nezmizí, jen ho přestanete vidět. A firma navíc přijde o čas, který mohla ušetřit. Je to jako zakázat dětem internet: výsledkem je jen to, že se vás přestanou ptát.
 
-Rozumnější cesta je AI povolit **za jasných podmínek**. A ty podmínky musí být tak krátké, aby si je lidé opravdu přečetli.
+## Pět otázek, na které má směrnice odpovědět
 
-## Co do směrnice patří
+1. **Čím smím pracovat?** Vyjmenujte schválené nástroje, ideálně pod firemním účtem.
+2. **Co nikdy nevkládat?** Buďte konkrétní: rodná čísla, čísla účtů a karet, hesla, zdravotní údaje, mzdy, smlouvy s mlčenlivostí.
+3. **Kdo za výsledek odpovídá?** Vždycky člověk, který ho použil. AI je nástroj jako kalkulačka. Na kalkulačku se taky nikdo nevymlouvá.
+4. **Co musím zkontrolovat?** Čísla, data, jména a citace zákonů. AI umí znít přesvědčivě, i když si fakta vymýšlí. Jako známý u piva, který „to četl na internetu“.
+5. **Na koho se obrátit?** Jedno jméno. Člověk, kterému se dá zavolat s otázkou „smím tohle?“.
 
-Dobrá směrnice odpovídá na pět otázek. Nic víc, nic méně.
+## Vzor ke zkopírování
 
-**1. Které nástroje smím používat?**
-Vyjmenujte konkrétní schválené nástroje a účty, ideálně firemní. „Používejte firemní účet v nástroji X, přihlášení přes pracovní e-mail.“ Co není na seznamu, se pro pracovní data nepoužívá.
+Záměrně je krátký. Co se nevejde na jednu stránku, to nikdo nečte.
 
-**2. Co do AI nikdy nevkládat?**
-Tohle je nejdůležitější část. Buďte konkrétní a uveďte příklady: rodná čísla, čísla účtů a karet, zdravotní údaje, hesla a přístupové klíče, mzdy, obsah smluv s doložkou mlčenlivosti. U ostatních osobních údajů zákazníků jen ve schválených firemních nástrojích.
-
-**3. Kdo odpovídá za výsledek?**
-Vždy člověk, který výstup použil. AI je nástroj jako kalkulačka nebo překladač. Pokud do nabídky projde chybná cena, nevymlouváme se na AI.
-
-**4. Co musím zkontrolovat?**
-Čísla, data, jména, citace zákonů a cokoli, co odchází ven. Jazykové modely umějí znít velmi přesvědčivě i ve chvíli, kdy si fakta vymýšlejí.
-
-**5. Na koho se obrátit?**
-Jedno jméno. Člověk, který odpoví na otázku „smím tohle?“ a kterému se nahlásí, když se něco pokazí. Ve větší firmě to bývá IT nebo pověřenec pro ochranu osobních údajů, v malé klidně majitel.
-
-## Vzor směrnice
-
-Následující text můžete převzít a upravit pro svou firmu. Záměrně je krátký: pokud se nevejde na jednu stránku, nikdo ho nebude číst.
-
-> **Pravidla pro používání umělé inteligence ve firmě [název]**
+> **Pravidla pro používání AI ve firmě [název]**
 >
-> **Proč:** AI nám může ušetřit čas při psaní, překladech, shrnutích a hledání informací. Chceme ji využívat, ale bezpečně.
+> **Proč:** AI nám šetří čas při psaní, překladech a hledání informací. Chceme ji používat, ale bezpečně.
 >
-> **Schválené nástroje:** [nástroj, typ účtu]. Pro pracovní účely používejte jen tyto nástroje a jen pod firemním účtem.
+> **Schválené nástroje:** [nástroj, typ účtu]. Pracovní věci jen tady a jen pod firemním účtem.
 >
-> **Nikdy nevkládejte:** rodná čísla, čísla účtů a platebních karet, hesla a přístupové údaje, zdravotní údaje, mzdové údaje, obsah smluv s doložkou mlčenlivosti. Osobní údaje zákazníků a kolegů jen ve schválených nástrojích a jen v nezbytném rozsahu.
+> **Nikdy nevkládejte:** rodná čísla, čísla účtů a karet, hesla, zdravotní a mzdové údaje, smlouvy s mlčenlivostí. Osobní údaje zákazníků jen ve schválených nástrojích a jen v nutném rozsahu.
 >
-> **Vždy zkontrolujte:** čísla, data, jména, odkazy na zákony a předpisy. Text, který odchází zákazníkovi nebo úřadu, si přečtěte celý.
+> **Vždy zkontrolujte:** čísla, data, jména a odkazy na předpisy. Co jde ven, si přečtěte celé.
 >
 > **Odpovědnost:** Za výsledek odpovídá ten, kdo ho použil, ne nástroj.
 >
-> **Označení:** Pokud zákazník komunikuje s automatickým asistentem, musí to vědět.
+> **Chatbot se představí:** Když zákazník píše s automatem, musí to vědět.
 >
-> **Dotazy a problémy:** [jméno, kontakt]. Pokud omylem vložíte něco, co jste neměli, dejte vědět hned. Nejde o trest, ale o to, abychom mohli reagovat.
+> **Stala se chyba?** Ozvěte se hned [jméno, kontakt]. Nejde o trest, ale o to, abychom stihli reagovat.
 >
-> Platnost od [datum]. Pravidla zrevidujeme nejpozději za šest měsíců.
+> Platí od [datum]. Za půl roku pravidla projdeme znovu.
 
-## Jak směrnici zavést, aby žila
+## Jak zařídit, aby nezůstala v šuplíku
 
-Papír v šuplíku nic nezmění. Osvědčilo se nám několik jednoduchých kroků:
+Stačí půlhodinové setkání s pár příklady z vaší vlastní práce: tohle je v pořádku, tohle už ne. Sdílejte dobré příklady, kdy někomu AI ušetřila hodinu. Zaveďte pravidlo „nahlásit bez trestu“, protože chyba nahlášená do hodiny se většinou dá napravit. A za půl roku pravidla zrevidujte, nástroje se mění rychle.
 
-- **Krátké společné setkání.** Půl hodiny, ne celodenní školení. Projděte pravidla a hlavně ukažte dva tři příklady z vaší vlastní práce: tohle je v pořádku, tohle ne.
-- **Ukažte, jak se to dělá dobře.** Lidé se nejvíc naučí z ukázky, jak kolega AI použil a ušetřil hodinu. Sdílejte dobré příklady.
-- **Pravidlo „nahlásit bez trestu“.** Když se zaměstnanec bojí přiznat chybu, dozvíte se o ní pozdě. Chyba nahlášená do hodiny se většinou dá napravit.
-- **Revize za půl roku.** Nástroje i jejich podmínky se mění rychle. Co dnes platí, může být za rok jinak.
+Bonus: tím zároveň plníte to, co po firmách chce evropský AI Act, tedy podporovat, aby lidé AI rozuměli a používali ji odpovědně.
 
-Kromě toho, že se tím vyhnete nepříjemnostem, plníte tím i to, co po firmách žádá evropský AI Act: podporovat, aby lidé, kteří s AI pracují, jí rozuměli a používali ji odpovědně. Krátká směrnice a společné setkání jsou k tomu dobrý a doložitelný první krok.
+## Směrnice je začátek
 
-## Směrnice je začátek, ne cíl
+Pravidla ohlídají chat, do kterého lidé ručně vkládají text. Největší úspory ale přijdou, až AI přestane být okýnkem v prohlížeči a stane se **řízeným krokem ve firemním procesu**. Pak už nemusí každý pamatovat, co nesmí vložit, protože to za něj hlídá samotný postup.
 
-Pravidla vyřeší chat, do kterého lidé ručně vkládají text. Největší úspory ale přicházejí, až AI přestane být samostatným oknem v prohlížeči a stane se **řízeným krokem ve firemním procesu**: s pevně daným vstupem, kontrolou výstupu a záznamem o každém běhu. Pak už nezáleží na tom, jestli si každý pamatuje, co nesmí vložit, protože to za něj hlídá samo workflow.
+My přitom vždycky začínáme otázkou, jestli úkol nezvládnou obyčejná pravidla bez AI. Většinou ano. A když ne, nasadíme AI jen na ten jeden krok, kde dává ekonomický smysl nebo ubere otravnou práci. Víc v článcích [Kontrolovatelné automatizace](/blog/kontrolovatelne-automatizace-s-minimem-ai) a [Firemní data a AI](/blog/firemni-data-a-ai-cloud-nebo-vlastni-server).
 
-Jak takové automatizace stavíme, popisujeme v článku [Kontrolovatelné automatizace](/blog/kontrolovatelne-automatizace-s-minimem-ai). A pokud řešíte, kam s citlivými daty, přečtěte si [Firemní data a AI: cloud, nebo vlastní server?](/blog/firemni-data-a-ai-cloud-nebo-vlastni-server)
-
----
-
-Chcete směrnici připravit na míru a provést tým krátkým praktickým školením? [Ozvěte se nám](/kontakt).
+Chcete směrnici na míru a krátké školení pro tým? S tím umíme poradit, [ozvěte se nám](/kontakt).

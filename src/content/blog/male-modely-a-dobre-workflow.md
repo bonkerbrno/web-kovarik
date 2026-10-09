@@ -1,60 +1,55 @@
 ---
 title: "Nepotřebujete drahý model. Stačí malý a dobře navržené workflow"
-description: "Pro většinu firemních úloh není potřeba nejvýkonnější a nejdražší AI. Malé modely zvládnou třídění, čtení dokumentů i krátké shrnutí, pokud je obklopí dobře navržené workflow. Vysvětlujeme proč a jak."
+description: "Na nákup rohlíků nepotřebujete Ferrari. A na třídění faktur nepotřebujete nejdražší umělou inteligenci na trhu. Proč malé modely stačí na většinu firemní práce a co je potřeba, aby fungovaly."
 pubDate: 2026-09-01
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "náklady", "workflow"]
 draft: false
 ---
 
-Často slyšíme: „Chceme AI, ale ten nejlepší model je moc drahý.“ Dobrá zpráva je, že ho většinou vůbec nepotřebujete. **O kvalitě výsledku rozhoduje víc to, jak je úloha navržená, než jak velký model ji řeší.**
+Představte si, že jezdíte pro rohlíky do večerky na rohu. Ferrari by to zvládlo. Rychle, stylově a za cenu, za kterou byste měli rohlíky do konce života. Většina z nás ale sedne do obyčejného auta, nebo jde rovnou pěšky.
 
-## Velký model je jako zaměstnat profesora na třídění pošty
+S umělou inteligencí ve firmách se často děje opak. „Chceme AI, ale ten nejlepší model je moc drahý,“ slýcháme pořád. Dobrá zpráva: na většinu firemní práce ho vůbec nepotřebujete.
 
-Největší modely umějí psát eseje, programovat, překládat i radit s obchodní strategií. Platíte za všechny tyto schopnosti, i když jich využijete zlomek.
+## Profesor na třídění pošty
 
-Typické firemní úlohy jsou přitom úzké:
+Největší jazykové modely umějí psát eseje, programovat, překládat i radit se strategií. Platíte za všechno, i když využijete zlomek. Je to jako zaměstnat profesora, aby vám třídil poštu. Zvládne to skvěle, ale ta výplatní páska…
 
-- zařadit e-mail do jedné z pěti kategorií,
+Typická firemní práce je přitom úzká a opakovaná:
+
+- zařadit e-mail do jedné z pěti přihrádek,
 - vytáhnout z faktury dodavatele, datum a částku,
-- poznat, jestli zpráva obsahuje reklamaci,
-- shrnout dotaz zákazníka do dvou vět,
-- přeložit krátký text.
+- poznat, jestli zpráva není reklamace,
+- shrnout dotaz zákazníka do dvou vět.
 
-Na takové úlohy stačí **malý model**: levnější, rychlejší a často dostupný i ke spuštění na vlastním počítači nebo serveru.
+Na tohle stačí **malý model**. Je levnější, rychlejší a často se dá provozovat i na vlastním serveru.
 
-## Proč malý model stačí
+## Kouzlo není v modelu, ale v přípravě
 
-Malý model sám o sobě chybuje víc než velký. Rozdíl ale z velké části zmizí, když mu dobře připravíte práci:
+Malý model sám o sobě chybuje víc než velký. Rozdíl ale z velké části zmizí, když mu práci dobře připravíte. Jako u nového kolegy: když mu řeknete „nějak to vyřiď“, dopadne to všelijak. Když mu dáte jasný úkol a šablonu, zvládne to na jedničku.
 
-- **Jedna úloha, jedna otázka.** Místo „zpracuj tenhle e-mail“ se ptáme „do které z těchto kategorií patří?“. Úzká otázka je pro malý model snadná.
-- **Krátký a čistý vstup.** Workflow předem odstraní podpisy, citace starších zpráv a reklamní patičky. Model čte jen to podstatné.
-- **Pevný formát odpovědi.** Model vrací hodnotu ze seznamu nebo vyplněnou šablonu. Odpověď, která do formátu nepasuje, workflow pozná a vrátí.
-- **Kontrola pravidlem.** Součty na faktuře se přepočítají, IČO se ověří v registru, datum musí být platné.
-- **Člověk pro výjimky.** Co model neumí s jistotou zařadit, jde k člověku. Ten řeší pár procent případů místo všech.
+Takže:
 
-Dobře navržené workflow tak nese velkou část „inteligence“ samo. Model je jen jeden šroubek v dobře postaveném stroji.
+- **Jedna otázka najednou.** Ne „zpracuj tenhle e-mail“, ale „do které z těchto pěti přihrádek patří?“.
+- **Čistý vstup.** Podpisy, staré citace a reklamní patičky se odstraní dřív, než text k modelu dorazí.
+- **Pevná odpověď.** Model nevypráví, jen vybere hodnotu ze seznamu nebo vyplní šablonu.
+- **Kontrola pravidlem.** Součty se přepočítají, IČO se ověří. Co nesedí, jde k člověku.
+
+Dobře navržený postup tak nese velkou část „inteligence“ sám. Model je jen jeden šroubek v dobře seřízeném stroji.
 
 ## Co tím získáte
 
-- **Nižší náklady.** Malé modely stojí za stejné množství textu zlomek ceny velkých. Při tisících dokumentů měsíčně je rozdíl znát.
-- **Rychlost.** Odpověď přijde rychleji, workflow běží plynuleji.
-- **Soukromí.** Malý model lze provozovat lokálně. Citlivá data, například osobní údaje nebo smlouvy, pak neopouštějí vaši firmu. To výrazně usnadňuje soulad s GDPR.
-- **Nezávislost.** Nejste vázáni na jednoho dodavatele. Když se změní ceny, model vyměníte a workflow zůstane.
-- **Předvídatelnost.** Úzká úloha s kontrolou výstupu se chová stabilně. Víte, co od ní čekat.
+- **Peníze.** Malý model stojí zlomek ceny velkého. U tisíců dokumentů měsíčně je to znát na účtu.
+- **Rychlost.** Odpověď přijde dřív, než stihnete říct „no tak, dělej“.
+- **Bezpečí.** Malý model jde provozovat u vás. Smlouvy a osobní údaje pak nikam necestují.
+- **Svobodu.** Když dodavatel zdraží, model vyměníte a zbytek zůstane, jak byl.
 
-## Kdy se velký model hodí
+## A kdy je Ferrari namístě?
 
-Abychom byli féroví: jsou úlohy, kde velký model dává smysl. Například návrh delšího textu, složitá analýza smlouvy nebo práce s velmi různorodými dokumenty. I tehdy ale doporučujeme, aby velký model byl **jedním krokem pod kontrolou**, ne řídicím centrem. A často se vyplatí kombinace: malý model vyřeší běžné případy a jen ty složité pošle velkému.
+Abychom byli féroví: na dlouhé texty, složitou analýzu smlouvy nebo hodně různorodé dokumenty se velký model hodí. I pak ale doporučujeme, aby byl jen jedním krokem pod dohledem, ne šéfem celého procesu. Často nejlépe funguje kombinace: běžné případy vyřídí malý model a jen ty zapeklité pošle velkému bráchovi.
 
-## Jak postupujeme my
+## Jak to děláme my
 
-1. **Rozložíme proces na kroky** a zjistíme, které zvládnou obyčejná pravidla bez AI.
-2. **Zbylé kroky zúžíme** na co nejjednodušší otázky.
-3. **Vyzkoušíme nejmenší model**, který úlohu spolehlivě zvládne, na vašich skutečných datech.
-4. **Přidáme kontroly a záznam** každého běhu, aby bylo vidět, co se děje.
-5. **Teprve když malý model nestačí**, sáhneme po větším, a jen pro daný krok.
+Držíme se jednoduchého pořadí. Nejdřív proces narovnáme, protože automatizovat zmatek znamená mít zmatek rychleji. Pak to, co jde, svěříme obyčejným programovým nástrojům a pravidlům. AI přizveme jen tam, kde pravidla nestačí. A i tam téměř vždy vystačíme s menším modelem, který je bezpečnější a levnější. Nad takovou automatizací máte plnou kontrolu a proti autonomním AI agentům vyjde řádově levněji.
 
-Výsledek je automatizace, která je levná na provoz, srozumitelná a dá se dál rozvíjet.
-
-Chcete vědět, kolik by vás stála AI ve vašich procesech, kdyby byla navržená rozumně? [Domluvte si hovor zdarma](/kontakt) nebo si přečtěte, proč se vyhýbáme [černým skříňkám velkých modelů](/blog/black-box-velke-modely-a-multiagentni-systemy).
+Chcete vědět, kolik by vás AI stála, kdyby byla navržená rozumně? S tím umíme poradit, [domluvte si hovor zdarma](/kontakt). A proč se vyhýbáme [černým skříňkám](/blog/black-box-velke-modely-a-multiagentni-systemy), píšeme jinde.

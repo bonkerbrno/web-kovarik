@@ -1,70 +1,67 @@
 ---
 title: "Kontrolovatelné automatizace: co nejvíc pravidel, co nejméně AI"
-description: "Nejspolehlivější automatizace je ta, které rozumíte. Ukazujeme, jak postavit workflow, kde většinu práce dělají jasná pravidla a AI nastupuje jen tam, kde opravdu pomůže, a vždy pod dohledem."
+description: "Babiččin recept funguje pokaždé. Kuchař improvizátor jednou uvaří zázrak a podruhé pálivý pudink. Proč stavíme automatizace hlavně na pravidlech a AI pouštíme ke sporáku jen tam, kde opravdu pomůže."
 pubDate: 2026-09-15
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["automatizace", "AI", "kontrola"]
 draft: false
 ---
 
-Když se dnes mluví o automatizaci, skoro vždy se mluví o umělé inteligenci. Jako by bez ní automatizace neexistovala. Z naší praxe ale platí opak: **čím méně AI v procesu, tím je spolehlivější, levnější a srozumitelnější.** AI má své místo, jen ne všude.
+Babiččin recept na bábovku funguje pokaždé. Tolik mouky, tolik vajec, padesát minut na stoosmdesát. Žádná překvapení. Pak je kuchař improvizátor: jednou uvaří zázrak, podruhé „experimentální“ pudink s chilli.
 
-## Co znamená „kontrolovatelná“ automatizace
+Dnes se o automatizaci skoro vždy mluví jako o umělé inteligenci. Jako by bez ní nešla. Naše zkušenost je opačná: **čím méně improvizátora v kuchyni, tím spolehlivější, levnější a srozumitelnější výsledek.** AI má své místo, jen ne u každého hrnce.
 
-Kontrolovatelná automatizace splňuje tři jednoduché podmínky:
+## Kdy je automatizace „kontrolovatelná“
 
-1. **Víte, co dělá.** Každý krok má jméno a jasný účel. Žádné „ono to nějak funguje“.
-2. **Vidíte, co udělala.** Každý běh zanechá stopu: co přišlo, co se rozhodlo, kam co odešlo.
-3. **Umíte ji zastavit a opravit.** Když se něco změní, upravíte jeden krok, ne celý systém.
+Stačí tři jednoduché podmínky:
 
-Pokud automatizace některou z podmínek nesplňuje, nepomáhá vám. Jen přesouvá nejistotu z lidí na počítač.
+1. **Víte, co dělá.** Každý krok má jméno a účel. Žádné „ono to nějak funguje“.
+2. **Vidíte, co udělala.** Každý běh nechá stopu: co přišlo, co se rozhodlo, kam co odešlo.
+3. **Umíte ji opravit.** Když se něco změní, upravíte jeden krok, ne celý systém.
 
-## Pravidla dělají 80 % práce
+Pokud automatizace některou podmínku nesplňuje, nepomáhá vám. Jen přestěhovala nejistotu z lidí do počítače.
 
-Většina firemní rutiny je předvídatelná. Faktura má číslo, datum a částku. Objednávka má zákazníka a položky. E-mail od dodavatele přichází z jeho domény. Na to žádnou AI nepotřebujete, stačí obyčejná pravidla:
+## Recept udělá 80 % práce
 
-- *pokud e-mail přišel z domény dodavatele a má přílohu PDF, ulož ji do složky Faktury,*
-- *pokud částka přesahuje 50 000 Kč, pošli ji ke schválení,*
-- *pokud zákazník neodpověděl do pěti dnů, připomeň se.*
+Většina firemní rutiny je předvídatelná. Faktura má číslo, datum a částku. E-mail od dodavatele chodí z jeho domény. Na to nepotřebujete AI, stačí obyčejná pravidla:
 
-Pravidla jsou **deterministická**: stejný vstup vždy dá stejný výsledek. Dají se otestovat, zdokumentovat a vysvětlit komukoli ve firmě. A nic nestojí za každé použití.
+- *když přijde e-mail od dodavatele s PDF, ulož ho do složky Faktury,*
+- *když částka přesáhne 50 000 Kč, pošli ji ke schválení,*
+- *když se zákazník neozve do pěti dnů, připomeň se.*
 
-## AI jen tam, kde pravidla nestačí
+Pravidla jsou jako babiččin recept. Stejný vstup dá vždycky stejný výsledek. Dají se vyzkoušet, zapsat a vysvětlit komukoli ve firmě. A nic si nevymýšlejí.
 
-Jsou ale úlohy, kde pravidla selhávají. Zákazník napíše dotaz vlastními slovy. Faktura přijde jako sken s nečekaným rozložením. Potřebujete rozpoznat, jestli jde o reklamaci, nebo o běžný dotaz.
+## AI jen tam, kde recept nestačí
 
-Tady AI pomůže. Důležité je, **jak** ji do procesu zapojíte:
+Pak jsou chvíle, kdy recept končí. Zákazník napíše dotaz po svém. Faktura přijde jako křivý sken. Potřebujete poznat, jestli jde o reklamaci, nebo o zvědavý dotaz.
 
-- **Úzké zadání.** Místo „vyřiď tenhle e-mail“ dáme modelu jednu otázku: „Je to reklamace? Odpověz ano, nebo ne.“ Úzká otázka znamená méně prostoru pro chybu.
-- **Pevný formát odpovědi.** Model nevrací volný text, ale předem dané hodnoty, například kategorii z krátkého seznamu. Co do seznamu nepatří, workflow odmítne.
-- **Kontrola výsledku pravidlem.** Když AI vytáhne z faktury částku, pravidlo ověří, že součet položek sedí. Když nesedí, faktura jde k člověku.
-- **Člověk u důležitých rozhodnutí.** Platby, odpovědi zákazníkům nebo změny v datech schvaluje člověk. Automatizace mu připraví podklady, rozhodnutí zůstává na něm.
+Tady AI pomůže. Ale s jasnými pravidly hry:
 
-Tak se AI stává jedním krokem ve workflow, ne jeho šéfem.
+- **Úzká otázka.** Ne „vyřiď tenhle e-mail“, ale „je to reklamace? ano, nebo ne“.
+- **Pevný formát odpovědi.** Model vybírá z krátkého seznamu. Co do seznamu nepatří, postup odmítne.
+- **Kontrola pravidlem.** Když AI vytáhne z faktury částku, pravidlo přepočítá, jestli sedí součty.
+- **Člověk u důležitých věcí.** Platby a odpovědi zákazníkům schvaluje člověk. Automatizace mu jen připraví podklady.
+
+AI je tak pomocník u jednoho hrnce, ne šéfkuchař.
 
 ## Jak to vypadá v praxi
 
-Představte si zpracování přijatých faktur:
+Vezměte přijaté faktury. Pravidlo pozná, že e-mail je od dodavatele. AI přečte PDF a vypíše dodavatele, číslo, datum a částku. Pravidlo ověří součty a IČO. Když sedí, faktura jde do účetnictví. Když ne, účetní dostane úkol i s vysvětlením, co nehraje.
 
-```
-E-mail s přílohou → Pravidlo: je od dodavatele? → Čtení PDF
-→ AI: vytáhni dodavatele, číslo, datum, částku (pevný formát)
-→ Pravidlo: sedí součty a IČO? 
-   ano → zápis do účetnictví
-   ne  → úkol pro účetní s vysvětlením, co nesedí
-```
+AI tu dělá jedinou věc: čte, co pravidla přečíst neumí. Když se něco pokazí, z historie hned vidíte, ve kterém kroku.
 
-AI tu dělá jedinou věc: čte dokument, který pravidla neumějí přečíst. Všechno ostatní jsou pravidla, která lze zkontrolovat. Když se něco pokazí, z historie běhů hned vidíte, ve kterém kroku.
+## Naše pravidla
 
-## Proč na tom záleží
+Tohle není jen teorie, takhle opravdu pracujeme:
 
-- **Spolehlivost.** Pravidla nehalucinují. AI v úzké roli s kontrolou výstupu chybuje výrazně méně než AI, které necháte volnou ruku.
-- **Náklady.** Každé volání AI něco stojí. Když ji voláte jen pro malou část případů, platíte zlomek.
-- **Odpovědnost.** Když se zákazník nebo úřad zeptá, proč se něco stalo, máte odpověď. Černá skříňka žádnou odpověď nedá.
-- **Nezávislost.** Pravidla nepatří žádnému dodavateli AI. Když se změní ceny nebo podmínky, vyměníte jeden krok, ne celé řešení.
+1. **Nejdřív narovnáme procesy.** Automatizovat zmatek znamená mít zmatek rychleji.
+2. **Automatizujeme hlavně běžnými programovými nástroji.** Pravidla jsou levná a spolehlivá.
+3. **AI nasadíme jen tam, kde by standardní nástroje nestačily.**
+4. **Na většinu úloh stačí menší modely.** Jsou bezpečnější a levnější. Nad takovou automatizací máte plnou kontrolu, pravidla si nic nevymýšlejí a proti autonomním agentům vyjde řádově levněji.
+5. **Neděláme nic kvůli hypu.** Automatizace musí dávat ekonomický smysl, nebo vám aspoň ubrat otravnou práci.
 
 ## Kde začít
 
-Vezměte jeden proces, který se opakuje každý den, a rozepište ho na kroky. U každého kroku si položte otázku: *dá se popsat pravidlem?* Pokud ano, automatizujte ho bez AI. Pokud ne, zeptejte se: *jak úzkou otázku můžu AI položit a jak její odpověď ověřím?*
+Vezměte jeden proces, který se opakuje každý den, a rozepište ho na kroky. U každého se zeptejte: *dá se to napsat jako recept?* Pokud ano, automatizujte bez AI. Pokud ne, zeptejte se: *jak úzkou otázku můžu AI položit a jak její odpověď ověřím?*
 
-S tímhle rozborem vám rádi pomůžeme. Při [procesním auditu](/sluzby#audit) projdeme vaše postupy a navrhneme automatizaci, které budete rozumět. [Domluvte si hovor zdarma](/kontakt).
+S tímhle rozborem umíme poradit. Při [procesním auditu](/sluzby#audit) projdeme vaše postupy a navrhneme automatizaci, které budete rozumět. [Domluvte si hovor zdarma](/kontakt).
