@@ -1,7 +1,7 @@
 ---
 title: "Firemní data a AI: cloud, nebo vlastní server?"
 description: "Smí faktura se jménem zákazníka do ChatGPT? A kdy se vyplatí provozovat jazykový model na vlastním serveru? Praktický průvodce rozhodováním o tom, kam s firemními daty, když chcete využít umělou inteligenci."
-pubDate: 2026-10-08
+pubDate: 2026-09-29
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "data", "GDPR", "bezpečnost"]
 draft: false

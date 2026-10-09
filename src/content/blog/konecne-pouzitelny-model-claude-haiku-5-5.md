@@ -1,7 +1,7 @@
 ---
 title: "Konečně použitelný model: Claude Haiku 5.5 a automatizace za pár korun"
 description: "Anthropic vydal Claude Haiku 5.5, malý model, který je řádově levnější než jeho předchůdce a přitom výrazně schopnější. Proč je to pro firemní automatizaci důležitější zpráva než další rekord největších modelů, a na co si dát pozor."
-pubDate: 2026-10-09
+pubDate: 2026-10-08
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "modely", "náklady", "automatizace"]
 draft: false

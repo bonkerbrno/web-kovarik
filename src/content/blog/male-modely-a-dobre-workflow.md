@@ -1,7 +1,7 @@
 ---
 title: "Nepotřebujete drahý model. Stačí malý a dobře navržené workflow"
 description: "Pro většinu firemních úloh není potřeba nejvýkonnější a nejdražší AI. Malé modely zvládnou třídění, čtení dokumentů i krátké shrnutí, pokud je obklopí dobře navržené workflow. Vysvětlujeme proč a jak."
-pubDate: 2026-10-04
+pubDate: 2026-09-01
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "náklady", "workflow"]
 draft: false

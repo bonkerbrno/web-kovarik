@@ -1,7 +1,7 @@
 ---
 title: "Kontrolovatelné automatizace: co nejvíc pravidel, co nejméně AI"
 description: "Nejspolehlivější automatizace je ta, které rozumíte. Ukazujeme, jak postavit workflow, kde většinu práce dělají jasná pravidla a AI nastupuje jen tam, kde opravdu pomůže, a vždy pod dohledem."
-pubDate: 2026-10-06
+pubDate: 2026-09-15
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["automatizace", "AI", "kontrola"]
 draft: false

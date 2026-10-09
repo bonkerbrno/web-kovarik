@@ -1,7 +1,7 @@
 ---
 title: "Pravidla pro AI ve firmě: směrnice na jednu stránku"
 description: "Zakázat AI nefunguje a nechat ji bez pravidel je riskantní. Ukazujeme, jak sepsat jednoduchou firemní směrnici pro používání umělé inteligence, které zaměstnanci porozumí, a přikládáme vzor, ze kterého můžete vyjít."
-pubDate: 2026-10-09
+pubDate: 2026-10-03
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "směrnice", "bezpečnost", "tým"]
 draft: false

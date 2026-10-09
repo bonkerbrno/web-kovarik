@@ -1,7 +1,7 @@
 ---
 title: "Černá skříňka: rizika velkých modelů a multiagentních systémů"
 description: "Velké jazykové modely a systémy, kde spolu „vyjednává“ několik AI agentů, vypadají působivě. Pro firemní procesy ale přinášejí riziko, které se snadno přehlédne: nikdo přesně neví, proč udělaly to, co udělaly."
-pubDate: 2026-10-05
+pubDate: 2026-09-08
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "bezpečnost", "rizika"]
 draft: false

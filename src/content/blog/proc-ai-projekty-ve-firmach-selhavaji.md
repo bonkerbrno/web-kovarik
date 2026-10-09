@@ -1,7 +1,7 @@
 ---
 title: "Proč AI projekty ve firmách selhávají (a jak to udělat jinak)"
 description: "Licence na ChatGPT koupené, školení proběhlo, a po třech měsících to nikdo nepoužívá. Popisujeme čtyři nejčastější důvody, proč zavádění AI ve firmách končí rozčarováním, a co dělat, aby to u vás dopadlo jinak."
-pubDate: 2026-10-07
+pubDate: 2026-09-22
 author: "Ing. Stanislav Kovařík a tým"
 tags: ["AI", "implementace", "strategie"]
 draft: false
